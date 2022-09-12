@@ -1,0 +1,162 @@
+1.Excel.xlsx
+---------------HEADER------------
+ribbon ,group ,tab ,contextual tab ,name box ,formula bar,
+one spreedsheet contains--[1048576(rows) ,16384(columns)]
+row column combination called cell - C4 --c column and 4th row and [:] is range
+sheet_name! - to refer another sheet. or create name to the range of cell
+like variable name condition.
+3 type of cell reference.
+absolute reference[$D$4];relative reference [D4];mixed reference[$D4] [D$4].
+
+
+------------SHORT-CUT---------
+= + ALT -- to sum.
+shift + direction key - select cell for range.
+ctrl + r - copy formula for right; ctrl + d --copy formula down.
+ctrl + 1 -- format cell.
+ctrl + ~ -- see all formulas.
+ctrl + shift + direction keys - to select all.
+fn + f4 - to make absolute.
+ctrl + t - to create a table.
+ctrl + space - to select a column. 
+ctrl + - - to delete a column.
+ctrl + shift + enter - to make convert into array.
+alt + dl -- to open data validation .
+------------DATA TYPES-------------
+1.Numeric[right-align]  2.alph-numeric[left-align]
+date-type dd/mm/yy[india] mm/dd/yy[usa]
+Format--only changes the apperence of data in the cell not data
+
+-------------FORMULA------------------
+if we insert new row or alter the existing row it will not make change auto
+=D4+D5+D6 - to find sum of values.
+=D4*3% -- to find 3 precent of D4 [so D4*3% = num*3/100].
+to evaluate formula --> click formula tab ;click formula evaluate.
+
+--------------FUNCTIONS-----------------
+if we insert new row or alter the existing row it will make changes automatically 
+because it consider as group of range.
+=SUM(D4:D6) - to sum all the numeric value within the range
+=PRODUCT(D4:D10) - to product all the numeric value within the range
+=SUMPRODUCT(array1,array..) - to find the sum of products of the arrays [upto 257]
+=SUMPRODUCT(--(array_with_logical_test)..,array..) --(TRUE) is 1 |--(FALSE) is 0.
+=SUMIFS(sum_range,criteria_range1,criteria1,criteria_range2,criteria2,..upto 256)
+-to find sum of range that meet criteria
+=MIN(D4:D10) - to find min value
+=MAX(D4:D10) - to find max value.
+=AVERAGE(D4:D10) - to find average of all values and if the a empty cell or alpha
+-numeric type it will ignore it.
+=AVERAGEIFS(avg_range,critiria_range,crit..) -to find avg that meet the criteria
+
+=ROUND(value) - it will round the value if [<=.5]-next value,[>5]-same value.
+=TRUNC(value) -- to remove decimal value.
+=D4-TRUNC(D4) -- to find decimal value.
+
+=COUNT(D4:D10) - to count only the numeric values.
+=COUNTA(D4:D10) - to count both numeric and alpha-numeric[string] values
+space is also consider as a alpha-numeric type {count-counta = no of alpha num}.
+=COUNTBLANK(D4:D10) - to count only blank space.
+
+=DATE(yy,mm,dd),DAY(),MONTH(),YEAR(),[=TODAY() or ctrl + ;] - to find today's day
+=DATEDIF(date1,date2,"y","m","d") "ym" "md" - to find the date difference.
+=text(date,"dddd","mmmm") or "ddd","mmm" - to find day,month name.
+=WEEKDAY(date,format) - to generate serial no for weekdays.
+=WORKDAY.INTL(start_date,no_of_days,weekoff_type,holidays) -to find no of working
+days[date].; =NETWORKDAYS.INTL(start_day,end_date,weekoff_type,holidays) -to find 
+total no of working days.[days]
+
+=VLOOKUP(lookup_value,table_range,col_index,0) 0-exact match and o is = .
+exact match can be used in num and alpha num ; order does not matter.
+the lookup_value must be in first index of the table range.Index starts from 1..
+=VLOOKUP(lookup_value,table_range,col_index,1) 1-appro match and 1 is >= .
+it can be used on only numeric type ; order should be in asecending so order 
+matters : 1st index_column>=lookup_value. is greater one row will reduce one row
+in result.if equal same row.
+=VLOOKUP(VLOOKUP()) - nested vlookup .
+=MATCH(lookup_value,array_table,0) - to find the array index. row and column wise
+=CHOOSE({no of column},range_of_column,) - to create a virtual table [256 col].
+
+=PMT(monthly_intrest_rate,no_of_installment_or_terms,principal_amount).
+=CLEAN(D4) - to clean the text that has non-printable character.
+=TRIM(D4) - to clean the unwanted spaces on text.
+=VALUE(D4) - to convert alpha-numeric into numeric values.
+
+
+=INDEX(array,row_no,col_no) - it will return the intersecting value of row and
+column. 
+
+-----------------LOGICAL-TESTING-----------
+simple if
+IF(condition,execute if true,execute if retrun false)
+
+nested if 
+IF(condition,TRUE,IF(condition,true,IF(condition,true,if()..)))
+in nested if always check from smallest condition to largest condition
+and there can be upto 64 nested condition or upto 64 nested function.both.
+
+if error
+IFERROR(statement1,statement2) - to execute if have error in statement 1 it will
+execute statement 2.
+IF(#N/A,statement 2)
+
+=OR(logical_test,logical_test) - 11,01,10-True; 00-False.
+=AND(logical_test,logical_test) - 11-True; 00,01,10-False.
+
+
+------------------TABLE--------------------------------------
+1.select a cell , insert tab,table icon,will select a contigous range(no row can
+be a empty row it should continous.),check have header,ok. or ctrl +t
+TABLE - it will automatically impliment the function or formula to the 
+remaining cells auto. so the data in that table becomes dynamic name range.
+TABLE[col_name] - to select a column form the table.
+
+filter in table -- select col select filter text or num or date and costimize.
+? for single char , * to series of char.
+
+Pivot table - select cell ; insert tab; pivot table; row and col according to
+report ; values - which should do calculation. - it is used to generate multiple
+reports. we can also create a pivot chart also and that chart has filter option 
+also and it will respond to the pivot table.
+--pivot - analysis - field,set->to add new column or modify or delete the column
+in value box . value feild setting and we can change the function.
+--to make the pivot table dynamic ; can choose change the data source;or make it
+as a table - apply pivot on the table and click refresh. 
+--to make a filter using pivort use the insert slicing is same as filter
+but gui and also change the slicer design and settings;multiple slicer.
+--
+
+
+---------------------ARRAY-----------------------------------------
+1.select column , 2.enter the formula or function ,3.press--ctrl+shift+enter.
+it will make take less space for the formula or fuction
+we cannot able to make change the array range or column.
+
+
+-----------------------ANALYSIS--------------------------------------
+click data tab ; click what if analysis icon; goal seek;select cell,set value
+[set value must contain formula or function];[so according to the set value which
+cell value should change];select that cell.- it is used for reverse calculation.
+
+FOR TABLE OR RANGE
+click data tab; click what if analysis icon ; data table;select table range
+the first empty cell should contain formula or function and first column or
+row must have the variables ; set the row has which part has to change in fuction
+and same in column.
+
+what is want;what is need;which is the problem area;what to get.
+
+contional formating -->select the range;click on conditional formating icon;select
+highlight cell;or icon ; or manage formating and customize the conditions.
+ 
+TO MAKE CSV FILE[comma seperated values]
+-concat - all the column and copy the formula;copy the entier range ;and make the
+the text file ; and send it. 
+- while open copy it and paste it to our sheet ; select the entier col ; click
+the text to column  and set the delimeter type ; and click finish.
+adv - it make the file size to small; and it version independent.
+
+Recording Macro: 1 start recording ; do the steps the want to record and stop
+recording.save it as name as variable;and now we can run the steps in any
+active workbook or active sheet. and to save as macro enabled xlsm.
+while recording step range must be match on other sheet also.
+
