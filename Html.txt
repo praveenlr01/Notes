@@ -1,0 +1,187 @@
+---------------------------------------------------------------------------------
+__FRONT_END__
+1.Html-structuring 2.Css-styling 3.JavaScript-Adding functionality 
+4.React-front_end_framework 5.Git-Version_Control_System
+
+-how Web Works???
+http://www.google.com ->URL(Uniform Resource Location) --it is used to locate
+a Resource(web page,img,video,fonts,ect..)
+client/browser--------->server/computer_host???
+-client (resquest) a servies and server provide a servies(response).
+This process is formated by HTTP(HyperTextTransferProtocol) protocol and also 
+used to communicate between client and server through internet.
+HTTPS(HTTP+Encryption)
+-what is DOM(Document Object Model)???
+it contains the data or objects of our html page or web page like,
+request type GET;status 200;type text/html;date of request;link;img;h1;ect...
+-what is rendering????
+our html document have several links for the resources once collecting all the
+resource it will start to render the web page that is displaying a web page.
+-recap--???
+client(sent http request)-->server(http responce)-->html document
+-->browser_converts_into_dom--->render_to_display_resourse_to_client.
+
+--dev tools(to check the changes) -validator w3(to validate the html doc)
+-google_web_store(html5 outliner)
+_________________________________________________________________________________
+-----HTML(HyperTexMarkupLanguage)-----
+html it is used to define the structure of the web page content.
+<html></html> - called tags or markup elements;<>opening tag;</>closing tag
+!+tab -to get a basic html_bolierplate.
+------------------------------------------------------------------------------
+1.<head></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="about the web page.">
+<meta name="author" content="praveenkumar">
+<title>title_of_web_page</title>
+<link rel="icon" href="images/path" type="image/x-icon">  rel(relation)
+<link rel="stylesheet" href="css/path" type="text/css"> href(hypertext_reference)
+</head>
+</html>
+
+_____________________________________________________________________________
+2.<body> </body>
+1.comment
+<!--For Documentation Search For 'MDN Html' -->
+------------------------------------------------------------------------------
+2.text
+<h1></h1>-heading1 we should have one h1 tag in a web page.(largest font size)
+<h2><h3><h4><h5><h6></> - heading tags.in html have upto h6.
+<p>text</p> - paragraph element./more than two blank space is not allowed.
+<br> - break tag .used to break the line.
+<hr> - horizontal_ruler.used to draw a horizontal line between text
+<b>Bold</b>; <i>italic</i>; <u>underline</u>; <pre>coding</pre>;
+<sup>powerof<\sup>; <sub>text<\sub>-basevalue; <q>text</q>-quotes;
+<p>my full name is <em>Praveen Kumar</em></p> - emphasis(italic).to highlight 
+important words in our web page.<strong>praveen kumar lr<strong> -Bold.
+&lt;(lessthan),&gt;(greaterthan),&nbsp;(space),&copy;(copy_right)--html entites
+//unicode-table.com 
+<abbr title="Full Form">FF</abbr> - to display abbrivations
+<address>address_text</address> - to display address in italic font_style.
+--------------------------------------------------------------------------------
+3.Lists
+--order_list(ol)
+<ol><li></li><li></li></ol> - order list gives number to the list elements
+--unorder_list(ul)
+<ul><li></li><li></li></ul> - unorder list gives bullet points to list elements.
+--descriptive_list(dl)
+<dl><dt><dd></dd><dt></dl>  -dl,des_terms,des_detial gives indent to dd by dt.
+---------------------------------------------------------------------------------
+4.Links
+<a href="absolute(http://www.)or relative address(login.html)or(#name)internal">
+click</a> -to link different pages.
+<a href="path" download>name.jpg</a> - to add download attribute
+<a href="mailto:praveenkumar@gmail.com">my email</a> -to open email
+<a href="tel:+91987654321">my phone</a> -to open phone dial
+<a href="http://www.goo.com" target="_blank">Google</a> - to open in new web page 
+<a href="/" >Home</a> - to take home page
+---------------------------------------------------------------------------------
+5.Images
+<img src="images/path" alt="my images">
+<img src="images/path" alt="altertext" width="100" height="100" 
+loading="lazy" title="description">
+<figure><img src="path" alt="text"><figcaption>text</figcaption></figure>
+
+--img download sources
+unsplash.com//pexels.com//gratisography//pixabay.com//emojipedia.org
+to reduce size of images
+tinypng.com
+--------------------------------------------------------------------------------
+6.Semantics
+semantic it is used to group the content and to implement css style easly.
+improve readiblty for developer and screen reader software and search engine.
+
+--<header></header> -for heading of the web page and navigation.can be more then 
+one header.
+--<nav></nav> - navigator of the content of page.usally inside header.
+<nav aria-labeledby="label_name"></nav> - if we have more than one nav per page.
+
+--<main></main> -there can be only one main element per page.
+
+--<article></article> - when we have <h><p><img> and it should be a stand alone
+content to the web page.
+
+--<section></section> - when we have a <h> <p> <img> elements and it fall under a
+same group we can use section.
+
+--<aside></aside> - info aside the web page content
+
+--<footer></footer> - content in footer .can be more than one footer per page.
+--<figure><img><figcaption></><code></></figure> -it provide indent to its block.
+--<time datetime="">7pm</time> -to specify time in our web page .it is 24 clock.
+--<details><summary>to show in top</summary>to show in drop down</details>
+
+--non-semantics elements
+<div></div> - when no semantic are suitable and it fall in same group can use div.
+it is an block level element.
+<span>text</span> - it is inline element
+-----class_id----
+class="class_name" (.class_name) -we can have same class name for different tags
+id="id_name" (#id_name) -we can have only unique id names for diff tags.
+--------------------------------------------------------------------------------
+7.Froms and Inputs
+<form action="server_address" method="GET"><fieldset><legend>form_caption
+</legend><label><input><button></fieldset></form>
+
+<label for="first_name">First Name</lable>
+
+<input type="text" id="name_in_for_of_label" name="name_in_server" 
+placeholder="eg.text" autocomplete="on" autofocus required> -there can be only 
+one autofocus input per page and requried is should be filled.
+
+<input type="password" > -for password input.
+<input type="email" pattern="@gmail.com" size="30" requried>
+<input type="tel" pattern="[0-9]{10}"> -for phone input [number]{no_digits}
+<input type="number" min="0" max="100" step="5" value="50" > -number input
+<input type="text" list="list_name"><datalist id="list_name"><option value="opt">
+<option value="opt"></datalist> -to create a list of drop down options.
+<input type="radio" value="opt"><label for="">opt</label> -radio options
+<input type="checkbox" id="" value="opt"><label>opt</label> -checkbox options
+<input type="date"> --date_box
+<input type="color"> --color_adjust
+<input type="range"> --choose_range
+
+<button type="submit">Submit</button> -to submit the form to server.
+<button type="reset">Reset</button> -to reset the form
+<textarea name="message" id="" cols="30" rows="10"></textarea> -entering 
+large message.
+<select id="" name=""><optgroup label="group_name"><option value="options">options
+</option></optgroup></select>
+
+---------------------------------------------------------------------------------
+8.<table></table>
+<table><caption>text</caption><thead><tr><th></th><tr></thead>
+<tbody><tr><td></td></tr></tbody><tfoot><tr><td></tr></td></tfoot><table>.
+
+<th scope="col">name</th><th scope="row">f_name</th>
+
+thead(table_head); tbody(table_body); tr(table_row); th(table_heading); 
+td(table_data_cell); <caption>text</caption>-about table ;colspan="2"; 
+rowspan="2"; <tfoot><tr></><td></><tfoot> -footer of the table
+
+--------------------------------------------------------------------------------
+Additional
+<video src="video/path" type=vedio/mp4 controls></video>
+<audio controls><source src="audio/path" type=audio/audi></audio>
+<s>text<\s>--strickout
+<small>text<\small>--light
+<tt>text<\tt>--typetext
+<cite><a href="cite_address" target="_blank"></a></cite>
+
+#frame(youtube vedio)
+<a href="" target="framename">text</a>
+<iframe src="link_or_blank" name="frame_name" width="200" height="100" 
+frameborder="0" allow autofullscreen></iframe>
+
+#marquee
+<marquee>text <img src=""></marquee>
+
+<marquee behaviour="scroll,slide,alternate" direction="top,buttom,left,right"
+bgcolor="red" loop="5" scrolldelay="500" scrollamount="10" width="200px" 
+height="10px"> text </marquee>
+
