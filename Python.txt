@@ -1,0 +1,102 @@
+--------------PYTHON---------------
+
+1.-----INTRO------------
+__DataTypes____
+1.integer(int) -- a=2,0,-2
+a.bit_count();a.bit_length();
+2.string(str) -- a="praveen"
+a.capitalize();a.count('l');a.split()-str_to_list;str=''.join(a)-list_to_str,
+a.isdigit,isalpha,isalnum,isdecimal;a.index('l');a.casefold()
+3.float(float) -- a=2.30,-3.94
+a.is_integer;
+4.complex(complex)  --a=(3j+5)
+a.real;a.imag;
+
+__Operators____
+1.Arithmetic --(+,-,*,/,//,**)
+2.Relational --(<,>,<=,>=,!=)
+3.Logical --(and,or,not)
+4.Bitwise --(&,|,~,^,<<,>>)
+5.Membership --(in,not in)
+6.Identity --(is,is not)
+
+___Variable___
+rules(1.should not start with numbers 2.should not contain special char except'_'
+3.should not use bulit in keywords)
+eg: name="praveen" --(one v and one d)
+name,age="praveen",23 --(multi v and multi d)
+details="praveen",23 --(one v and multi d)
+f_name=m_name=l_name ="praveen" --(multi v and one d)
+
+___print()___
+1.a=" "
+print("praveen",a,"kumar",end="") or print("praveen","kumar",sep=" ")
+print("lr")
+2.a,b,c="praveen",23,0.0    -- used to type_casting and slicing
+print("%0.2s %i %0.2f"%(a,b,c))
+3.a="praveen";b="Kumar"
+print(f'{a} {b}') / print(f'{a} is {b} equal {a*b}')
+4.print("{} {}".format(a,b))
+5.print("praveen\tkumar\nlr\\\"23age\'s\"\bold")
+
+2.-----------Conditional and Loop-------------
+--1.if cond:stat;if cond:stat else:stat;if cond:stat elif cond:stat else:stat
+
+--2.for i in iter:stat;for i in range(5):[0..4];for i in range(1,5):[1..4];
+for i in range(5,1,-1):[5..2] for i in a:stat else: stat
+
+3.-------------DATA_STRUCTURE--------------------
+--1.List = [int,float,char,str,set,dict,tuple]
+l.append(value);l.insert(indx,value);l.remove(value);l.sort();l.index(value);
+l.pop(index)defl(-1)-retrun last value and also remove from list;l.reverse();
+zip(l1,l2);zip(l1);zip(*l1).
+
+--2.tuple = (") - t.count(value);t.index(value)
+
+--3.dict = {key:value }{key->int,float,str,tuple}{value ->int,char,str,float,list,
+tuple,dict,set} -to copy--d3=d1|d2 or d3={**d1,**d1}
+d.update({dict});d.clear,copy, ;d.keys,values,items;d.pop(key),d.popitems(-1)
+
+--4.set = {int,float,char,str,list,tuple,dict}
+s.add(value);s.union(ss)(|) add 2 except dupli;s.intersection(ss)(&) same element 
+s as ss;s.difference(ss)(-) diff element s as ss;s.issubet(),isdisjoint();
+s.pop()-def last val;s.copy,clear,remove(values);s.symmentric_difference(ss);
+
+4.-------------FUNCTIONS----------------------
+1.user_defind_function
+def fun_name(para,para):
+	stat or return or pass
+fun_name(para,para)
+
+2.lambda or anonymous
+(lambda x :x**2)(x)
+(lambda x :x%2!=0)(x) condition
+fun_name=lambda para:expr 
+fun_name(para)
+--f=list(filter(func-lambda x :cond- x%2==0,iter-l))
+--m=list(map(func-lambda x :oper- x+2,iter-l))
+--r=list(reduce(func-lambda x:)) import functools
+
+3.____Comprehension__
+[x**2 for i in x]
+[(x,y) for x in l1 for y in l2] [(x,y) outer_loop inner_loop]
+[(x,y) for x in l1 for y in l2 if x!=0]
+[1 if x%2==0 else 0]
+[x for x in l1 if x%2==0]
+--list,dict,set
+
+4.builtin_Function
+zip(list_1,list_2)
+enumerate(values,start=0) -to give index
+ord('a') ->97 / A->65
+chr(97) ->'a' /65-A
+
+
+
+
+ALGORITHM
+1.Euclidean Algorithm
+def hcf(x,y)
+   while(y):
+     x,y=y,x%y
+   return x
