@@ -1,0 +1,322 @@
+----------------------------------------------------------------------------
+------INTRO-------------
+____Cascading_StyleSheet____
+it is design language or styling language It is used for the process of making 
+web pages Presentable. file extension -(*.css)
+
+-----------------------------------------------------------------------
+1.Type of styling
+
+1.Inline styling :(first Preference or precedence)
+<p style="color:blue; font-size=2rem">text</p> -try to avoid using this type
+2.Internal styling :(preference based on position)
+<style>p {color:brown; font-size:1.5rem; }</style> -use when have minimal styling
+3.External Styling:(preference based on the position)
+<link rel="stylesheet" href="css/style.css"> -most commonly used style type
+p{                 |p-selector {}
+   color: blue;    |color-property:
+ }                 |blue-value or property value;
+	           |s{p:v;p:v;}
+----------------------------------------------------------------------------
+2.Selector
+1.id_selector
+#id_name {p:v;} -rarely used in css styling but first precedence in css.
+2.class_selector
+.class_name{p:v;} -most commanly used selector in css and precedence after id.
+3.nested_element_selector or inherit_element_selector
+ul li a {p:v;} -nested selelctor second common . and precedence after class
+4.group_selector
+h1, h2, p {p:v;} -group selector used when common style should apply for 
+different elements.
+5.element_selector
+body{p:v;} -selecting the whole body of the element.
+6.all_selector
+*{p:v;} -selecting the entire body of the web page and used for reset default 
+property values *{margin:0; padding:0; box-sizing:border-box; }
+--precedence:
+1.id, 2.class, 3.nested or inherit elements 4.group 5.element 
+//specificity.keegan.st - to check the score
+
+selector {p:v!important} -it will overwrites all the value and precedence is 
+after id. but it very rarely used. 
+------------------------------------------------------------------------------
+3.Property and Value
+----1.color---------
+color:#000(black); #fff(white); #f00(red); #0f0(green); #00f(blue);-commanly used
+color:blue; -(140 colors avaliable)
+color:rgb(120,120,120) value form 255-0 gives a color match that value.
+color:rgba(120,120,120,0.5) rgba(red green blue alpha_channel-transperance)[0-1]
+color:hsla(0,100%,50%,0.5) (hue saturation lightness)
+background-color:#f00;
+
+//coolors.co --(to check quality of color contrast).
+------------------------------------------------------------------------------
+2.font
+font-size:2rem; -size of the text charcter/ 
+font-family: cursive; -type of the text style 
+The 5 Generic font-family [serif,sans-serif,cursive,monospace,fantasy]
+width:50ch;  - 50char in one line
+font-weight:bold; bolder ,100-900
+font-style:italic, ect..
+font-variant:small-caps;
+font: bold 1rem italic; font-weight font-size font-style;
+
+//googlefonts.com
+------------------------------------------------------------------------------
+3.boxing
+margin:0; outter most region of the box.margin-top-right-buttom-left:1rem;
+margin:2rem 2rem; top-buttom left-right; margin:2rem auto; to make center.
+margin-inline:1rem; left-right only.
+border:1px solid black; second most outter region of box.
+size typeof_border color |types-solid,outset,double,dotted,dashed.
+border-radius:50%; - to make round border. for square img. b-r:t-l t-r b-r b-l;
+paddding:0.5em; thrid most outter. space around the content to the border.
+font-size:1rem; content or text in the box.
+------------------------------------------------------------------------------
+4.Typography
+it is the way of text to style or presented or arranged.
+text-align: left;justify;center.
+text-decoration: none;underline ;overline;line-through;
+text-transform : capitalize,uppercase,lowercase;
+text-indent: 2em; -indentation
+text-shadow:2px 2px 5px black;x-axis y-asix shadow blur ;--shadow under the text.
+line-height: 1.5; -to adjust the space between text line 
+letter-spacing:0.2em; -to adjust the space between character.word-spacing:0.2;
+
+button, input, textarea, select {font:inherit; property:inherit;} - for same size
+----------------------------------------------------------------------------
+5.link_styling
+reset the default
+a {text-decoration:underline; cusor:pointer; color:blue;}
+a {color:;} a:visited{color:; } a:hover{color:; } a:active{color:; } -order pref 
+a:focus {color:; } -help to choose link using tab key.
+opacity:0.6; filter: brightness(150%), hue-rotate(180deg); 
+
+cusor:not-allowed;
+------------------------------------------------------------------------------
+6.list_styling
+<ol start="5" reversed>
+ol {list-style-type:upper-roman;} decimal-leading-zero,alpha,disc,ect.
+ul {list-style-position:inside; list-style-image:url(../images/img.png)}
+<li value=7>
+li:nth-child(2) - position number,even,odd. pesedo-class
+::marker {}  -to change only the bullets of the list
+------------------------------------------------------------------------------
+7.display:
+the amount of area occupies by the element of the page.
+Block level element - (<p> <main> <ul> <li> <h>)...
+in block element we can apply width;height;margin;
+Inline level Element - (<a> <span>)
+in inline we can not apply width,height so we can change into inline-block.
+
+. display:inline-block; - to make the inline element inside the block.
+display:none;  - to make the entire block to disappeier.
+-----------------------------------------------------------------------------
+8.floats
+float:left; -to move the element to left. float:right; -to move content to right
+width:20vw; height:20vh;
+<div class="clear"></div> |.clear {clear:both;} -to make wraped content to stop
+and to start in new line.
+
+display:flow-root; to use when the float element should be inside the block level
+element to avoid the overflow. can also use overflow:auto;
+--------------------------------------------------------------------------------
+9.Columns
+to make the elements or content to divide into columns based on column-count
+columns:4 250px; column-count column-width ; no of col div and size of col
+column-gap:3rem; to give the space between the columns content.
+column-span:all; to fill all the width of the columns.
+break-inside: avoid; not to break the block.
+white-space: nowrap; - don't cut the content or text.
+------------------------------------------------------------------------------
+10.position
+position: absolute; -it need a relative element or else it will take the page as
+parent element. while adjusting postion by using(top,left,buttom,right).
+position: relative; -it will take only its parent element as relative.
+position: fixed; -it is always relative to the page and it is fixed not able to 
+remove . it remains in same position through out page. it is an inline element.
+position: sticky; -it will act as fixed but only when it reach it specified 
+position like (top:0;)
+-----------------------------------------------------------------------------
+11.flex-box //flexbox froggy
+display:flex; -to make the elements into flex items.
+justify-content:flex-start; (flex-end; center; space-between,around,evenly;) 
+-to fix the position of content.
+align-content:center; (def) (same as justify-content values).to align content hori
+align-items:flex-start; (def) (flex-end;center) -to align items verticaly/a-self: 
+gap:1 rem -like space between on fixed size value.
+flex-direction:row;(default) :column; direction of items .row/column-reverse;
+flex-wrap:wrap; to wrap the flex box inside the contianer.nowrap-all in one line
+wrap-it can go to new line;wrap-reverse:
+flex-flow:flex-direction flex-wrap; --flex-flow:row wrap;
+
+flex-basis:100px - to set width of the content as (width:100px;)
+flex-grow:1; -the ratio to grow the width after reaching fixed size.
+flex-shrink:2; -the ratio to shrink the size after reaching the basis size.
+flex:flex-grow flex-shrink flex-basis; (flex:1 1 100px;)
+order:1; -to end | -1; -to start
+----------------------------------------------------------------------------
+12.grid //grid garden
+display:grid; -to make the elements into grid items.
+grid-auto-flow:row /column;
+grid-auto-rows:minmax(min,max); - to set the row size |grid-auto-columns:minmax();
+grid-template-column:repeat(no,fr); -no_of_columns and fr size|g-t-columns:rep();
+grid-column-start:1;grid-column-end:3; element start 1 and end before 3 at 2.
+grid-column:1 / 4; grid-row:start/end; same as start and end;
+grid-template-areas: "r1 c1 c2.." "r2 c1 c2..";
+grid-area:r1; grid-area:c1; ele {grid-area:name}
+row-gap:1 rem; column-gap:1rem; | gap:1rem 1rem; row col;
+--------------------------------------------------------------------------------
+13.images
+img {display:block;} -image reset -to make image element to block level.
+
+html--<img src="path" alt="#" width="200" height="200"> (only 200) not 200px
+.class img {width:100%; height:auto; min-width:100px; } -to make a responsive img
+
+----background_img----------
+background-image:url('../images/path');
+background-image:linear-gradient(to bottom,blue,wheat);radial-gradient(only color)
+background-size:cover,contain; 25%, auto;
+background-position:center center; top right;top left;bottom center;
+background-repeat: no-repeat,repeat,repeat-x,repeat-y; -to control the img repeat.
+
+---------------------------------------------------------------------------
+14.media_queries
+it is used to modify the page based on specific condition or parameter occured.
+syntax:
+@media media_type and (condition:breakpoint) { css {p:v;} }
+
+media_type:screen(commanly used);  all, print, even-speech.
+condition:min-width(commanly used)-styles are start from that width.(recommeded)
+max-width-style will apply upto that width,
+breakpoint:578px - style start from 576px.[576px-S|768px-M|992px-L|1200-xL|1400]
+(min-width:576px); (orentation:landscape); (min-aspect-ratio:7/4)-w/h;
+(max-height:442px);(prefers-color-scheme: dark);
+-it will combine the media_queries with same type of condition-type.and apply to
+it if it is not override.when the condition occured true then it will apply all 
+the previous condition and also override the specified condition inside it.
+
+------------------------------------------------------------------------------
+15.pseudo
+.class_name:nth-child(2){} -in same class name 2nd class element.(even),(odd);
+nav a:hover, nav a:focus {} || nav: is(a:hover, a:focus) {} - :is() The highest
+precendence element inside the:is() will be precedence of :is() pseudo class also
+nav a, nav a:visted {} || nav a:any-link{} -[a,a:visited,a:act,a:hov,a:focus;]
+.class:where() -similay to :is() but it has no specificity.
+.class:target {} -to style targeted internal links of the page.(#id_name)
+
+.class img[attribute] -to style img inside the class which has that attribute.
+.class img:not([attribute]) -to style which does not have that attribute.
+attribute-(alt,class,width,ect..)
+
+---pseudo_elements----------::
+.class ele::after {content:'text';p:v;}
+.class ele::before {content:'text';p:v;}
+.class ele::first-letter {}
+.class ele::first-line {}
+
+--------------------------------------------------------------------------------
+16.variables
+it is case sensitive and can use alpha, dash, underscore. 
+variables are used in large project where the same value is repeated for more time
+syntax:
+:root {--COLOR:#fff;}  body {background-color:var(--COLOR);} -value alt variable
+:root {--BORDER:2px solid var(--COLOR)} border:var(--BORDER) -variable inside var
+
+@media (prefers-color-scheme: dark) { :root {--var:value; } }
+we can also use variable inside the media queries and overrid the previous 
+varibale declared.
+------------------------------------------------------------------------------
+17.Fuctions.
+min(2.5rem, 3vh); (abs, rel) -it always take the smallest of two values and 
+changes according to the relative value.it take the max of absolute value.
+max(1.5rem, 3vh);  
+it take min of absolute value.
+clamp(min_value relative_value max_value);clamp(max() rel min())
+attr(data-custom_attr) custom attr starts with data key_words.
+calc(70% - 5px)
+minmax();
+-----------------------------------------------------------------------------
+18.Animations.
+--1.transform------
+transform:translate(50px, 50px) -right bottom. like float.
+transform:rotateX(180deg) -to rotate deg according to x and y.
+transform:scale(150%, 150%) -to increase the size scale to x and y.
+transform:skew(-10deg, -10deg)  -to change size side wise.
+--2.transition---
+transition-property: background-color,     ; -which property to change.
+transition-duration: 2s; -it take 2s to change the background color or t-p
+transition-timing-function:ease,liner; -timing type.
+transition-delay: 0.5; -it wait 0.5s to start changing.
+transition: t-p t-du t-t-f t-de; -:all 2s ease 0.5s;
+--3.animation--------
+animation-name:slide; 
+animation-duration:2s;
+animation-timing-function: ease;
+animation-delay: 0.5s;
+animation-iteration-count:3;
+animation-direction:normal,reverse;
+animation-fill-mode:forwards,backwards;
+animation:a-name a-du a-t-f a-de a-i-c a-d a-f-m ; 
+animation:4s ease 0.5s 4 normal forwards slide;
+@keyframes slide { 0%{transform:tansition(0);} 33%{:600px} 66%{} 100%{:(0)}}
+
+--------------------------------------------------------------------------------
+19.Organization
+1.follow your team, 2.comment headers 3.sort properties(ctrl+p|>sort asc),
+4.follow naming methodology. eg: BEM - (Block __Element --Modifier)
+BEM-(aka_components tied_to_block incremental_style )
+<header></>-block <h1 class="header__title"></>-element,
+<button class="header__btn--first"></>-modifier.|"header__btn--second-icon".
+using .class make the specificity even for group elements inside of element
+selector.
+
+
+
+
+---------value_units----------------
+px  - pexel=1/96th of 1 inch -it absolute size or used for fixed size
+%   - percentage 100% - it is relative to width or height of parent element.
+rem - rootelement (1rem=16pexel)  - it is realtive size for fonts size.
+em - relative the parent element of rem value to em.
+vh  - viewportheight min-height:100vh; to make full body active even no content.
+vw  - viewportwidth min-width:100vw; 
+
+width - 100%        breath or wide 
+height - 100%      length
+
+max-width:600px;min-width:500px; min-height:100%; max-height:500px;
+width:100vw; height: 100vh;
+[100% == 16px == 1rem]
+
+-----Addtional--------
+overflow:auto; -to make the float element to fix inside the container.
+z-index:1; -among the position type element making the highest precedence.
+position:absolute; left:-10000px; -to make something disappear. off the page
+html {scroll-behaviour: smooth; } - to make page to scroll smoothly.
+place-content:center; -align-content|justify-content as combined.
+opacity:0.6; transparent links
+width:min(100%, 350px);
+box-shadow:10px 10px 5px 0px rgba(0,0,0,0.15);
+vertical-align:sub sup;
+transform-orgin:top center;
+@using symbols
+class_name > p{;;} --to select para tag of only child of class_name
+class_name + p{;;} --to select frist next after child block
+@class atributes
+div[class]{;;} |
+div[id]{;;}    |----div must seperate not nested
+div[class="class_name"] --- to select pariticular class ".
+div[class~="class_name"] --- to select pariticular class even when
+                             there is multiple class_names ".
+a[title="name"]{;;} a[href="name"]{;;} -- to select particular anchore
+a[title^="name"]{;;} --starting letter a[href$="name"] --ending letter 
+
+----shortcut_keys--------------
+shift+alt+a -to comment the selected lines
+shift+alt+down-arrow -to copy the single line content to next line.
+alt+z -to cut down the extented lines
+ctrl+d - to select the similary words.
+ctrl+shift+l - to select all the similiar words.
+li*4>a+tab -emmet abbrevation.to create 4 list with 4 links
+
