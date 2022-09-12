@@ -1,0 +1,137 @@
+1....-----CREATE----
+SHOW DATABASES;
+CREATE DATABASE database_name;
+CREATE TABLE table_name(col_name type constrains,col_name2 type constrain,pk);
+
+2....-----INSERT----
+INSERT INTO table_name VALUES(respective to column and type of data),(),();
+INSERT INTO table_name(col_name,col_name,ect..)VALUES(respective data),(),();
+but the column count must match the value count. no need to mention
+------------DATATYPES--------------
+INT - only integer numbers size is 4bytes (upto -20 to +20billion
+CHAR(size) - when we know the lenght of the character 4bytes (upto 8000char)
+VARCHAR(size) - when len of char may vary and to acheive the memory optimize.8000
+DECIMAL(5,2)- to store decimal values where 5 is total digits including decimal 
+digits and 2 is no of decimal in that total digits.(upto (65,30))
+DATE - to store dates Format is YYYY-MM-DD
+TIMESTAMP - to store date and time of entry of data format is YYYY-MM-DD HH:MM:SS
+BLOG - Binary Large object - to store images ,file ect..(upto 65kb)
+
+___CONSTRAINS____
+1.NOT NULL;- can't be empty
+2.DEFAULT 'default_name'; - if we leave empty default value will be replaced.
+3.AUTO_INCREMENT - to make a column auto_increment it must satisfy two condition
+1-the column must be key(primary or foreign key) 2-the type must be int. to set
+limit at end we can mention.
+4.UNIQUE;- to make the column to enter only unique values;
+5.PRIMARY KEY(col_name); it is combination of unique and not null;
+6.CHECK (col_name<=100); -to check some condition;
+7.FROEIGN KEY(col_name) REFERENCE ref_table_name(ref_col_name); -to set foreign
+key.
+8.CREATE INDEX ind_name ON tabel_name(col_name);to make execution faster.
+
+
+3...--------UPDATE OR ALTER----------------
+to add column
+ALTER TABLE table_name ADD COLUMN col_name type ; - to add single column
+ALTER TABLE table_name ADD(col_name type,col_name2 type,...) -to add multiple
+ALTER TABLE table_name ADD COLUMN col_name type AFTER col_name -to add after
+
+to modify existing column
+ALTER TABLE table_name MODIFY COLUMN col_name type; (changes)
+ALTER TABLE table_name RENAME COLUMN col_name TO new_col_name; -to change col name
+
+to add primary key
+ALTER TABLE table_name ADD PRIMARY KEY(col_name); -to add primary key after create
+
+to update records
+UPDATE table_name SET col_name="update_value" WHERE col_name="record_value";
+UPDATE table_name SET col_name="uv",col_name="uv" WHERE col_name IN (rv,rv,rv);
+
+4....--------DELETE----------------------
+DROP DATABASE database_name; - to drop a database.
+DROP TABLE table_name; - to drop a table.
+DROP TABLE table_name,table_name; - to drop multiple table.
+ALTER TABLE table_name DROP COLUMN col_name; - to drop a column in the table.
+ALTER TABLE table_name DROP COLUMN col_name,DROP COLUMN col_name;-drop multiple.
+
+
+
+5....-------QUERING---------------------
+SELECT * FROM table_name; -to select all the column from the table
+SELECT col_name,col_name FROM table_name; -to select multiple column form table
+SELECT * FROM table_name ORDER BY col_name ASC; -order column values in asc order
+SELECT * FROM table_name ORDER BY col_name DSCE; -order column values desc order
+SELECT * FROM table_name LIMIT 10; -to get top 10 (siting limit)
+SELECT * FROM table_name ORDER BY col_name DSCE LIMIT 5; -using order by and limit
+SELECT * FROM table_name WHERE col_name ="condi"; -single condition
+SELECT * FROM table_name WHERE col_name IN (condi,condi); -multiple conditon
+SELECT * FROM table_name WHERE col_name NOT IN (cond1,cond2); -muliple condition
+SELCT COUNT(col_name) FROM table_name; - to count no of rows.
+SELECT COUNT (DISTINCT col_name) FROM table_name; -to count unique records;
+SELECT * FROM table_name WHERE col_name LIKE '%_' -[%string] ,[_char]
+
+---nested quering or sub qurey--------
+SELECT * FROM table_name WHERE (SELECT col_name FROM table_name);
+ 
+
+
+
+-------join-------------------
+SELECT table_name.col_name,tn.cn,tn.cn FROM tn 
+JOIN tn ON tn.cn=tn.cn;  -(condition two must be in same field type and values).
+
+
+
+6..-------FUNCTIONS----------------------
+________AGG FUNCTIONS____ 
+SUM(col_name),AVG(col_name),COUNT(col_name),MAX(col),MIN(col),
+add multiple column C_n+c_n+c+n find avg for multiple col (C_n+c_n+c_n)/3.
+lenght(col_name).
+________ANALYTIC FUNCTIONS____________
+OVER(PARTITION BY col_name) - over to make the function into analytic or window
+funtions, and partition by is like group by it groups and also it apply on every
+records in the table.
+
+ROW_NUMBER() OVER(PARTITION BY col_name) -it will generate a unique row number
+based on the partition values.
+RANK() OVER(PARTITION BY col_name ORDER BY col_name ord) - to give rank based on
+the order by column in given order 
+DENSE_RANK() OVER(PARTITION BY col_name ORDER BY col_name ord) - same as rank
+but it will not the skip the rank number even there are duplicate.
+LAG(col_name) OVER(PARTITION BY col_name ORDER BY col_name ord) - to show the 
+col value of the previous record value of the column.
+LEAD(col_name) OVER(PARTITION BY col_name ORDER BY col_name) - to show the col
+value of the next record value of the column.
+ 
+FIRST_VALUE(col_name) OVER(PARTITION BY col_name ORDER BY col_name) - to get the
+first value of the group and order by result window. 
+LAST_VALUE(col_name) OVER(PARTITION BY col_name ORDER BY col_name 
+range between unbounded preceding and unbounded following) - to get the last
+value of the result set by partition and order.
+FRAME --> range between unbounded preceding and current row - default frame range
+--> range between unbounded preciding and unbounded following - to change for 
+some window function to change the frame range.
+<>insted of range we can use rows - when we have duplicate rows will not consider
+as all the duplicate only  the current row but in range it will take all the 
+duplicate values within the range of the start . <>insted of unbounded can specify
+numbers like 2 and 2 -- 2 rows preceding and 2 rows following.
+NTH(no) OVER(PARTITION BY col_name ORDER BY col_name) - to get record no mentioned
+by the nth(argument) will be returned like 3,4,5..ect
+NTILE(no) OVER(order by col_name ord) - it will divided the group of record in
+number given in ntile argument like 3 divided into 3 part 1st part will given 
+high precident. (divided into buckets)
+CUME_DIST()OVER(ORDER BY col_name) - to get the percentage of records like
+top 30 percent ,least 20 percent.formula(current_row_no/total_row_no)
+
+
+
+
+---------------CTE(Common Expresion Table)--------------
+WITH cte_name(col_name) AS (qurey for creating cte table like SELECT col_name 
+FROM table_name) SELECT * FROM cte_name; - to create a tempory table for only
+that qurey without storing the table.
+WITH cte_name(col_name) AS (qurey for creating cte table),
+cte_name(col_name) AS (qurey for creating cte table)
+SELECT * from cte_name,cte_name; - to creating multiple cte
+
