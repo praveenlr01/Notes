@@ -166,13 +166,11 @@ rowspan="2"; <tfoot><tr></><td></><tfoot> -footer of the table
 
 --------------------------------------------------------------------------------
 Additional
-<video src="video/path" type=vedio/mp4 controls></video>
-<audio controls><source src="audio/path" type=audio/audi></audio>
-<s>text<\s>--strickout
-<small>text<\small>--light
-<tt>text<\tt>--typetext
+<small>text<\small>--small font.
 <cite><a href="cite_address" target="_blank"></a></cite>
 
+<audio src="audio/path" type=audio/mp3 controls></audio>
+<video src="video/path" type=vedio/mp4 controls></video>
 #frame(youtube vedio)
 <a href="" target="framename">text</a>
 <iframe src="link_or_blank" name="frame_name" width="200" height="100" 
@@ -182,6 +180,5 @@ frameborder="0" allow autofullscreen></iframe>
 <marquee>text <img src=""></marquee>
 
 <marquee behaviour="scroll,slide,alternate" direction="top,buttom,left,right"
-bgcolor="red" loop="5" scrolldelay="500" scrollamount="10" width="200px" 
-height="10px"> text </marquee>
-
+bgcolor="red" loop="5" scrolldelay="5s" scrollamount="10" width="200" 
+height="10"> text </marquee>
