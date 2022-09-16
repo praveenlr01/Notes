@@ -17,6 +17,7 @@ p{                 |p-selector {}
    color: blue;    |color-property:
  }                 |blue-value or property value;
 	           |s{p:v;p:v;}
+
 ----------------------------------------------------------------------------
 2.Selector
 1.id_selector
@@ -39,6 +40,7 @@ property values *{margin:0; padding:0; box-sizing:border-box; }
 
 selector {p:v!important} -it will overwrites all the value and precedence is 
 after id. but it very rarely used. 
+
 ------------------------------------------------------------------------------
 3.Property and Value
 ----1.color---------
@@ -56,10 +58,10 @@ font-size:2rem; -size of the text charcter/
 font-family: cursive; -type of the text style 
 The 5 Generic font-family [serif,sans-serif,cursive,monospace,fantasy]
 width:50ch;  - 50char in one line
-font-weight:bold; bolder ,100-900
-font-style:italic, ect..
-font-variant:small-caps;
-font: bold 1rem italic; font-weight font-size font-style;
+font-weight:bold; -bolder ,100-900
+font-style:italic; -to make fonts in italic
+font-variant:small-caps; -all letter in small caps.
+font: bold 1rem italic; -font-weight font-size font-style;
 
 //googlefonts.com
 ------------------------------------------------------------------------------
@@ -68,10 +70,12 @@ margin:0; outter most region of the box.margin-top-right-buttom-left:1rem;
 margin:2rem 2rem; top-buttom left-right; margin:2rem auto; to make center.
 margin-inline:1rem; left-right only.
 border:1px solid black; second most outter region of box.
-size typeof_border color |types-solid,outset,double,dotted,dashed.
+size typeof_border color |types-solid,outset,double,dotted,dashed. border:none;-r
 border-radius:50%; - to make round border. for square img. b-r:t-l t-r b-r b-l;
 paddding:0.5em; thrid most outter. space around the content to the border.
 font-size:1rem; content or text in the box.
+box-shadow:10px 10px 5px 0px rgba(0,0,0,0.15);
+
 ------------------------------------------------------------------------------
 4.Typography
 it is the way of text to style or presented or arranged.
@@ -89,28 +93,30 @@ button, input, textarea, select {font:inherit; property:inherit;} - for same siz
 reset the default
 a {text-decoration:underline; cusor:pointer; color:blue;}
 a {color:;} a:visited{color:; } a:hover{color:; } a:active{color:; } -order pref 
-a:focus {color:; } -help to choose link using tab key.
+a:focus {color:; } -help to choose link using tab key.(a:focus-visible)
 opacity:0.6; filter: brightness(150%), hue-rotate(180deg); 
-
 cusor:not-allowed;
+
 ------------------------------------------------------------------------------
 6.list_styling
 <ol start="5" reversed>
-ol {list-style-type:upper-roman;} decimal-leading-zero,alpha,disc,ect.
-ul {list-style-position:inside; list-style-image:url(../images/img.png)}
+ol {list-style-type:upper-roman;} decimal-leading-zero,alpha,disc,none,ect..
+ul {list-style-position:inside; list-style-image:url("../images/img.png")}
 <li value=7>
 li:nth-child(2) - position number,even,odd. pesedo-class
 ::marker {}  -to change only the bullets of the list
+
 ------------------------------------------------------------------------------
 7.display:
 the amount of area occupies by the element of the page.
 Block level element - (<p> <main> <ul> <li> <h>)...
 in block element we can apply width;height;margin;
-Inline level Element - (<a> <span>)
+Inline level Element - (<a> <span> <img>)
 in inline we can not apply width,height so we can change into inline-block.
 
-. display:inline-block; - to make the inline element inside the block.
+display:inline-block; - to make the inline element inside the block.
 display:none;  - to make the entire block to disappeier.
+
 -----------------------------------------------------------------------------
 8.floats
 float:left; -to move the element to left. float:right; -to move content to right
@@ -120,6 +126,7 @@ and to start in new line.
 
 display:flow-root; to use when the float element should be inside the block level
 element to avoid the overflow. can also use overflow:auto;
+
 --------------------------------------------------------------------------------
 9.Columns
 to make the elements or content to divide into columns based on column-count
@@ -128,6 +135,7 @@ column-gap:3rem; to give the space between the columns content.
 column-span:all; to fill all the width of the columns.
 break-inside: avoid; not to break the block.
 white-space: nowrap; - don't cut the content or text.
+
 ------------------------------------------------------------------------------
 10.position
 position: absolute; -it need a relative element or else it will take the page as
@@ -137,17 +145,21 @@ position: fixed; -it is always relative to the page and it is fixed not able to
 remove . it remains in same position through out page. it is an inline element.
 position: sticky; -it will act as fixed but only when it reach it specified 
 position like (top:0;)
+z-index:1; -among the position type element making the highest precedence.
+position:absolute; left:-10000px; -to make something disappear. off the page
+
 -----------------------------------------------------------------------------
 11.flex-box //flexbox froggy
 display:flex; -to make the elements into flex items.
 justify-content:flex-start; (flex-end; center; space-between,around,evenly;) 
 -to fix the position of content.
-align-content:center; (def) (same as justify-content values).to align content hori
-align-items:flex-start; (def) (flex-end;center) -to align items verticaly/a-self: 
+align-content:center;(def)(same as justify-content values).to align content hori
+place-content:center; -align-content|justify-content as combined.
+align-items:flex-start; (def)(flex-end;center) -to alignitems verticaly/ali-self: 
 gap:1 rem -like space between on fixed size value.
 flex-direction:row;(default) :column; direction of items .row/column-reverse;
 flex-wrap:wrap; to wrap the flex box inside the contianer.nowrap-all in one line
-wrap-it can go to new line;wrap-reverse:
+wrap-it can go to new line;wrap-reverse: wrap items reversly.
 flex-flow:flex-direction flex-wrap; --flex-flow:row wrap;
 
 flex-basis:100px - to set width of the content as (width:100px;)
@@ -155,29 +167,32 @@ flex-grow:1; -the ratio to grow the width after reaching fixed size.
 flex-shrink:2; -the ratio to shrink the size after reaching the basis size.
 flex:flex-grow flex-shrink flex-basis; (flex:1 1 100px;)
 order:1; -to end | -1; -to start
+
 ----------------------------------------------------------------------------
 12.grid //grid garden
 display:grid; -to make the elements into grid items.
 grid-auto-flow:row /column;
-grid-auto-rows:minmax(min,max); - to set the row size |grid-auto-columns:minmax();
-grid-template-column:repeat(no,fr); -no_of_columns and fr size|g-t-columns:rep();
+grid-auto-rows:minmax(min,max); - to set the row size|grid-auto-columns:minmax();
+grid-template-columns:repeat(no,fr);-no_of_columns and fr size|g-t-columns:rep();
 grid-column-start:1;grid-column-end:3; element start 1 and end before 3 at 2.
 grid-column:1 / 4; grid-row:start/end; same as start and end;
 grid-template-areas: "r1 c1 c2.." "r2 c1 c2..";
 grid-area:r1; grid-area:c1; ele {grid-area:name}
 row-gap:1 rem; column-gap:1rem; | gap:1rem 1rem; row col;
+
 --------------------------------------------------------------------------------
 13.images
 img {display:block;} -image reset -to make image element to block level.
 
 html--<img src="path" alt="#" width="200" height="200"> (only 200) not 200px
-.class img {width:100%; height:auto; min-width:100px; } -to make a responsive img
+.class img {max-width:100%; height:auto; min-width:100px; } 
+-to make a responsive img
 
 ----background_img----------
 background-image:url('../images/path');
 background-image:linear-gradient(to bottom,blue,wheat);radial-gradient(only color)
 background-size:cover,contain; 25%, auto;
-background-position:center center; top right;top left;bottom center;
+background-position:center; top right;top left;bottom center;
 background-repeat: no-repeat,repeat,repeat-x,repeat-y; -to control the img repeat.
 
 ---------------------------------------------------------------------------
@@ -198,6 +213,7 @@ the previous condition and also override the specified condition inside it.
 
 ------------------------------------------------------------------------------
 15.pseudo
+---pseudo_class-----
 .class_name:nth-child(2){} -in same class name 2nd class element.(even),(odd);
 nav a:hover, nav a:focus {} || nav: is(a:hover, a:focus) {} - :is() The highest
 precendence element inside the:is() will be precedence of :is() pseudo class also
@@ -218,14 +234,16 @@ attribute-(alt,class,width,ect..)
 --------------------------------------------------------------------------------
 16.variables
 it is case sensitive and can use alpha, dash, underscore. 
-variables are used in large project where the same value is repeated for more time
+variables are used in large project where the same value is repeated for moretime
 syntax:
-:root {--COLOR:#fff;}  body {background-color:var(--COLOR);} -value alt variable
+:root {--variable_name:values;}
+:root {--COLOR:#fff;} -body {background-color:var(--COLOR);} -value alt variable
 :root {--BORDER:2px solid var(--COLOR)} border:var(--BORDER) -variable inside var
 
-@media (prefers-color-scheme: dark) { :root {--var:value; } }
+@media (prefers-color-scheme: dark) { :root {--variable_name:value; } }
 we can also use variable inside the media queries and overrid the previous 
 varibale declared.
+
 ------------------------------------------------------------------------------
 17.Fuctions.
 min(2.5rem, 3vh); (abs, rel) -it always take the smallest of two values and 
@@ -236,6 +254,7 @@ clamp(min_value relative_value max_value);clamp(max() rel min())
 attr(data-custom_attr) custom attr starts with data key_words.
 calc(70% - 5px)
 minmax();
+
 -----------------------------------------------------------------------------
 18.Animations.
 --1.transform------
@@ -260,6 +279,7 @@ animation-fill-mode:forwards,backwards;
 animation:a-name a-du a-t-f a-de a-i-c a-d a-f-m ; 
 animation:4s ease 0.5s 4 normal forwards slide;
 @keyframes slide { 0%{transform:tansition(0);} 33%{:600px} 66%{} 100%{:(0)}}
+transform-orgin:top center;
 
 --------------------------------------------------------------------------------
 19.Organization
@@ -270,9 +290,6 @@ BEM-(aka_components tied_to_block incremental_style )
 <button class="header__btn--first"></>-modifier.|"header__btn--second-icon".
 using .class make the specificity even for group elements inside of element
 selector.
-
-
-
 
 ---------value_units----------------
 px  - pexel=1/96th of 1 inch -it absolute size or used for fixed size
@@ -288,18 +305,15 @@ height - 100%      length
 max-width:600px;min-width:500px; min-height:100%; max-height:500px;
 width:100vw; height: 100vh;
 [100% == 16px == 1rem]
+1rem - 0.1em-(1/10th of 1rem).
 
 -----Addtional--------
-overflow:auto; -to make the float element to fix inside the container.
-z-index:1; -among the position type element making the highest precedence.
-position:absolute; left:-10000px; -to make something disappear. off the page
 html {scroll-behaviour: smooth; } - to make page to scroll smoothly.
-place-content:center; -align-content|justify-content as combined.
-opacity:0.6; transparent links
 width:min(100%, 350px);
-box-shadow:10px 10px 5px 0px rgba(0,0,0,0.15);
+display:content; -to display direct child element.
+border:medium ridge black;
 vertical-align:sub sup;
-transform-orgin:top center;
+
 @using symbols
 class_name > p{;;} --to select para tag of only child of class_name
 class_name + p{;;} --to select frist next after child block
@@ -312,6 +326,7 @@ div[class~="class_name"] --- to select pariticular class even when
 a[title="name"]{;;} a[href="name"]{;;} -- to select particular anchore
 a[title^="name"]{;;} --starting letter a[href$="name"] --ending letter 
 
+//caniuse.com -to check the support.
 ----shortcut_keys--------------
 shift+alt+a -to comment the selected lines
 shift+alt+down-arrow -to copy the single line content to next line.
@@ -319,4 +334,3 @@ alt+z -to cut down the extented lines
 ctrl+d - to select the similary words.
 ctrl+shift+l - to select all the similiar words.
 li*4>a+tab -emmet abbrevation.to create 4 list with 4 links
-
