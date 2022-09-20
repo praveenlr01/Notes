@@ -1,93 +1,257 @@
-1....-----CREATE----
-SHOW DATABASES;
-CREATE DATABASE database_name;
-CREATE TABLE table_name(col_name type constrains,col_name2 type constrain,pk);
+-------------------------------MySql-----------------------------------------
+Data is raw fact or unorganized information.eg.list of names,list of age.
+DataBase is organized data to form a meaningfull information.eg.student database.
+DataBase Management System(DBMS)-collection of database or schema.
+Two type of DBMS -1.Non-Relational DBMS- Store data in {key:value} formate by
+using json. eg.MongoDB,amazon dynamoDB. 2.Relational-DBMS -data are stored in a 
+tabular formate using row as records and column as field. eg.Mysql,SqlServer
 
-2....-----INSERT----
-INSERT INTO table_name VALUES(respective to column and type of data),(),();
-INSERT INTO table_name(col_name,col_name,ect..)VALUES(respective data),(),();
-but the column count must match the value count. no need to mention
+SQL(Structured Query Language) it is a standard quering language for (RDBMS) to 
+perform mainly CIRUD-(CreateInsertReadUpdateDelete) operations and more quering.
+
+----------------------------------------------------------------------------
+1.CREATE
+CREATE DATABASE database_name;
+SHOW DATABASES;
+USE database_name;
+CREATE TABLE table_name(col_name type constrains,col_name2 type constrain,pk);
+SHOW TABLES;
+SHOW FULL TABLES;
+
 ------------DATATYPES--------------
 INT - only integer numbers size is 4bytes (upto -20 to +20billion
 CHAR(size) - when we know the lenght of the character 4bytes (upto 8000char)
 VARCHAR(size) - when len of char may vary and to acheive the memory optimize.8000
+TINYTEXT -to store upto 255 char. TEXT- to store really large text upto 2GB.
 DECIMAL(5,2)- to store decimal values where 5 is total digits including decimal 
 digits and 2 is no of decimal in that total digits.(upto (65,30))
-DATE - to store dates Format is YYYY-MM-DD
+DATE - to store dates Format is YYYY-MM-DD |YEAR - to store only year
+TIME - to store time only HH:MM:SS  | DATATIME -to store date time.
 TIMESTAMP - to store date and time of entry of data format is YYYY-MM-DD HH:MM:SS
 BLOG - Binary Large object - to store images ,file ect..(upto 65kb)
 
 ___CONSTRAINS____
 1.NOT NULL;- can't be empty
-2.DEFAULT 'default_name'; - if we leave empty default value will be replaced.
+2.DEFAULT 'default_value'; - if we leave empty default value will be replaced.
 3.AUTO_INCREMENT - to make a column auto_increment it must satisfy two condition
 1-the column must be key(primary or foreign key) 2-the type must be int. to set
-limit at end we can mention.
+limit at end we can mention auto_increment 5.
 4.UNIQUE;- to make the column to enter only unique values;
-5.PRIMARY KEY(col_name); it is combination of unique and not null;
-6.CHECK (col_name<=100); -to check some condition;
+5.PRIMARY KEY(col_name); it is combination of unique and not null; there can 
+be only one primary key for one table.
+6.CHECK (col_name<=100); -to check some condition; 
 7.FROEIGN KEY(col_name) REFERENCE ref_table_name(ref_col_name); -to set foreign
-key.
+key.there can be one or many foreign key for per table.
 8.CREATE INDEX ind_name ON tabel_name(col_name);to make execution faster.
 
+------------------------------------------------------------------------------
+2.INSERT
+INSERT INTO table_name VALUES(respective to column and type of data),(),();
+INSERT INTO table_name(col_name,col_name,ect..)VALUES(respective data),(),();
+but the column count must match the value count. no need to mention
+INSERT INTO table_name1 SELECT * FROM table_name2;
 
-3...--------UPDATE OR ALTER----------------
+-----------------------------------------------------------------------------
+3.UPDATE OR ALTER
 to add column
 ALTER TABLE table_name ADD COLUMN col_name type ; - to add single column
-ALTER TABLE table_name ADD(col_name type,col_name2 type,...) -to add multiple
+ALTER TABLE table_name ADD COLUMN(col_name type,col_name2 type,...)-add multi Col
 ALTER TABLE table_name ADD COLUMN col_name type AFTER col_name -to add after
 
-to modify existing column
+to modify/rename existing column
 ALTER TABLE table_name MODIFY COLUMN col_name type; (changes)
-ALTER TABLE table_name RENAME COLUMN col_name TO new_col_name; -to change col name
+ALTER TABLE table_name RENAME COLUMN col_name TO new_col_name; -to change colname
+ALTER TABLE table_name RENAME TO new_table_name; -to rename table_name.
 
 to add primary key
-ALTER TABLE table_name ADD PRIMARY KEY(col_name); -to add primary key after create
-
+ALTER TABLE table_name ADD PRIMARY KEY(col_name); -to add primarykey after create
+ALTER TABLE table_name ADD FOREIGN KEY(col_name) REFERENCES table_name(col_name);
+ 
 to update records
 UPDATE table_name SET col_name="update_value" WHERE col_name="record_value";
 UPDATE table_name SET col_name="uv",col_name="uv" WHERE col_name IN (rv,rv,rv);
+UPDATE table_name INNER JOIN tn ON tn.cn=tn.cn SET tn.col=tn.col;-update and join
 
-4....--------DELETE----------------------
+-----------------------------------------------------------------------------
+4.DELETE
+DELETE FROM table_name; -to delete all the records in that table.
+TRUNCATE TABLE table_name; -similary to deletefrom but it can't have where clause
+DELETE FROM table_name WHERE salary<=10000; -to delete all the records that 
+satisfy the where condition.(only that records)
+
 DROP DATABASE database_name; - to drop a database.
 DROP TABLE table_name; - to drop a table.
 DROP TABLE table_name,table_name; - to drop multiple table.
 ALTER TABLE table_name DROP COLUMN col_name; - to drop a column in the table.
 ALTER TABLE table_name DROP COLUMN col_name,DROP COLUMN col_name;-drop multiple.
+ALTER TABLE table_name DROP PRIMARY KEY; -to drop primary key.
+ALTER TABLE table_name ALTER col_name DROP CHECK,DEFAULT;
+DROP VIEW view_name;  -to drop view.
+DROP PROCEDURE procedure_name; -to drop procedure.
 
-
-
-5....-------QUERING---------------------
+------------------------------------------------------------------------------
+5.SELECT QUERY
 SELECT * FROM table_name; -to select all the column from the table
 SELECT col_name,col_name FROM table_name; -to select multiple column form table
+SELECT col_name AS new_name FROM table_name; -to select col with alias name
+SELECT * FROM table_name WHERE col_name ="condi"; -single condition
+SELECT * FROM table_name WHERE col_name="cond1" AND col_name="cond2" -multi condi
+SELECT * FROM table_name WHERE col_name="C1" OR col_name="C2" -mul condition or
+SELECT * FROM table_name WHERE NOT col_name="c1"; -only records not in condition
+SELECT * FROM table_name WHERE col_name IN (condi,condi); -multiple conditonvalue
+SELECT * FROM table_name WHERE col_name NOT IN (cond1,cond2);-muliple condition
+SELECT col_name FROM table_name WHERE col BETWEEN val AND val;-only values between
+SELECT * FROM table_name WHERE col_name LIKE '%_' -[%string] ,[_char]
+SELECT * FROM table_name WHERE col_name IS NULL/IS NOT NULL; -only having null val
+SELECT * FROM table_name WHERE col_name = ANY(values) - if equal to any value
+SELECT * FROM table_name WHERE col_name >ALL(values) -it should greater than all
+ 
 SELECT * FROM table_name ORDER BY col_name ASC; -order column values in asc order
 SELECT * FROM table_name ORDER BY col_name DSCE; -order column values desc order
 SELECT * FROM table_name LIMIT 10; -to get top 10 (siting limit)
-SELECT * FROM table_name ORDER BY col_name DSCE LIMIT 5; -using order by and limit
-SELECT * FROM table_name WHERE col_name ="condi"; -single condition
-SELECT * FROM table_name WHERE col_name IN (condi,condi); -multiple conditon
-SELECT * FROM table_name WHERE col_name NOT IN (cond1,cond2); -muliple condition
+SELECT * FROM table_name LIMIT 10 OFFSET 10; -to get top 10 after top 10;
+SELECT * FROM table_name ORDER BY col_name DSCE LIMIT 5; -to get least 5 record.
+SELECT c_id,avg(amount) FROM table_name GROUP BY c_id; c_id wise amount.
+SELECT * FROM table_name WHERE EXISTS(SELECT col FROM WHERE condi) -the outer
+query execute only when the inner query return value is not null.
+
 SELCT COUNT(col_name) FROM table_name; - to count no of rows.
+SELECT DISTINCT col_name FROM table_name; -to get records of unique value in dcol 
 SELECT COUNT (DISTINCT col_name) FROM table_name; -to count unique records;
-SELECT * FROM table_name WHERE col_name LIKE '%_' -[%string] ,[_char]
+SELECT CONCAT(col_name,col_name) AS alais FROM table_name;
 
----nested quering or sub qurey--------
-SELECT * FROM table_name WHERE (SELECT col_name FROM table_name);
- 
+---------------Nested quering or Sub qurey------------------------------
+CREATE TABLE table_name AS (SELECT * FROM table WHERE salary>=20000);
+SELECT * FROM table_name WHERE col_name IN (SELECT col_name FROM table_name);
 
+SELECT * FROM table_name WHERE col_name = (SELECT max(col_name) FROM table_name);
+SELECT count(cust_id),country FROM orders GROUP BY country -cust count ctry wise
+HAVING count(cust_id)>1; -to get country wise count of customer more than 1person
+having is same as where but it can use after group by clause and aggregate func
 
+--union/union all--
+SELECT col FROM table1 UNION SELECT col FROM table2; -all values but it will 
+elimenate duplicate. UNION ALL -it will not eliminate duplicate.
 
--------join-------------------
+--Case---
+SELECT s_id,s_name,
+CASE
+WHEN col_name>-18 THEN 'allowed'
+ELSE 'not allowed'
+END AS col_name 
+FROM student;
+---------------------------------------------------------------------------
+6.JOINS-joining two table based on a common condition.
+---join/inner join---
 SELECT table_name.col_name,tn.cn,tn.cn FROM tn 
-JOIN tn ON tn.cn=tn.cn;  -(condition two must be in same field type and values).
+JOIN tn ON/where tn.cn=tn.cn where c_id<=7;  -(two conditions must be in same 
+field type and values). join with where condition also on.
+---left join|right join|full outer join|cross join----
+SELECT tn.cn,tn.cn FROM tn LEFT JOIN tn ON tn.cn=tn.cn; -all records left-table
+is returned and only matching records in right table. 
+SELECT tn.cn,tn.cn FROM tn RIGHT JOIN tn ON tn.cn=tn.cn; -all records right-table
+is returned but only the matching records of left table will returned.
+SELECT tn.cn,tn.cn FROM tn FULL OUTER JOIN tn ON tn.cn=tn.cn;-both left/rightjoin
+SELECT tn.cn,tn.cn FROM tn CROSS JOIN tn ON tn.cn=tn.cn; -cartision product
+
+------------------------------------------------------------------------------
+7.views and common table expression.
+CREATE VIEW view_name AS queries;
+CREATE VIEW view_name AS SELECT emp_id, phone_no FROM employee WHERE salary>=2000;
+--to_update_views---
+CREATE OR REPLACE VIEW view_name AS SELECT * FROM employee WHERE salary>=30000;
+
+---------------CTE(Common Expresion Table)--------------
+WITH cte_name(col_name) AS (qurey for creating cte table like SELECT col_name 
+FROM table_name) SELECT * FROM cte_name; - to create a tempory table for only
+that qurey without storing the table.
+
+WITH cte_name(col_name) AS (qurey for creating cte table),
+cte_name(col_name) AS (qurey for creating cte table)
+SELECT * from cte_name,cte_name; - to creating multiple cte
+
+------------------------------------------------------------------------------
+8.Store_procedure
+DELIMITER //
+CREATE PROCEDURE procedure_name(atr varchar(20))
+BEGIN
+SELECT * FROM table_name
+WHERE country=atr;
+END //
+DELIMITER ; -to create a store procedure
+
+CALL procedure_name('india'); -to call store_procedure.
+when a same action is repeated often but with different condition value that time
+we can create a store procedure to perform that operation.
+
+-------------------------------------------------------------------------------
+9.triggers
+create table to store the trigger data.
+DELIMITER //
+CREATE TRIGGER trigger_name
+BEFORE/AFTER UPDATE/INSERT/DELETE 
+ON table_name
+FOR EACH ROW/FOR EACH COLUMN
+BEGIN
+INSERT INTO tn values(old.cn,old.cn,new.cn);
+END //
+DELIMITER ; -to create trigger, it will be call automatically when specific
+action is occured in that table.
+
+show triggers;
+-------------------------------------------------------------------------------
+10.FUNCTIONS
+---Build-in Function
+_AGG FUNCTIONS_
+SUM(col_name),AVG(col_name),COUNT(col_name),MAX(col),MIN(col),ROUND(col_name,0)
+-DATE Function_
+select now(); select datediff(month/year/day, date 1, date2YYYY-MM-DD);
+select dateadd(month,1,yyyy-mm-dd);
+concat(col1,col2); -to concat two column|length(col) -len of char in that column
+col1+col2+col3 -to add two col values|(col1+col2)/2 -to avg of two column values 
+
+--user_defined_fuction---
+DELIMITER //
+CREATE FUNCTION fun_name(para type)
+RETURNS return_type
+DETERMINISTIC
+BEGIN
+DECLARE variable_name var_type;
+IF condi THEN SET var=value;
+ELSEIF condi THEN SET var=value;
+ELSE SET var=value;
+END IF;
+RETURN return_value;
+END //
+DELIMITER ; -to create a function
+
+SELECT fun_name(para); -to call the function
+------------------------------------------------------------------------------
+11.Normalization -(1NF,2NF,3NF,BCNF or 4NF)
+--1NF(1st Normal Form) - to achieve 1st normal form it should follow 3 rules.
+1-Each column name must be unique.|2-All the data of a column must be same type|
+3-Each column should contain single value. 
+--2NF(2nd Normal Form) - to achieve 2nd normal form it should follow 1st NF and
+there should be no partial dependency in the table.all non-key attr must depend
+on key attribute.eg:|s_id,s_name,s_details||m_id,major||s_major,hod,staff_detail|
+--3NF(3rd Normal Form) - to acheive 3rd normal form it should follow 2nd NF and
+there should be no transitive dependency.all columns determined by key column
+eg:|product_name,company_name,company_details||p_name,c_name||c_name,c_details|
+--BCNF(boye Coded Normal Form) -to acheive bcnf it should follw 3rd nf and 
+there must be no multivalue dependence. A -->superkey of B
+eg:|customer_id,c_name,c_details,c_subcription||c_id,c_name,c_det||c_id,c_sub|
 
 
+------------------------------------------------------------------------------
+12.ADDITIONAL
+--Backup_database---
+BACKUP DATABASE database_name 
+TO DISK="path"; - to create a backup for the database. 
+WITH DIFFERENTIAL; - to add only the new data .
+--Restore_database---
+RESTORE DATABASE database_name 
+FROM DISK="path";
 
-6..-------FUNCTIONS----------------------
-________AGG FUNCTIONS____ 
-SUM(col_name),AVG(col_name),COUNT(col_name),MAX(col),MIN(col),
-add multiple column C_n+c_n+c+n find avg for multiple col (C_n+c_n+c_n)/3.
-lenght(col_name).
 ________ANALYTIC FUNCTIONS____________
 OVER(PARTITION BY col_name) - over to make the function into analytic or window
 funtions, and partition by is like group by it groups and also it apply on every
@@ -95,10 +259,12 @@ records in the table.
 
 ROW_NUMBER() OVER(PARTITION BY col_name) -it will generate a unique row number
 based on the partition values.
+
 RANK() OVER(PARTITION BY col_name ORDER BY col_name ord) - to give rank based on
 the order by column in given order 
 DENSE_RANK() OVER(PARTITION BY col_name ORDER BY col_name ord) - same as rank
 but it will not the skip the rank number even there are duplicate.
+
 LAG(col_name) OVER(PARTITION BY col_name ORDER BY col_name ord) - to show the 
 col value of the previous record value of the column.
 LEAD(col_name) OVER(PARTITION BY col_name ORDER BY col_name) - to show the col
@@ -106,32 +272,25 @@ value of the next record value of the column.
  
 FIRST_VALUE(col_name) OVER(PARTITION BY col_name ORDER BY col_name) - to get the
 first value of the group and order by result window. 
-LAST_VALUE(col_name) OVER(PARTITION BY col_name ORDER BY col_name 
+LAST_VALUE(col_name) OVER(PARTITION BY col_name ORDER BY col_name
 range between unbounded preceding and unbounded following) - to get the last
 value of the result set by partition and order.
+
 FRAME --> range between unbounded preceding and current row - default frame range
 --> range between unbounded preciding and unbounded following - to change for 
 some window function to change the frame range.
 <>insted of range we can use rows - when we have duplicate rows will not consider
-as all the duplicate only  the current row but in range it will take all the 
-duplicate values within the range of the start . <>insted of unbounded can specify
+as all the duplicate only the current row but in range it will take all the 
+duplicate values within the range of the start. <>insted of unbounded can specify
 numbers like 2 and 2 -- 2 rows preceding and 2 rows following.
-NTH(no) OVER(PARTITION BY col_name ORDER BY col_name) - to get record no mentioned
+
+NTH(no) OVER(PARTITION BY col_name ORDER BY col_name) -to get record no mentioned
 by the nth(argument) will be returned like 3,4,5..ect
 NTILE(no) OVER(order by col_name ord) - it will divided the group of record in
 number given in ntile argument like 3 divided into 3 part 1st part will given 
 high precident. (divided into buckets)
+
 CUME_DIST()OVER(ORDER BY col_name) - to get the percentage of records like
 top 30 percent ,least 20 percent.formula(current_row_no/total_row_no)
-
-
-
-
----------------CTE(Common Expresion Table)--------------
-WITH cte_name(col_name) AS (qurey for creating cte table like SELECT col_name 
-FROM table_name) SELECT * FROM cte_name; - to create a tempory table for only
-that qurey without storing the table.
-WITH cte_name(col_name) AS (qurey for creating cte table),
-cte_name(col_name) AS (qurey for creating cte table)
-SELECT * from cte_name,cte_name; - to creating multiple cte
-
+---------------------------
+rename_database.
