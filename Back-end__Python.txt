@@ -1,33 +1,48 @@
---------------PYTHON---------------
-
-1.-----INTRO------------
+----------------------------PYTHON---------------------------------------------
+Programming Language is used to communicate to the computer to perform some
+task.eg:Python.[General Purpose Language-web,gaming,ect..] 
+history-1990's,Guido van Rossum. |it is interperter language execute line by line
+first it converts to mr,and then get interperted. | 
+-------------------------------------------------------------------------------
+1.INTRODUCTION
 __DataTypes____
-1.integer(int) -- a=2,0,-2
+--1.integer(int) -- a=2,0,-2
 a.bit_count();a.bit_length();
-2.string(str) -- a="praveen"
+--2.string(str) -- a="praveen"
 a.capitalize();a.count('l');a.split()-str_to_list;str=''.join(a)-list_to_str,
 a.isdigit,isalpha,isalnum,isdecimal;a.index('l');a.casefold()
-3.float(float) -- a=2.30,-3.94
+--3.float(float) -- a=2.30,-3.94
 a.is_integer;
-4.complex(complex)  --a=(3j+5)
+--4.complex(complex)  --a=(3j+5)
 a.real;a.imag;
-
-__Operators____
-1.Arithmetic --(+,-,*,/,//,**)
+--------------------------------------------------------
+__Operators__
+1.Arithmetic --(+,-,*,/,%,//,**)
 2.Relational --(<,>,<=,>=,!=)
 3.Logical --(and,or,not)
 4.Bitwise --(&,|,~,^,<<,>>)
 5.Membership --(in,not in)
 6.Identity --(is,is not)
-
-___Variable___
+------------------------------------------------------------
+___Variable__
 rules(1.should not start with numbers 2.should not contain special char except'_'
 3.should not use bulit in keywords)
 eg: name="praveen" --(one v and one d)
-name,age="praveen",23 --(multi v and multi d)
-details="praveen",23 --(one v and multi d)
+name,age="praveen",23 --(multi v and multi d) a,b,c=['a','b','c'] - print(a) =>a
 f_name=m_name=l_name ="praveen" --(multi v and one d)
+details="praveen",23 --(one v and multi d)
 
+1.local_variable -life_time is only inside the function or a block.for:a=2
+2.global_variable -life_time is still through out the program |a=5 for:
+non-local_variable -life_time is inside the function and also in nested function.
+fun():a=5 in_fun():  ||variable precidence will be local->non-local->global.
+3.non-local or enclosed varibale. 4.bulid-in variable or keywords
+namespace is like dictionary is {variable name: value} it is created automatically
+according to the scope it is declared and grouped. it is system that control names
+to check names use - dir() function will return the names used in that scope.
+4.special_variable -it is bulidin special varibale eg:__name__ -return moduel name
+as '__main__'.
+------------------------------------------------------------------
 ___print()___
 1.a=" "
 print("praveen",a,"kumar",end="") or print("praveen","kumar",sep=" ")
@@ -35,17 +50,21 @@ print("lr")
 2.a,b,c="praveen",23,0.0    -- used to type_casting and slicing
 print("%0.2s %i %0.2f"%(a,b,c))
 3.a="praveen";b="Kumar"
-print(f'{a} {b}') / print(f'{a} is {b} equal {a*b}')
-4.print("{} {}".format(a,b))
+print(f'{a} {b}') | print(f'{a} is {b} equal {a*b}')
+4.print("{} {}".format(a,b)) |print("{0}{1}".fromat(a,b))
 5.print("praveen\tkumar\nlr\\\"23age\'s\"\bold")
 
-2.-----------Conditional and Loop-------------
---1.if cond:stat;if cond:stat else:stat;if cond:stat elif cond:stat else:stat
+-------------------------------------------------------------------------------
+2.Conditional Statement and Loops
+--1.if cond:stat|if cond:stat else:stat|if cond:stat elif cond:stat else:stat|
 
---2.for i in iter:stat;for i in range(5):[0..4];for i in range(1,5):[1..4];
-for i in range(5,1,-1):[5..2] for i in a:stat else: stat
+--2.for i in iter:stat|for i in range(5):[0..4]|for i in range(1,5):[1..4]|
+for i in range(5,1,-1):[5..2] | for i in a:stat else: stat
 
-3.-------------DATA_STRUCTURE--------------------
+--3.a=1 while condi:stat iteration
+
+-------------------------------------------------------------------------------
+3.DATA_STRUCTURE
 --1.List = [int,float,char,str,set,dict,tuple]
 l.append(value);l.insert(indx,value);l.remove(value);l.sort();l.index(value);
 l.pop(index)defl(-1)-retrun last value and also remove from list;l.reverse();
@@ -62,13 +81,25 @@ s.add(value);s.union(ss)(|) add 2 except dupli;s.intersection(ss)(&) same elemen
 s as ss;s.difference(ss)(-) diff element s as ss;s.issubet(),isdisjoint();
 s.pop()-def last val;s.copy,clear,remove(values);s.symmentric_difference(ss);
 
-4.-------------FUNCTIONS----------------------
-1.user_defind_function
+____Comprehension__
+[x**2 for i in x]
+[(x,y) for x in l1 for y in l2] [(x,y) outer_loop inner_loop]
+[(x,y) for x in l1 for y in l2 if x!=0]
+[1 if x%2==0 else 0]
+[x for x in l1 if x%2==0]
+--list,dict,set
+
+--------------------------------------------------------------------------------
+4.FUNCTIONS
+--1.User_Defind_Function
 def fun_name(para,para):
 	stat or return or pass
-fun_name(para,para)
+fun_name(arg,arg)
 
-2.lambda or anonymous
+*args -variable_length_argument[list]
+**kwargs-keywordVariableLengthArgument{di:ct}
+
+--2.Lambda or Anonymous
 (lambda x :x**2)(x)
 (lambda x :x%2!=0)(x) condition
 fun_name=lambda para:expr 
@@ -77,26 +108,257 @@ fun_name(para)
 --m=list(map(func-lambda x :oper- x+2,iter-l))
 --r=list(reduce(func-lambda x:)) import functools
 
-3.____Comprehension__
-[x**2 for i in x]
-[(x,y) for x in l1 for y in l2] [(x,y) outer_loop inner_loop]
-[(x,y) for x in l1 for y in l2 if x!=0]
-[1 if x%2==0 else 0]
-[x for x in l1 if x%2==0]
---list,dict,set
+--3.Recursive_Function
+def outt_fun():
+      stat
+      def in_fun():
+	stat
+      in_fun()
+      stat
+outt_fun()   
 
-4.builtin_Function
+--4.builtin_Function
 zip(list_1,list_2)
 enumerate(values,start=0) -to give index
 ord('a') ->97 / A->65
 chr(97) ->'a' /65-A
+isinstance(obj,attributes) attributes -instance_attributes , instance_method
+issubclass(child_class,parent_class) -retrun true or false.
+
+--5.Methods
+--1.instance method -def method(self):stat -(self)-can access ia,ca.
+--2.classmethod -@classmethod def method(cls):stat -(cls)- can access only ca.
+--3.staticmethod -@staticmethod def method(): stat -can't access ia,ca.
+--4.abstractmethod -@abstractmethod def method(): pass -to create abc method.
+--5.special_method or magic_function: /special-variable
+__add__() -add operator calls,__doc__() -to get document_string,
+__gt__() -greater_than operator calls,__init__() -initialition of class obj calls
+class_name.__mro__ -to get mro.__call__ -to call a object.
+
+--------------------------------------------------------------------------------
+5.OOPS(Object Oriented Programming)
+1.Class- it is the blue print of object and defines the behaviour of the object.
+the class consits of attributes and methods.eg:An Employee as object.
+class class_name: 
+    age=23      ----->class_attributes| class_name.age/self.age
+    def __init__(self,name):
+        self.name=name    --->instance_attributes| self.name
+    def method(self,para):  --->argument/parameter| para
+         self.name,para,class_name.age    --->access the attributes
+c=class_name('praveen')  --->object/instance of calss - c for class_name
+c.method(para)         --->to call the method| class_name.fun(para)
+c.ca/c_n.ca , c.ia
+c.attr='new_instance attr' -->we can also create new attributes for only that obj.
+
+2.Object -object is the single instance of the class,we can have mulitple object
+for single class type. class class_name: def: obj1=class_name obj2=class_name
+object is used to call the method inside class.process is called instantiation
+self -is a short form of itself. the object itself and it is not a keyword
+and it changes according where it is used according to the class.
+obj.method()  <--> class_name.method(obj)
+---Constructor--- -used to initialize all variable or attributes of instance obj
+and also allocate memory for object.it is called automatically when the object is
+created for a class. __init__(self,ia,ia=v):self.ia=ia,self.ia=ia,self.ia=6.
+del class_name.method_name | del obj.attribute |del obj -to delete object
+del class_name.class_attr |
 
 
+3.Inheritance: -it gives the power to access all the attributes and method of a 
+another class and also add some fuctionality to itself.
+class A:
+     ca=''       --class_attributes
+     self.ia=ia  --instance_attributes
+     def f():    --class_method
+class B(A):         -->to access all the class_attributes and methods of classA
+  def __init__(self):
+       super().__init__('ia') --->to access all the instance_attributes of classA
+  def fun(self):                  super().__init__('ia') / A.__init__(self,'ia')
+       print(self.ca)   -to access another class class_attributes
+       print(self.ia)   -to access another class instance__attributes|o=c obj.ia 
+       self.f()         -to access another class method
+b=B()
+b.f()
+b.fun()
+--1.Single level inheritance:class A: class B(A):|--2.Multi level inheritance:
+class A: class B(A): class C(B):..|--3.Multiple inheritance:class D(A,B,C):
+--4.Heriarical inheritance: class A: class B(A): class C(A): class D(A):
 
+4.Encapsulation -Restrict the access of attributes and method by wraping them
+inside the class.so,outside of class we can't see or modify the data.
+By using 1.private attributes __attr |2.protected attributes _attr |3.public attr
 
-ALGORITHM
+5.Polymorphism -Many+form .One thing in multiple form. we describe one it has the
+ability to take multiple forms.
+class lion: def s(): | class dog: def s(): |.. |def find(para): para.s()
+
+Types:1.Run-time polymorphism or method overridding: if we inheriate a class and
+in both class have same method name.so it will first check for the local method
+and then go for parent method.By using Method Resolution Order(MRO).child-parent
+2.compile-time polymorphism or method overloading: it is the process of calling
+the same method in a class but calling with different number of arguments or
+different type of argument. but bydefault in python it not supported.so we have
+to do some conditional check. *args | len() 
+
+6.Operator Overloading -it used to overload or modify the perform of operator.
+by changing operator's special method eg:5+5 ->it calls __add__() speical method.
+class cn:
+    def __init__(self,a,b):
+          stat
+    def __add__(self,other):   --->(obj1,obj2)
+         x=self.a+other.a      --->obj1.a + obj2.a
+	 y=self.b+other.b
+         return x,y
+obj1=cn(a,b)
+obj2=cn(a,b)
+obj1+obj2               ---->obj1.__add__(obj2)-->cn.__add__(obj1,obj2)
+if we don't have __add__ inside our class. --->int.__add__(obj1,obj2)
+
+7.Abstract -The method which has only declaration but not definition is called
+abstract method.and the class have abstract method is called abstract class. and 
+we can't create an object for an abstract class.to set rules to creating classes.
+from abc import ABC,abstractmethod
+class cn(ABC):       | class cn2(cn):        |so,we have to include all the 
+   @abstractmethod   |      def fun(self):   |abstract method in the abs class
+   def fun(self):    |            pass       |if we fail this class also become
+       pass          |                       |abstract class can't create obj
+
+8.Multithreading -it refers to concurrently executing multiple threads same time
+but rapdily switching the control between threads.big task.small part,threads
+from threading import *
+class cn(Thread):    -->inherit Thread class for multithreading 
+    def run(self):    |obj.start()  -->o.start()-to run the run method
+       print('some')  |obj.join()   -->to make wait the main_thread untill finish
+obj=cn()              ||main_thread,multithread,colusion.
+
+9.Decorators -it is function that add some functiolity to existing function 
+without changing the structure of the original function.@decorator_name. any 
+callable object that is used to modify a function or a class is called decorator.
+1.take a function as arg,2.modify the func,3.return a function.
+
+--Closure -function object that remembers values in enclosed scope even if it is 
+not present in the memory.1.nested function,2.use encloed values,3.outer return
+def outer():                     |def outer(func):   
+    x=5                          |    def inner(name):
+    def inner():                 |        r=func(name)
+       print(x)                  |        return r.capitalize()
+    return inner                 |    return inner 
+o=outer() -returns function address|def hai(name):
+o()-it remember enclosed value   |       return 'hai'+name
+                                 | hai=outer(hai)  == @outer above hai() function
+                                 | print(hai('praveen'))
+
+--muliple_decorator-@dn3 @dn2 @dn1 def fun(): pass -order is dn1,dn2,dn3.
+--decorator with parameters  -to add parameter to decorator add function with arg
+def para(arg):                  |def out(method):
+    def outer(func):            |   def inner(self):
+        def inner():            |        if self.ia==condi: return 'some in dec'
+            r=func()+arg        |        else: method(self) -->to call a m in deco
+            return r.upper()    |   return inner
+        return inner            |class cn:
+    return outer                |     def __init__(self):
+@para(input("Enter Your Name: "))|           self.ia=ia
+def hai():                      |     @out
+    return 'hai '               |     def method(self):
+print(hai())                    |           return 'some in method'
+                                |c=cn()
+--Class_decorator               |c.method()
+class outer:   --dn         
+    def __init__(self,func): faa                  funtools.wrap()-to get org name
+        self.func=func     -->to call self.func()
+    def __call__(self):  return function
+        r=self.func()
+        return r.upper()
+
+--property_decorator -it is used to convert a instance attributes to method but
+remains as a attribute.
+class prop:                     |class name:             
+    def __init__(self,fn,ln):   |       def __init__(self,fname):
+        self.fn=fn              |            self.__fname=fname  
+        self.ln=ln              |       @property
+        #self.n=self.fn+self.ln |       def fname(self):      
+    @property                   |             return self.__fname
+    def n(self):                |       @fname.setter
+        return self.fn+self.ln  |       def fname(self,val):
+    def display(self):          |             self.__fname=val
+        print(self.fn)          |       def display(self):       
+        return self.n #without property|       return self.fname
+                       -PraveenKumar|n=name('praveen')
+p=prop('Praveen','Kumar')       |n.fname='Vijay'
+p.fname='vijay'                 |print(n.display())   
+print(p.display())              |fname=property(fget,fset) == @property,@p.setter
+
+10.Iterator: -it make the object to iterator and return one value at time.
+obj ->iter(obj)-to make the obj to iter -->next(obj) ->to fetch one value. also
+obj.__next__() -the next method remember previous value. to make our obj to iter
+we have to include __iter__(self):,__next__(self): method.raise StopIteration -tos
+
+--Generator: -generator will automatically convert obj to iter without iter,next.
+By using yield keyword we can make the func as generator.g=gen() ->g is iter.
+def gen():           g=gen()
+   n=1
+   while n<=10:      for i in g/gen(): -g is now a iter, yield is like next().
+       sq=n*n            print(i)
+       n+=1
+       yield sq    -not break func and also it onlu return value-address not value
+
+ADVANTAGES:1.code reused,increase code efficient,readablity,data security,
+interface
+
+-----------------------------------------------------------------------------
+6.ADDITIONAL
+--1.Importing modules and packages and fuctions
+import package_name | import pandas |import pandas as pd -using alias name for pn
+from package_name import module_name |from time import sleep |
+form pn.mn import fn | from sklearn.similarity import difflib|function_name.
+
+--2.File Handling and Exception Handling:
+obj=open('path','mode',encoding='utf-8')|with open('path','mode',encoding) as obj
+mode=w,a,r|x,t,b. path:"C:/path" |obj.write(data)-to insert data|obj.read()-r data
+w -overwrite data,a -append data,r -read data,x -exclusive creation,t -open text
+obj.read(4) -4letters,.readline()-read line by line,.readlines()-make into list.
+obj.close() -to close a file.import os|os.getcwd()|os.chdir('dic')|os.rm('dname')
+os.listdir() \os.listdir('directory')
+
+---Exception Handling -To handel Errors in our program 1.syntax(misspell,misname)
+2.Logical(unexcepted input value,type,ect..) -try,except,finally
+try: block contains statment that cause error if no error the except block skipped
+except:p(sys.exc_info()[0])|except Exception as e:p(e)|Exception e:p(e.__class__)
+except ValueError:(only this type error)|except(E,E,E):only in ()|
+raise StopIteration -we are manually making Error or raising to execute except b.
+else: -block to execute after try block executed without error.
+finally: -it will execute all time,both error in try or no error in try.
+try:raise 1 raise 2 except 1: except 2: follow the raise order.
+AssertionError,AttributeError,StopIteration,SyntaxError,ZeroDivisionError,ImportEr
+ValueError-arg inporper value,RuntimeError-not in other catgeroy.TypeError-obj ict
+-userdefined Exception:class cn(Exception):pass we can use raise cn.
+super().__init__(self.message)
+
+--3.RegEx(Regular Expersion) -used for search pattern as sequence of character.
+(.....)(sssss) -only 5char str| (^s) -starts with s |(s$) -end with s|[abc]-anyone
+(+) -zero or more. import re   |re.search('pattern','str') -return true or false.
+regex is used to find the number of match in that str.
+
+--4.if __name__=='__main__': the __name__ -special variable return '__main__'
+only when that module is main_file else it will simply return module name.
+import workout
+def re():
+    print('relevel file')
+    print(__name__)
+if __name__=='__main__':
+    re()
+
+--5.ALGORITHM (DSA)
 1.Euclidean Algorithm
 def hcf(x,y)
    while(y):
      x,y=y,x%y
    return x
+
+def fibonacci_numbers(nums):
+    x, y = 0, 1
+    for _ in range(nums):
+        x, y = y, x+y
+        yield x
+
+for i in fibonacci_numbers(10):
+    print(i)
