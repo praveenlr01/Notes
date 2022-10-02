@@ -18,7 +18,7 @@ request type GET;status 200;type text/html;date of request;link;img;h1;ect...
 our html document have several links for the resources once collecting all the
 resource it will start to render the web page that is displaying a web page.
 -recap--???
-client(sent http request)-->server(http responce)-->html document
+client(sent http request)-->server(http response)-->html document
 -->browser_converts_into_dom--->render_to_display_resourse_to_client.
 
 --dev tools(to check the changes) -validator w3(to validate the html doc)
@@ -43,7 +43,6 @@ html it is used to define the structure of the web page content.
 <link rel="stylesheet" href="css/path" type="text/css"> href(hypertext_reference)
 </head>
 </html>
-
 _____________________________________________________________________________
 2.<body> </body>
 1.comment
@@ -54,9 +53,9 @@ _____________________________________________________________________________
 <h2><h3><h4><h5><h6></> - heading tags.in html have upto h6.
 <p>text</p> - paragraph element./more than two blank space is not allowed.
 <br> - break tag .used to break the line.
-<hr> - horizontal_ruler.used to draw a horizontal line between text
+<hr> - horizontal_ruler.used to draw a horizontal line.
 <b>Bold</b>; <i>italic</i>; <u>underline</u>; <pre>coding</pre>;
-<sup>powerof<\sup>; <sub>text<\sub>-basevalue; <q>text</q>-quotes;
+<sup>powerof<\sup>; <sub>text<\sub>-basevalue; <q>quotes</q>-quotes;
 <p>my full name is <em>Praveen Kumar</em></p> - emphasis(italic).to highlight 
 important words in our web page.<strong>praveen kumar lr<strong> -Bold.
 &lt;(lessthan),&gt;(greaterthan),&nbsp;(space),&copy;(copy_right)--html entites
@@ -73,8 +72,8 @@ important words in our web page.<strong>praveen kumar lr<strong> -Bold.
 <dl><dt><dd></dd><dt></dl>  -dl,des_terms,des_detial gives indent to dd by dt.
 ---------------------------------------------------------------------------------
 4.Links
-<a href="absolute(http://www.)or relative address(login.html)or(#name)internal">
-click</a> -to link different pages.
+<a href="absolute(http://www.Go)or relative address(login.html)or(#name)internal">
+click</a> -to direct to different pages.
 <a href="path" download>name.jpg</a> - to add download attribute
 <a href="mailto:praveenkumar@gmail.com">my email</a> -to open email
 <a href="tel:+91987654321">my phone</a> -to open phone dial
@@ -111,9 +110,9 @@ same group we can use section.
 
 --<aside></aside> - info aside the web page content
 
---<footer></footer> - content in footer .can be more than one footer per page.
+--<footer></footer> -contents in footer .can be more than one footer per page.
 --<figure><img><figcaption></><code></></figure> -it provide indent to its block.
---<time datetime="">7pm</time> -to specify time in our web page .it is 24 clock.
+--<time datetime="19:00">7pm</time>"yyyy-mm-dd" "hh:ss:ms"-24h clock.mention date
 --<details><summary>to show in top</summary>to show in drop down</details>
 
 --non-semantics elements
@@ -135,7 +134,7 @@ placeholder="eg.text" autocomplete="on" autofocus required> -there can be only
 one autofocus input per page and requried is should be filled.
 
 <input type="password" > -for password input.
-<input type="email" pattern="@gmail.com" size="30" requried>
+<input type="email" pattern=".+@gmail.com" size="30" requried>
 <input type="tel" pattern="[0-9]{10}"> -for phone input [number]{no_digits}
 <input type="number" min="0" max="100" step="5" value="50" > -number input
 <input type="text" list="list_name"><datalist id="list_name"><option value="opt">
@@ -159,10 +158,11 @@ large message.
 <tbody><tr><td></td></tr></tbody><tfoot><tr><td></tr></td></tfoot><table>.
 
 <th scope="col">name</th><th scope="row">f_name</th>
+<td rowspan="2" colspan="2"></td> 
 
 thead(table_head); tbody(table_body); tr(table_row); th(table_heading); 
-td(table_data_cell); <caption>text</caption>-about table ;colspan="2"; 
-rowspan="2"; <tfoot><tr></><td></><tfoot> -footer of the table
+td(table_data_cell); <caption>text</caption>-about table;
+<tfoot><tr></><td></><tfoot> -footer of the table
 
 --------------------------------------------------------------------------------
 Additional
