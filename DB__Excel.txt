@@ -159,4 +159,3 @@ Recording Macro: 1 start recording ; do the steps the want to record and stop
 recording.save it as name as variable;and now we can run the steps in any
 active workbook or active sheet. and to save as macro enabled xlsm.
 while recording step range must be match on other sheet also.
-
