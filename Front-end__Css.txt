@@ -8,7 +8,7 @@ web pages Presentable. file extension -(*.css)
 1.Type of styling
 
 1.Inline styling :(first Preference or precedence)
-<p style="color:blue; font-size=2rem">text</p> -try to avoid using this type
+<p style="color:blue; font-size:2rem;">text</p> -try to avoid using this type
 2.Internal styling :(preference based on position)
 <style>p {color:brown; font-size:1.5rem; }</style> -use when have minimal styling
 3.External Styling:(preference based on the position)
@@ -57,10 +57,10 @@ background-color:#f00;
 font-size:2rem; -size of the text charcter/ 
 font-family: cursive; -type of the text style 
 The 5 Generic font-family [serif,sans-serif,cursive,monospace,fantasy]
-width:50ch;  - 50char in one line
 font-weight:bold; -bolder ,100-900
 font-style:italic; -to make fonts in italic
 font-variant:small-caps; -all letter in small caps.
+width:50ch;  - 50char in one line
 font: bold 1rem italic; -font-weight font-size font-style;
 
 //googlefonts.com
@@ -74,7 +74,7 @@ size typeof_border color |types-solid,outset,double,dotted,dashed. border:none;-
 border-radius:50%; - to make round border. for square img. b-r:t-l t-r b-r b-l;
 paddding:0.5em; thrid most outter. space around the content to the border.
 font-size:1rem; content or text in the box.
-box-shadow:10px 10px 5px 0px rgba(0,0,0,0.15);
+box-shadow:10px 10px 5px grey; x-axis y-axis blur-value color;
 
 ------------------------------------------------------------------------------
 4.Typography
@@ -83,14 +83,14 @@ text-align: left;justify;center.
 text-decoration: none;underline ;overline;line-through;
 text-transform : capitalize,uppercase,lowercase;
 text-indent: 2em; -indentation
-text-shadow:2px 2px 5px black;x-axis y-asix shadow blur ;--shadow under the text.
 line-height: 1.5; -to adjust the space between text line 
-letter-spacing:0.2em; -to adjust the space between character.word-spacing:0.2;
+letter-spacing:0.2em; -space between character|word-spacing:0.2; -space btw words
+text-shadow:2px 2px 5px black;x-axis y-asix shadow blur ;--shadow under the text.
 
 button, input, textarea, select {font:inherit; property:inherit;} - for same size
 ----------------------------------------------------------------------------
 5.link_styling
-reset the default
+reset the defaults 
 a {text-decoration:underline; cusor:pointer; color:blue;}
 a {color:;} a:visited{color:; } a:hover{color:; } a:active{color:; } -order pref 
 a:focus {color:; } -help to choose link using tab key.(a:focus-visible)
@@ -134,51 +134,59 @@ columns:4 250px; column-count column-width ; no of col div and size of col
 column-gap:3rem; to give the space between the columns content.
 column-span:all; to fill all the width of the columns.
 break-inside: avoid; not to break the block.
-white-space: nowrap; - don't cut the content or text.
+
+white-space: nowrap; -don't cut the content or text after the whitespace.
 
 ------------------------------------------------------------------------------
 10.position
-position: absolute; -it need a relative element or else it will take the page as
-parent element. while adjusting postion by using(top,left,buttom,right).
+position: absolute; -it need a relative element or else it will take his parent
+element as relative. while adjusting postion by using(top,left,buttom,right).
 position: relative; -it will take only its parent element as relative.
-position: fixed; -it is always relative to the page and it is fixed not able to 
-remove . it remains in same position through out page. it is an inline element.
+position: fixed; -it is always relative to parent element and it is fixed.
+it remains in same position through out page. it is an inline element.
 position: sticky; -it will act as fixed but only when it reach it specified 
 position like (top:0;)
+
 z-index:1; -among the position type element making the highest precedence.
 position:absolute; left:-10000px; -to make something disappear. off the page
 
 -----------------------------------------------------------------------------
 11.flex-box //flexbox froggy
-display:flex; -to make the elements into flex items.
+display:flex; -to make the child elements into flex items.
 justify-content:flex-start; (flex-end; center; space-between,around,evenly;) 
 -to fix the position of content.
-align-content:center;(def)(same as justify-content values).to align content hori
-place-content:center; -align-content|justify-content as combined.
+align-content:center;(def)(same as justify-content values).to align content 
+place-content:center; -align-content|justify-content as combined. -horizontal
 align-items:flex-start; (def)(flex-end;center) -to alignitems verticaly/ali-self: 
-gap:1 rem -like space between on fixed size value.
-flex-direction:row;(default) :column; direction of items .row/column-reverse;
+flex-direction:row;(default) :column; :column-reverse; -direction of items .
 flex-wrap:wrap; to wrap the flex box inside the contianer.nowrap-all in one line
 wrap-it can go to new line;wrap-reverse: wrap items reversly.
 flex-flow:flex-direction flex-wrap; --flex-flow:row wrap;
+gap:1 rem -like space between on fixed size value.
 
-flex-basis:100px - to set width of the content as (width:100px;)
 flex-grow:1; -the ratio to grow the width after reaching fixed size.
 flex-shrink:2; -the ratio to shrink the size after reaching the basis size.
+flex-basis:100px - to set width of the content as (width:100px;)
 flex:flex-grow flex-shrink flex-basis; (flex:1 1 100px;)
-order:1; -to end | -1; -to start
+order:1; -to end | -1; -to start | -2,-1,0,1,2
+
+(d:flex, place-content:justify-content align-content, align-items/align-self,
+flex-flow:f-direction f-wrap, flex:f-grow f-shrink f-basis, gap)
 
 ----------------------------------------------------------------------------
 12.grid //grid garden
-display:grid; -to make the elements into grid items.
+display:grid; -to make the child elements into grid items.
 grid-auto-flow:row /column;
 grid-auto-rows:minmax(min,max); - to set the row size|grid-auto-columns:minmax();
 grid-template-columns:repeat(no,fr);-no_of_columns and fr size|g-t-columns:rep();
 grid-column-start:1;grid-column-end:3; element start 1 and end before 3 at 2.
 grid-column:1 / 4; grid-row:start/end; same as start and end;
 grid-template-areas: "r1 c1 c2.." "r2 c1 c2..";
-grid-area:r1; grid-area:c1; ele {grid-area:name}
+grid-area:r1; grid-area:c1; ele {grid-area:name} |grid-area: rs/cs/re/ce;
 row-gap:1 rem; column-gap:1rem; | gap:1rem 1rem; row col;
+
+(d:grid, grid-auto-flow:row/column, grid-column/row/area:s/e, grid-template-rows/
+columns/areas, grid-auto-row/column , gap, row/col-gap)
 
 --------------------------------------------------------------------------------
 13.images
@@ -205,7 +213,7 @@ media_type:screen(commanly used);  all, print, even-speech.
 condition:min-width(commanly used)-styles are start from that width.(recommeded)
 max-width-style will apply upto that width,
 breakpoint:578px - style start from 576px.[576px-S|768px-M|992px-L|1200-xL|1400]
-(min-width:576px); (orentation:landscape); (min-aspect-ratio:7/4)-w/h;
+(min-width:576px); (orientation:landscape); (min-aspect-ratio:7/4)-w/h;
 (max-height:442px);(prefers-color-scheme: dark);
 -it will combine the media_queries with same type of condition-type.and apply to
 it if it is not override.when the condition occured true then it will apply all 
@@ -248,10 +256,9 @@ varibale declared.
 17.Fuctions.
 min(2.5rem, 3vh); (abs, rel) -it always take the smallest of two values and 
 changes according to the relative value.it take the max of absolute value.
-max(1.5rem, 3vh);  
-it take min of absolute value.
-clamp(min_value relative_value max_value);clamp(max() rel min())
-attr(data-custom_attr) custom attr starts with data key_words.
+max(1.5rem, 3vh);  it take min of absolute value.
+clamp(min_value relative_value max_value);clamp(1rem 4vw 2rem);
+html <p data-attr_name="attr_value"></p> attributes starts with data key_words.
 calc(70% - 5px)
 minmax();
 
@@ -263,7 +270,7 @@ transform:rotateX(180deg) -to rotate deg according to x and y.
 transform:scale(150%, 150%) -to increase the size scale to x and y.
 transform:skew(-10deg, -10deg)  -to change size side wise.
 --2.transition---
-transition-property: background-color,     ; -which property to change.
+transition-property: background-color; -which property to change.
 transition-duration: 2s; -it take 2s to change the background color or t-p
 transition-timing-function:ease,liner; -timing type.
 transition-delay: 0.5; -it wait 0.5s to start changing.
@@ -277,7 +284,8 @@ animation-iteration-count:3;
 animation-direction:normal,reverse;
 animation-fill-mode:forwards,backwards;
 animation:a-name a-du a-t-f a-de a-i-c a-d a-f-m ; 
-animation:4s ease 0.5s 4 normal forwards slide;
+animation:slide 4s ease 0.5s 4 normal forwards;
+
 @keyframes slide { 0%{transform:tansition(0);} 33%{:600px} 66%{} 100%{:(0)}}
 transform-orgin:top center;
 
@@ -296,8 +304,8 @@ px  - pexel=1/96th of 1 inch -it absolute size or used for fixed size
 %   - percentage 100% - it is relative to width or height of parent element.
 rem - rootelement (1rem=16pexel)  - it is realtive size for fonts size.
 em - relative the parent element of rem value to em.
-vh  - viewportheight min-height:100vh; to make full body active even no content.
-vw  - viewportwidth min-width:100vw; 
+vh  - viewport height min-height:100vh; to make full body active even no content.
+vw  - viewport width min-width:100vw; 
 
 width - 100%        breath or wide 
 height - 100%      length
