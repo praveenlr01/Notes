@@ -2,7 +2,7 @@
 Programming Language is used to communicate to the computer to perform some
 task.eg:Python.[General Purpose Language-web,gaming,ect..] 
 history-1990's,Guido van Rossum. |it is interperter language execute line by line
-first it converts to mr,and then get interperted. | 
+first it converts to mrc,and then get interperted. | 
 -------------------------------------------------------------------------------
 1.INTRODUCTION
 __DataTypes____
@@ -10,7 +10,7 @@ __DataTypes____
 a.bit_count();a.bit_length();
 --2.string(str) -- a="praveen"
 a.capitalize();a.count('l');a.split()-str_to_list;str=''.join(a)-list_to_str,
-a.isdigit,isalpha,isalnum,isdecimal;a.index('l');a.casefold()
+a.isdigit,isalpha,isalnum,isdecimal();a.index('l');a.casefold() -lower(),a.upper()
 --3.float(float) -- a=2.30,-3.94
 a.is_integer;
 --4.complex(complex)  --a=(3j+5)
@@ -32,16 +32,16 @@ name,age="praveen",23 --(multi v and multi d) a,b,c=['a','b','c'] - print(a) =>a
 f_name=m_name=l_name ="praveen" --(multi v and one d)
 details="praveen",23 --(one v and multi d)
 
-1.local_variable -life_time is only inside the function or a block.for:a=2
-2.global_variable -life_time is still through out the program |a=5 for:
-non-local_variable -life_time is inside the function and also in nested function.
+1.local_variable -life_time is only inside the function or a block.def f():a=2
+2.global_variable -life_time is still through out the program |a=5 def ():
+3.non-local_variable-life_time is inside the function and also in nested function.
 fun():a=5 in_fun():  ||variable precidence will be local->non-local->global.
-3.non-local or enclosed varibale. 4.bulid-in variable or keywords
+non-local or enclosed varibale. 4.bulid-in variable or keywords
 namespace is like dictionary is {variable name: value} it is created automatically
 according to the scope it is declared and grouped. it is system that control names
-to check names use - dir() function will return the names used in that scope.
-4.special_variable -it is bulidin special varibale eg:__name__ -return moduel name
-as '__main__'.
+to check names used - dir() function will return the names used in that scope.
+5.special_variable -it is bulidin special varibale eg:__name__ -return moduel name
+as '__main__'. |class_name.__mro__ -method order
 ------------------------------------------------------------------
 ___print()___
 1.a=" "
@@ -65,28 +65,30 @@ for i in range(5,1,-1):[5..2] | for i in a:stat else: stat
 
 -------------------------------------------------------------------------------
 3.DATA_STRUCTURE
---1.List = [int,float,char,str,set,dict,tuple]
+--1.List = [int,float,char,str,set,dict,tuple] |can have duplicate values.
 l.append(value);l.insert(indx,value);l.remove(value);l.sort();l.index(value);
 l.pop(index)defl(-1)-retrun last value and also remove from list;l.reverse();
-zip(l1,l2);zip(l1);zip(*l1).
+list(zip(l1,l2)); zip(l1);zip(*l1). |l=sorted(l).
 
---2.tuple = (") - t.count(value);t.index(value)
+--2.tuple = (") - t.count(value);t.index(value) |can have duplicate values
 
 --3.dict = {key:value }{key->int,float,str,tuple}{value ->int,char,str,float,list,
 tuple,dict,set} -to copy--d3=d1|d2 or d3={**d1,**d1}
 d.update({dict});d.clear,copy, ;d.keys,values,items;d.pop(key),d.popitems(-1)
+duplicate is allowed for values and no duplicate for keys.
 
 --4.set = {int,float,char,str,list,tuple,dict}
 s.add(value);s.union(ss)(|) add 2 except dupli;s.intersection(ss)(&) same element 
 s as ss;s.difference(ss)(-) diff element s as ss;s.issubet(),isdisjoint();
 s.pop()-def last val;s.copy,clear,remove(values);s.symmentric_difference(ss);
+no duplicate is allowed and no order of data
 
 ____Comprehension__
 [x**2 for i in x]
-[(x,y) for x in l1 for y in l2] [(x,y) outer_loop inner_loop]
+[(x,y) for x in l1 for y in l2]   - [(x,y) outer_loop inner_loop]
+[x for x in l1 if x%2==0]
 [(x,y) for x in l1 for y in l2 if x!=0]
 [1 if x%2==0 else 0]
-[x for x in l1 if x%2==0]
 --list,dict,set
 
 --------------------------------------------------------------------------------
@@ -109,17 +111,17 @@ fun_name(para)
 --r=list(reduce(func-lambda x:)) import functools
 
 --3.Recursive_Function
-def outt_fun():
+def outter():
       stat
-      def in_fun():
+      def inner():
 	stat
-      in_fun()
-      stat
-outt_fun()   
+      inner()
+      return val
+outter()   
 
 --4.builtin_Function
 zip(list_1,list_2)
-enumerate(values,start=0) -to give index
+enumerate(values,start=0) -to give index|list(enumerate(iter,start=index_no))
 ord('a') ->97 / A->65
 chr(97) ->'a' /65-A
 isinstance(obj,attributes) attributes -instance_attributes , instance_method
@@ -130,7 +132,7 @@ issubclass(child_class,parent_class) -retrun true or false.
 --2.classmethod -@classmethod def method(cls):stat -(cls)- can access only ca.
 --3.staticmethod -@staticmethod def method(): stat -can't access ia,ca.
 --4.abstractmethod -@abstractmethod def method(): pass -to create abc method.
---5.special_method or magic_function: /special-variable
+--5.special_method or magic_function:
 __add__() -add operator calls,__doc__() -to get document_string,
 __gt__() -greater_than operator calls,__init__() -initialition of class obj calls
 class_name.__mro__ -to get mro.__call__ -to call a object.
@@ -145,7 +147,7 @@ class class_name:
         self.name=name    --->instance_attributes| self.name
     def method(self,para):  --->argument/parameter| para
          self.name,para,class_name.age    --->access the attributes
-c=class_name('praveen')  --->object/instance of calss - c for class_name
+c=class_name('praveen')  --->object/instance of calss - c is obj for class_name
 c.method(para)         --->to call the method| class_name.fun(para)
 c.ca/c_n.ca , c.ia
 c.attr='new_instance attr' -->we can also create new attributes for only that obj.
@@ -233,14 +235,14 @@ obj=cn()              ||main_thread,multithread,colusion.
 9.Decorators -it is function that add some functiolity to existing function 
 without changing the structure of the original function.@decorator_name. any 
 callable object that is used to modify a function or a class is called decorator.
-1.take a function as arg,2.modify the func,3.return a function.
+1.take a function as arg,2.modify the func-inner,3.return a function-inner
 
 --Closure -function object that remembers values in enclosed scope even if it is 
 not present in the memory.1.nested function,2.use encloed values,3.outer return
 def outer():                     |def outer(func):   
     x=5                          |    def inner(name):
-    def inner():                 |        r=func(name)
-       print(x)                  |        return r.capitalize()
+    def inner():                 |        r=name.capitalize()
+       print(x)                  |        return func(r)
     return inner                 |    return inner 
 o=outer() -returns function address|def hai(name):
 o()-it remember enclosed value   |       return 'hai'+name
@@ -252,8 +254,8 @@ o()-it remember enclosed value   |       return 'hai'+name
 def para(arg):                  |def out(method):
     def outer(func):            |   def inner(self):
         def inner():            |        if self.ia==condi: return 'some in dec'
-            r=func()+arg        |        else: method(self) -->to call a m in deco
-            return r.upper()    |   return inner
+            r=arg.upper()       |        else: method(self) -->to call a m in deco
+            return func()+r     |   return inner
         return inner            |class cn:
     return outer                |     def __init__(self):
 @para(input("Enter Your Name: "))|           self.ia=ia
@@ -263,7 +265,7 @@ print(hai())                    |           return 'some in method'
                                 |c=cn()
 --Class_decorator               |c.method()
 class outer:   --dn         
-    def __init__(self,func): faa                  funtools.wrap()-to get org name
+    def __init__(self,func): faa              funtools.wrap()-to get org name
         self.func=func     -->to call self.func()
     def __call__(self):  return function
         r=self.func()
@@ -290,7 +292,7 @@ print(p.display())              |fname=property(fget,fset) == @property,@p.sette
 10.Iterator: -it make the object to iterator and return one value at time.
 obj ->iter(obj)-to make the obj to iter -->next(obj) ->to fetch one value. also
 obj.__next__() -the next method remember previous value. to make our obj to iter
-we have to include __iter__(self):,__next__(self): method.raise StopIteration -tos
+we have to include __iter__(self):,__next__(self): method.raise StopIteration-tos
 
 --Generator: -generator will automatically convert obj to iter without iter,next.
 By using yield keyword we can make the func as generator.g=gen() ->g is iter.
@@ -299,7 +301,7 @@ def gen():           g=gen()
    while n<=10:      for i in g/gen(): -g is now a iter, yield is like next().
        sq=n*n            print(i)
        n+=1
-       yield sq    -not break func and also it onlu return value-address not value
+       yield sq    -not break func and also it only return value-address not value
 
 ADVANTAGES:1.code reused,increase code efficient,readablity,data security,
 interface
@@ -324,7 +326,7 @@ os.listdir() \os.listdir('directory')
 try: block contains statment that cause error if no error the except block skipped
 except:p(sys.exc_info()[0])|except Exception as e:p(e)|Exception e:p(e.__class__)
 except ValueError:(only this type error)|except(E,E,E):only in ()|
-raise StopIteration -we are manually making Error or raising to execute except b.
+raise StopIteration -we are manually raising Error or making to execute except b.
 else: -block to execute after try block executed without error.
 finally: -it will execute all time,both error in try or no error in try.
 try:raise 1 raise 2 except 1: except 2: follow the raise order.
@@ -335,7 +337,7 @@ super().__init__(self.message)
 
 --3.RegEx(Regular Expersion) -used for search pattern as sequence of character.
 (.....)(sssss) -only 5char str| (^s) -starts with s |(s$) -end with s|[abc]-anyone
-(+) -zero or more. import re   |re.search('pattern','str') -return true or false.
+(+) -zero or more| import re   |re.search('pattern','str') -return true or false.
 regex is used to find the number of match in that str.
 
 --4.if __name__=='__main__': the __name__ -special variable return '__main__'
