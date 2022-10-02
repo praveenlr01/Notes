@@ -1,7 +1,7 @@
 -------------------------------MySql-----------------------------------------
 Data is raw fact or unorganized information.eg.list of names,list of age.
 DataBase is organized data to form a meaningfull information.eg.student database.
-DataBase Management System(DBMS)-collection of database or schema.
+DataBase Management System(DBMS)-is the collection of database or schema.
 Two type of DBMS -1.Non-Relational DBMS- Store data in {key:value} formate by
 using json. eg.MongoDB,amazon dynamoDB. 2.Relational-DBMS -data are stored in a 
 tabular formate using row as records and column as field. eg.Mysql,SqlServer
@@ -36,10 +36,10 @@ ___CONSTRAINS____
 3.AUTO_INCREMENT - to make a column auto_increment it must satisfy two condition
 1-the column must be key(primary or foreign key) 2-the type must be int. to set
 limit at end we can mention auto_increment 5.
-4.UNIQUE;- to make the column to enter only unique values;
-5.PRIMARY KEY(col_name); it is combination of unique and not null; there can 
+4.CHECK (col_name<=100); -to check some condition; 
+5.UNIQUE;- to make the column to enter only unique values;
+6.PRIMARY KEY(col_name); it is combination of unique and not null; there can 
 be only one primary key for one table.
-6.CHECK (col_name<=100); -to check some condition; 
 7.FROEIGN KEY(col_name) REFERENCE ref_table_name(ref_col_name); -to set foreign
 key.there can be one or many foreign key for per table.
 8.CREATE INDEX ind_name ON tabel_name(col_name);to make execution faster.
@@ -84,7 +84,7 @@ DROP TABLE table_name; - to drop a table.
 DROP TABLE table_name,table_name; - to drop multiple table.
 ALTER TABLE table_name DROP COLUMN col_name; - to drop a column in the table.
 ALTER TABLE table_name DROP COLUMN col_name,DROP COLUMN col_name;-drop multiple.
-ALTER TABLE table_name DROP PRIMARY KEY; -to drop primary key.
+ALTER TABLE table_name DROP PRIMARY KEY pk_dsjf_1; -to drop primary key.
 ALTER TABLE table_name ALTER col_name DROP CHECK,DEFAULT;
 DROP VIEW view_name;  -to drop view.
 DROP PROCEDURE procedure_name; -to drop procedure.
@@ -103,8 +103,8 @@ SELECT * FROM table_name WHERE col_name NOT IN (cond1,cond2);-muliple condition
 SELECT col_name FROM table_name WHERE col BETWEEN val AND val;-only values between
 SELECT * FROM table_name WHERE col_name LIKE '%_' -[%string] ,[_char]
 SELECT * FROM table_name WHERE col_name IS NULL/IS NOT NULL; -only having null val
-SELECT * FROM table_name WHERE col_name = ANY(values) - if equal to any value
-SELECT * FROM table_name WHERE col_name >ALL(values) -it should greater than all
+SELECT * FROM table_name WHERE col_name = ANY(query) - if equal to any value
+SELECT * FROM table_name WHERE col_name >ALL(query) -it should greater than allval
  
 SELECT * FROM table_name ORDER BY col_name ASC; -order column values in asc order
 SELECT * FROM table_name ORDER BY col_name DSCE; -order column values desc order
@@ -118,7 +118,7 @@ query execute only when the inner query return value is not null.
 SELCT COUNT(col_name) FROM table_name; - to count no of rows.
 SELECT DISTINCT col_name FROM table_name; -to get records of unique value in dcol 
 SELECT COUNT (DISTINCT col_name) FROM table_name; -to count unique records;
-SELECT CONCAT(col_name,col_name) AS alais FROM table_name;
+SELECT CONCAT(col_name,col_name) AS alais FROM table_name; -concat two records.
 
 ---------------Nested quering or Sub qurey------------------------------
 CREATE TABLE table_name AS (SELECT * FROM table WHERE salary>=20000);
@@ -131,7 +131,7 @@ having is same as where but it can use after group by clause and aggregate func
 
 --union/union all--
 SELECT col FROM table1 UNION SELECT col FROM table2; -all values but it will 
-elimenate duplicate. UNION ALL -it will not eliminate duplicate.
+eleminate duplicate. UNION ALL -it will not eleminate duplicate.
 
 --Case---
 SELECT s_id,s_name,
@@ -162,7 +162,7 @@ CREATE VIEW view_name AS SELECT emp_id, phone_no FROM employee WHERE salary>=200
 CREATE OR REPLACE VIEW view_name AS SELECT * FROM employee WHERE salary>=30000;
 
 ---------------CTE(Common Expresion Table)--------------
-WITH cte_name(col_name) AS (qurey for creating cte table like SELECT col_name 
+ WITH cte_name(col_name) AS (qurey for creating cte table like SELECT col_name 
 FROM table_name) SELECT * FROM cte_name; - to create a tempory table for only
 that qurey without storing the table.
 
@@ -173,10 +173,9 @@ SELECT * from cte_name,cte_name; - to creating multiple cte
 ------------------------------------------------------------------------------
 8.Store_procedure
 DELIMITER //
-CREATE PROCEDURE procedure_name(atr varchar(20))
+CREATE PROCEDURE procedure_name(attr varchar(20))
 BEGIN
-SELECT * FROM table_name
-WHERE country=atr;
+SELECT * FROM table_name WHERE country=attr;
 END //
 DELIMITER ; -to create a store procedure
 
@@ -236,7 +235,7 @@ there should be no partial dependency in the table.all non-key attr must depend
 on key attribute.eg:|s_id,s_name,s_details||m_id,major||s_major,hod,staff_detail|
 --3NF(3rd Normal Form) - to acheive 3rd normal form it should follow 2nd NF and
 there should be no transitive dependency.all columns determined by key column
-eg:|product_name,company_name,company_details||p_name,c_name||c_name,c_details|
+eg.|product_name,company_name,company_details||p_name,c_name||c_name,c_details|
 --BCNF(boye Coded Normal Form) -to acheive bcnf it should follw 3rd nf and 
 there must be no multivalue dependence. A -->superkey of B
 eg:|customer_id,c_name,c_details,c_subcription||c_id,c_name,c_det||c_id,c_sub|
@@ -286,6 +285,7 @@ numbers like 2 and 2 -- 2 rows preceding and 2 rows following.
 
 NTH(no) OVER(PARTITION BY col_name ORDER BY col_name) -to get record no mentioned
 by the nth(argument) will be returned like 3,4,5..ect
+
 NTILE(no) OVER(order by col_name ord) - it will divided the group of record in
 number given in ntile argument like 3 divided into 3 part 1st part will given 
 high precident. (divided into buckets)
