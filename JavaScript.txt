@@ -1,0 +1,342 @@
+----------------------------JAVASCRIPT-----------------------------------
+
+
+127.0.0.1:5500/ip_address:port_number or local host.
+<script>console.log("Hello world!")</script>
+<script defer src="js/main.js"></script> | <script type="module" src="path"></>
+--------------------------------------------------------------------------------
+1.Introduction
+---comments---
+comments is notes or description for the following statements
+//single_line_comment  /*multi_line_comment */
+
+---Datatypes----
+1.String - "praveen"  |let name="praveen" | typeof name >string |color:white;
+const myName="praveen" > myName.length; myName.toUpperCase(); MyName.toLowerCase()
+myName.charAt(0)-index_position|myName[0] -'p'; myName.indexOf('e')-returns char; 
+.lastIndexOf('e'); .includes('ee') -return true if 'ee' is present in that string
+myName.slice(0,3)-pra, .slice(3)-veen,.slice(5,2)-''; myName.split(',')-seperator
+to convert str into array based on the seperator.myName.trim() -remove extra space
+type-casting: String(23)-"23" -converting Number_type to String_type.
+
+2.Number - 23 (int), 23.5 (float) both are number datatype | color:purple;
+let myNum = 23 |Number.isInteger(myNum) -true/false| Number.parseFloat(myNum) 
+-it convert into float -(23.5klf -23.5).Number.parseInt(myNum) -to convert into
+integer -(23.4jf - 23).| .tofixed(2) -.2f(two decimal digits after number) but it
+will convert into string; Number.isNaN(num) -return true/false. NaN-Not a Number.
+type-casting: Number("23") -23 -converting String type into Number type.
+Number(true) -1. Number(false) -0. ||isNaN(num) -not check type check value itself
+
+3.boolean - true, false
+
+---Operators---
+1.Arithmetic Operator-(+,-,*,/,%,**) .In js praveen+23=praveen23 >typeof string
+2.Relational Operator-(<,>,<=,>=,==/===,!=/!==)
+3.Logical Operator-(&&,||,!)
+4.Ternary Operator-(condition?iftrue:iffalse).((myNum%2==0)?"even":"odd");
+condition?true:condition?true:false -nested ternary operator.c?c?:t:f:f;
+
+---Variables---
+1.should not start with number| 2.only _ special character is allowed.
+3.no bulid in keywords can be used. naming-convention (camelcase).myNameIs="lr".
+let myAgeIs=23; -one variabel =one date.
+let myNameIs="praveen";myAgeIs=23; -in single line.
+
+1.let myName="praveen"; myName="vijay"; -let variable can modify but cannot 
+reassign.
+2.const myName="praveen"; myName="vijay"-error. const variable cannot modify and
+cannot reassign.
+3.var myName="praveen"; var myName="vijay" -it can be modify and can be reassign.
+var is fuction scope. //try to avoid var
+-Scope 1.local_scope 2.non-local or enclosed_scope/fuction_scope 3.global_scope.
+
+---Print---
+console.log("myName"); -to print in console >praveen |const myName="praveen"
+console.log("my name is",myName) -my name is praveen |both string and variables
+console.log(`my name is ${name}`); -my name is praveen| const name="praveen";
+
+---input---
+alert("Hello World!"); -pop up window on top to show some message.return none. 
+ok. to show some information to user.
+confirm("click ok if you agree"); pou up window on top with ok | cancel and
+return true or false. to get permission from user.
+let p=prompt("Enter Your Name"); if(p){console.log(p)}else{"enter name"}
+prompt -to get input data from user.
+
+---Math----
+Math.PI -3.1415
+Math.round(3.1) -3 |(3.4)-3 |(3.5)-4|(3.7)-4| Math.trunc(3.4) -3 to remove decimal
+Math.ceil(3.1) -4 (3.0)-3| Math.floor(3.9) -3| Math.pow(2,4) -16 (2**4) 2*2*2*2.
+Math.min(3,2,0) -0 |Math.max(2,4,9) -9|Math.random() -random values 0 to 1.
+Math.floor(Math.random()*10)+1;
+
+---------------------------------------------------------------------------------
+2.conditional Statement and Looping.
+---1.Conditional Statement---
+used to check the logical conditions or desicion making.
+let myName = "praveen"
+if (myName) {console.log(myName);} else {console.log('Not defind');} -if-else
+if (condi) {stat;}else if (!condi) {stat;} else{stat;} -if-else if-else
+if(con){st;}else if (con){if (cond) {st;} else {stat;}stat;}else{stat;}-nested.
+
+---2.Switch Statement---
+switch(expression or value){case match_value: break; case mv:stat; default: stat;}
+if any case matches it get break and if no case matches default is executed.
+
+---3.While Loop---
+Every Looping must have a Break point or else it will be endless.
+let myNum=0; while(myNum<50) {console.log(myNum); myNum+=1;} declartion,condition,
+increment is while Loop.increment ways - myNum=myNum+1;myNum+=1;myNum++;
+--Do While Loop -- |similary to while loop.but it will execute the do block 
+atleast one time even the condition is false. 
+do {console.log(myNum);myNum++;}while(myNum<20);
+
+---4.For Loop----
+let myName="praveen";for(let i=0;i<myName.length;i++) i->counter_variable.
+{console.log(myName.charAt(i));} |let i=0; for(;i<=7;){i++}|
+--for (let variable in iter) for (let i in myArray) {consol.log(i);}
+
+-break; to stop the execution and come out of the control block.
+-continue;to skip the remaing statement only for that iteration.pass control to s
+
+--------------------------------------------------------------------------------
+3.Data_Structure
+---1.Arrays--- []  || like list || type is object.
+let myArray = [1,'a',"abc",1.2]; -it is mutable in both const and let.
+myArray.length; -property gives the len of myArray | myArray[0],[3],no negative
+number instead [myArray.length - 1][3-2]; | myArray.push("values") -to insert data
+in last position [-1] like append and return new len of array.| myArray.pop() -to
+remove and return the last value of the array.| array.unshift("val")-to insert 
+data in [0] first position. |myArr.shift() -to remove and return the first data.
+myArray.splice(1,1); -to delete data in [1] position|.splice(1,3) -[1,2,3] posi v
+myArray.splice(1,0,"val"); -to add val in [1] position.|del,update v in position.
+myArray.slice(1,4) -[1,2,3] |myArray.reverse(); -to reverse the array order ele.
+myArray1.concat(myArray2); -to add two arrays.|newArr=[...arr1, ...arr2];
+myArray.join(','?'':'') -array to str with , 1-D Array = [1,2,3]  array [1] > 2| 
+2-D Array=[[1,2],[4,5]] array[0][1] >2 |
+3-D Array = [[[1,2],[3,4]],[[5,6],[7,8]]]-[0][0][1] >2 |
+
+---2.Object--- {}  || like dictionay ||obj={key:number,str,array,object,function};
+const myObject = {name:["praveen","kumar"],age:23}; typeof 'object'{property:val}
+const myObject = {"name":"praveen","age":23}; typeof 'object'{"key":val};
+myObject['name'] >["praveen","kumar"] | myobject.name >["praveen","kumar"] |
+myObject['name'][1] >kumar |const myobj = {"marks":{"10th":466,"12th":1055},
+func:function(){return "can also include function"}} myObj.func() >can also..
+--Object_Inheritance---
+const myObj={name:"praveen",age:23} |const otherObj=Object.create(myObj);
+obj.name="vijay"; otherObj=Object.create(obj);otherObj["name"]>"vijay"
+--Destructuring_object--
+const {key_name:variable_name}=object_name |const {name:myName}=myObject; -to 
+create a variable from a object by changing a key_name or with same key_name.{sn}
+function fn({key_name}) {return this.kn;} fn(object_name); -to pass a key's value 
+as argument to the function by using object_name,key_name.
+--Inbulid_object's_property/method--
+myObj.hasOwnProperty("name") -return true/false.
+delete myObj.name; -to delete a item in the object.
+
+---------------------------------------------------------------------------------
+4.Functions.
+---user_defind_function---
+function fun_name(para) {statements;return;}  -it used for code reusablity. 
+fun_name(para) -to call a function.
+
+---anonymous_fuction---
+fuction (arg) {stat;};  |const obj=function (arg) {stat;}; |obj(arg) -to call fun
+const obj=(arg) => {stat;}; -arrow function.
+
+---build_in_function---
+alert();prompt();
+---Methods--
+Math.random(); Number.isNaN();
+
+--------------------------------------------------------------------------------
+5.Oops[Object Oriented Programming]
+--1.Class---
+class class_name { 
+  school = "vijay vidyalaya" //class_attributes.
+  constructor(name,age) {  //like__init__():instead this can also use [this/self]
+    this.name=name;        //instance_attributes
+    this.age=age;
+  }
+  display() {           //class_methods
+    return this.name;
+  }
+}
+const obj = new class_name("praveen",23); //obj,class
+console.log(obj.display());    //calling class_method.  >praveen
+
+--2.Encapsulation [using get,set]
+class class_name { constructor(name,age){this.name=name;this.age=age;}
+  get myName() {        //by using get keyword converting method into attribute
+    return this.name;   //this method is [this.myName=this.name]
+  }                     ||getname(){return this.name}
+  set myName(n) {       ||setname(n) {this.name=n;}
+    this.name=n;        ||
+  }                     ||
+  display() {this.name} }  ||
+const obj = new class_name("praveen",23); //obj,class || 
+obj.myName="vijay"          ||obj.setname("vijay") 
+console.log(obj.display());    //calling class_method. >vijay ||
+--To make private attributes by using naming_convention[#] like[__] infront of 
+attributes_name; but it can be only used in class enclosed scope and should be 
+defined or declared in class_attribute area. 
+class cn {cn;#pv; constructor(pv){self.#pv=pv;} }
+
+--3.Inheritance [extends]
+class A {cn constructor(ia){self.ia=ia;} fnA(){return }} 
+class B extends A {ca constructor(iaA,ia){super(iaA)self.ia=ia;} fnB(){self.fnA} }
+const b=new B(iaA,iaB)
+
+--------------------------------------------------------------------------------
+6.Additional
+---1.JSON(JavaScriptObjectNotation)--- (dict)
+const sendJSON =JSON.stringify(myObj) - it converts a object into json (string)
+which will ignore function value.
+const receiveJSON =JSON.prase(sendJSON) -it receive the json and converts into
+object type.
+
+---2.Error_Handeling---
+try{ error;throw new Error("message");} -execute if no error is occured in block.
+catch(err) {console.log/error/warn/table(err);} -when there is error in try it exe
+finally{excecute all time}; -it will execute all time in both case.
+
+---3.DOM(DocumentObjectModel)---
+--Properties- element.style.css_style_property="value";h1.style.color="red"; |
+element.textContent="text to be added"; -only text can be overwrite.
+element.innerHTML=`elements to be added`; -html-elements can be overwrite.
+element.parentElement; -it will return the parent_element of element
+element.parentElement.children; -to get all the children of the parent_ele of ele
+ele.parentElement.childNodes; first/lastChild;first/lastElementChild; -to select
+ele.next/previousSibling; next/previousElementSibling; .haschildNodes; -any doms. 
+
+--methods-for selecting elements.
+const section1 = document.getElementById("id_name"); -to select element in id_name
+const sections=document.getElementsByClassName("sec"); -to select elements by 
+using class_name. can't use .style | .querySelectorAll() |
+const div = document.getElementsByTagName("div"); -to select all div elements.
+
+const section1 = document.querySelector("css s"); -arg like css selector but it 
+will select the first result and used for selecting single element.
+const sections = document.querySelectorAll("css s"); -to select elements by using
+.class_name, #id_name, tag_name,  . pass agrument same as css selector.
+const div2 = section1.querySelectorAll(div:nth-child(2)); -to select from previous
+--method-for creating and appending new elements/remove old elements.
+section1.last/firsChild|last/firstElementChild.remove();to remove_nodes|r_element
+const newElement = document.createElement("tag_name");-add tC,s.Css;
+section1.append(newElement) -to append the newly created element into parent ele.
+
+---4.Event_Listener---
+syntax - ele.addEventListener(event,function_name,useCapture);
+const element=document.querySelector("h1");
+element.addEventListener("click",welcome,false);
+element.addEventListener("click",(event) => {event.target.textContent="welcome"},
+false); -to add anomonus fuction| event.target==element.-is the element on which
+event is occured/prev_occ it will not change. event.target.style != element.style
+element.removeEventListener("click",welcome,false); -to remove EventListener.
+usecapture-false(default) -eventbubble from inner to outer| -true propagate from
+outer to inner that is called capture.
+event.stopPropagation() -to stop the event bubbling or capture.
+element.classList.add("class_name")-to add new class in ele <h1 class="newcn">
+element.classList.remove("cn")-to remove old class in ele <h1 class="">
+element.classList.toggle("cn")-it will add if it is not and remove if it is in.
+const myText=event.target.textContent;myText=="old"?event.target.textContent="new"
+:event.target.textContent="old";-to toggle textContent.
+event.preventDefault(); -to not execute the default action.
+
+--Events-element.addEventListener("click",fn,f);-clicking event.
+document.aEL("readystatechange",event.readyState=="complete");
+element.aEL("mouseover",fn) -the mousehover event|ele.aEL("mouseout",fn)-mouseout
+element.aEl("submit",fn)-the submit event in forms|("input") -input event.
+
+---5.WebStorage_API---
+--1.sessionStorage -temporary storage.
+window.sessionStorage.setItem("storage_name",Jvalue) -to store value in strg_name.
+c o=JSON.parse(sessionStorage.getItem("storage_name")) -to get data in object type
+sessionStorage.removeItem("set_name"); -to remove single object.
+sessionStorage.clear(); -to remove all the storage data.
+sessionStorage.key(0); -to get object name of using index position.
+sessionStorage.length; -to get length of sessionStorage.
+--2.localStorage -perceistance storage.
+same as sessionStorage instead of sessionStorage -- localStorage. In which data 
+remains even if we close the bowser and we open again the data will remain.
+
+---6.Modules---
+<script type="module" src="js/main.js"></script> -type  include defer (automatic)
+and this script file is going to use modules.2.also apply use strict; mode.
+--Exporting a function or class. export function fn {}; -there can be many export
+export default fuction fn {}; -there can be only one default export function.
+export default fn; export {fn,fn}; -at the end of file.
+--Importing js file/f/c. import fn/cn from "./file_name.js";-to import default fun
+import {fn, fn as new} from "./f.js" -to import export function,also rename fname
+import * as F from "./fn.js"; -to import all function from files. F.fn() -access.
+
+---7.HigherOrderFunction---one or many arg|but one expersion.
+--1.myArray.forEach((e)=>{console.log(e);}); -to iterate array of each element.
+--2.myArray.filter((e)=>{return e%2==0;}); -to filter only even numbers.
+--3.myArray.map((e)=>{return e+1;}); -to map do some change in all values.
+--4.myArray.reduce((a,b)=>{return a+b}) -to reduce an array into single value.
+
+---8.Fetch_API---
+--1.async/await - async function fn(){const data = await fetch("serverAddress")};
+to make a async function and to use await keyword to wait till it is completed.
+but js is synchronised fuction it will execute same . async execute seperately
+await keyword is used when the execution will take time like fetching data from
+another server ect.. it can be used inside a async function.
+fetchResponse.json() -to convert the response into JSON type.
+-example_1 -to get emails from users data promise and passing to other function.
+function getUserEmail(emails) {console.log(emails); }
+async function fetchUserEmail() {
+  const userData = await fetch("https://jsonplaceholder.typicode.com/users");
+  const jsonUserData = await userData.json();
+  const userEmails = jsonUserData.map((i) => {return i.email;});
+  getUserEmail(userEmails);}
+fetchUserEmail();
+-example_2 -to get data of required type,by using 2nd parameter of fetch()
+async function getDadJoke(){
+    const dadJoke = await fetch("https://icanhazdadjoke.com/",
+                       {method:"GET",headers:{Accept:"application/json"}});
+    const jsonDadJoke = await dadJoke.json();         "text/plain" -get only text
+    console.log(jsonDadJoke.joke); }
+getDadJoke();
+-example_3 -to post data of json type using body property.
+const dadJoke = { id: "1234", joke: "JOKE JOKE" };
+async function postDadJoke(joke) {
+    const response = await fetch("https://httpbin.org/post",
+		       {method:"POST",
+        		headers:{"content-type":"application/json"},
+        		body:JSON.stringify(joke) })
+    const jsonResponse = await response.json();
+    console.log(jsonResponse.json); } -.headers .data
+postDadJoke(dadJoke);
+-example_4 -
+
+
+---9.RegularExpression(RegEx)---
+They are used to describe and select patterns inside a string data.
+//g -global_scope | //gm -g_with_multiline | //gi -g_with-case_insenistive.
+[abc-f12&*] -to select all the charcters in the list| [range_start-range_end]
+eg.0-9,a-z,A-Z,c-g | [^abd12*_] -to select all charcter except the char in list.
+. -to select all except \n | \w -to select all word character includes a-z,A-Z,_ 
+\W -to select all except char in \w | \d -digits[0-9] | \D -all char except[0-9]
+\s -all whiteSpace,tab   |\S -all char except blankspace,tab | [\s\S]-select all
+^A -starts or begin of every \n with 'A' | A$ -ends with A \.$ -ends with . char 
+(text) -string with 'text' no any other character in between text. set of char.
+t(?:ext) -same as (text) | t(?=ext) -select 't' that only follow with 'ext'
+t(?!ext) -select 't' that not followed by 'ext'.
+-Quantifiers '+' -greedy char | '?' -is lazy/optional char
+[A-Z]\w+ -'+' to have 1 or more | [A-Z]\w*'*[a-z]* -'*' to have 0 or more than
+(t|T)ext - starts with t or T and followed by ext - alternative operator.
+\d{10} - to select only number has 10 digit. {10,} -10 or more. {4,5} -4 or 5 
+
+-Examples: (^\d{10}$) -to select only 10 digit number only.
+(^\d{5})(?!\d)-?(\d{4}$) -to select 5digit number and 5d-4digit number only.
+
+
+
+
+//regexr.com
+--------------------------------------------------------------------------------
+knowledge collesking operator- name?? "null"; -if name=null/undefind.
+location.reload() -to reload the current page.
+api?
+outline css
