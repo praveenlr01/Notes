@@ -121,12 +121,14 @@ visibility:hidden; -to disappeier but occupies the space.
 -----------------------------------------------------------------------------
 8.floats
 float:left; -to move the element to left. float:right; -to move content to right
-width:20vw; height:20vh;
+it also make it as inline elements.
+width:20vw; height:20vh; 
 <div class="clear"></div> |.clear {clear:both;} -to make wraped content to stop
-and to start in new line.
+and to start in new line. clear: left, right; 
 
-display:flow-root; to use when the float element should be inside the block level
-element to avoid the overflow. can also use overflow:auto;
+overflow:auto; to use when the float element should be inside the block level
+element to avoid the overflow.|overflow: scroll,hidden,visible.
+can also use display:flow-root;
 
 --------------------------------------------------------------------------------
 9.Columns
@@ -148,7 +150,8 @@ it remains in same position through out page. it is an inline element.
 position: sticky; -it will act as fixed but only when it reach it specified 
 position like (top:0;)
 
-z-index:1; -among the position type element making the highest precedence.
+z-index:1; 2,3 -among the position type element making the highest precedence.
+low index will in lower , high index will be higher.
 position:absolute; left:-10000px; -to make something disappear. off the page
 
 -----------------------------------------------------------------------------
