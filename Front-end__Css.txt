@@ -84,7 +84,7 @@ text-decoration: none;underline ;overline;line-through;
 text-transform : capitalize,uppercase,lowercase;
 text-indent: 2em; -indentation
 line-height: 1.5; -to adjust the space between text line 
-letter-spacing:0.2em; -space between character|word-spacing:0.2; -space btw words
+letter-spacing:1px; -space between character| word-spacing:2px; -space btw words
 text-shadow:2px 2px 5px black;x-axis y-asix shadow blur ;--shadow under the text.
 
 button, input, textarea, select {font:inherit; property:inherit;} - for same size
