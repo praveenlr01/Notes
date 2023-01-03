@@ -116,6 +116,7 @@ in inline we can not apply width,height so we can change into inline-block.
 
 display:inline-block; - to make the inline element inside the block.
 display:none;  - to make the entire block to disappeier.
+visibility:hidden; -to disappeier but occupies the space.
 
 -----------------------------------------------------------------------------
 8.floats
