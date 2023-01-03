@@ -130,7 +130,7 @@ id="id_name" (#id_name) -we can have only unique id names for diff tags.
 <label for="first_name">First Name</lable>
 
 <input type="text" id="name_in_for_of_label" name="name_in_server" 
-placeholder="eg.text" autocomplete="on" autofocus required> -there can be only 
+placeholder="eg.text" autocomplete="on" readonly autofocus required> -there can be only 
 one autofocus input per page and requried is should be filled.
 
 <input type="password" > -for password input.
