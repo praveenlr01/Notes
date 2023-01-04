@@ -160,6 +160,7 @@ display:flex; -to make the child elements into flex items.
 justify-content:flex-start; (flex-end; center; space-between,around,evenly;) 
 -to fix the position of content.
 align-content:center;(def)(same as justify-content values).to align content 
+align-content is used when the flex item is wrap.
 place-content:center; -align-content|justify-content as combined. -horizontal
 align-items:flex-start; (def)(flex-end;center) -to alignitems verticaly/ali-self: 
 flex-direction:row;(default) :column; :column-reverse; -direction of items .
@@ -171,9 +172,9 @@ gap:1 rem -like space between on fixed size value.
 flex-grow:1; -the ratio to grow the width after reaching fixed size.
 flex-shrink:2; -the ratio to shrink the size after reaching the basis size.
 flex-basis:100px - to set width of the content as (width:100px;)
-flex:flex-grow flex-shrink flex-basis; (flex:1 1 100px;)
+flex:flex-grow flex-shrink flex-basis; (flex:1 1 100px;) flex:1; rem opt
 order:1; -to end | -1; -to start | -2,-1,0,1,2
-
+align-self: flex-start; it will overwrite the align-self value.
 (d:flex, place-content:justify-content align-content, align-items/align-self,
 flex-flow:f-direction f-wrap, flex:f-grow f-shrink f-basis, gap)
 
