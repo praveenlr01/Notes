@@ -207,6 +207,8 @@ background-image:linear-gradient(to bottom,blue,wheat);radial-gradient(only colo
 background-size:cover,contain; 25%, auto;
 background-position:center; top right;top left;bottom center;
 background-repeat: no-repeat,repeat,repeat-x,repeat-y; -to control the img repeat.
+background: rgba(0,0,0,0.7) url('./images/path');
+background-blend-mode: darken;  --to make background image dark;
 
 ---------------------------------------------------------------------------
 14.media_queries
@@ -323,7 +325,7 @@ width:100vw; height: 100vh;
 -----Addtional--------
 html {scroll-behaviour: smooth; } - to make page to scroll smoothly.
 width:min(100%, 350px);
-display:content; -to display direct child element.
+display:content; -to display direct child element.;
 border:medium ridge black;
 vertical-align:sub sup;
 outline:none; -to remove the defalut styling in input box.
