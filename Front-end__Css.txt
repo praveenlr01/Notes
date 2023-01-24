@@ -147,25 +147,25 @@ element as relative. while adjusting postion by using(top,left,buttom,right).
 position: relative; -it will take only its parent element as relative.
 position: fixed; -it is always relative to parent element and it is fixed.
 it remains in same position through out page. it is an inline element.
-position: sticky; -it will act as fixed but only when it reach it specified 
-position like (top:0;)
+position: sticky; -it will act as fixed but only when it reach it specified
+position like (top:0;).
 
 z-index:1; 2,3 -among the position type element making the highest precedence.
-low index will in lower , high index will be higher.
+low index will in lower, high index will be higher.
 position:absolute; left:-10000px; -to make something disappear. off the page
 
 -----------------------------------------------------------------------------
 11.flex-box //flexbox froggy
 display:flex; -to make the child elements into flex items.
 justify-content:flex-start; (flex-end; center; space-between,around,evenly;) 
--to fix the position of content.
-align-content:center;(def)(same as justify-content values).to align content 
-align-content is used when the flex item is wrap.
+-to fix the position of content horizontalliy.
+align-content:center;(def)(same as justify-content values).to align content
+when the flex items is wrap.
 place-content:center; -align-content|justify-content as combined. -horizontal
 align-items:flex-start; (def)(flex-end;center) -to alignitems verticaly/ali-self: 
 flex-direction:row;(default) :column; :column-reverse; -direction of items .
 flex-wrap:wrap; to wrap the flex box inside the contianer.nowrap-all in one line
-wrap-it can go to new line;wrap-reverse: wrap items reversly.
+wrap-it can go to new line;wrap-reverse: wrap items reversely.
 flex-flow:flex-direction flex-wrap; --flex-flow:row wrap;
 gap:1 rem -like space between on fixed size value.
 
