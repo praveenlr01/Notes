@@ -331,6 +331,7 @@ display:content; -to display direct child element.;
 border:medium ridge black;
 vertical-align:sub sup;
 outline:none; -to remove the defalut styling in input box.
+outline:10px solid black; -it is the area around the border of ele.
 backdrop-filter: blur(10px); -to set glassy background.
 
 @using symbols
