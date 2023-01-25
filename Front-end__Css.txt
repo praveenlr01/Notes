@@ -100,6 +100,7 @@ reset the defaults
 a {text-decoration:underline; cusor:pointer; color:blue;}
 a {color:;} a:visited{color:; } a:hover{color:; } a:active{color:; } -order pref 
 a:focus {color:; } -help to choose link using tab key.(a:focus-visible)
+a:hover:not(.active) {color:;} -to not apply hover effect on active class.
 opacity:0.6; filter: brightness(150%), hue-rotate(180deg); 
 cusor:not-allowed;
 
@@ -263,6 +264,8 @@ content of the element.
 .class ele::after {content:'text';p:v;} -to add content after ele content.
 .class ele::first-line {} - to style the first line in that element.
 .class ele::first-letter {} -to style the first letter in that element content
+ele::marker {} -to style the list item markers
+ele::selection {} -to style the selected text by the user.
 
 --------------------------------------------------------------------------------
 16.variables
