@@ -257,10 +257,12 @@ nav a, nav a:visted {} || nav a:any-link{} -[a,a:visited,a:act,a:hov,a:focus;]
 attribute-(alt,class,width,ect..)
 
 ---pseudo_elements----------::
-.class ele::after {content:'text';p:v;}
-.class ele::before {content:'text';p:v;}
-.class ele::first-letter {}
-.class ele::first-line {}
+it can apply only to block level elements.
+.class ele::before {content:'text';p:v;} -to add some content before the 
+content of the element.
+.class ele::after {content:'text';p:v;} -to add content after ele content.
+.class ele::first-line {} - to style the first line in that element.
+.class ele::first-letter {} -to style the first letter in that element content
 
 --------------------------------------------------------------------------------
 16.variables
