@@ -101,6 +101,7 @@ a {text-decoration:underline; cusor:pointer; color:blue;}
 a {color:;} a:visited{color:; } a:hover{color:; } a:active{color:; } -order pref 
 a:focus {color:; } -help to choose link using tab key.(a:focus-visible)
 a:hover:not(.active) {color:;} -to not apply hover effect on active class.
+.dropDown {position:relative} .dropDownCotent {dis:no;posi:ab;width:100%;}
 .dropDown:hover .dropDownContent {display:block;} -to create a dropdown list.
 opacity:0.6; filter: brightness(150%), hue-rotate(180deg); 
 cusor:not-allowed;
@@ -254,6 +255,12 @@ nav a, nav a:visted {} || nav a:any-link{} -[a,a:visited,a:act,a:hov,a:focus;]
 .class:where() -similay to :is() but it has no specificity.
 .class:target {} -to style targeted internal links of the page.(#id_name)
 
+attributes Selectors: 
+it is used to style specific element that has the attributes or that 
+attributes value. by using attributes selector. ele[attr = "value"]
+a[traget] {};  -to select element that has the attributes.
+a[target="_blank"] {}; -it select attr have 'only' "value" as value.
+a[class~="red"] {} -to select attr have that "value" as value.
 .class img[attribute] -to style img inside the class which has that attribute.
 .class img:not([attribute]) -to style which does not have that attribute.
 attribute-(alt,class,width,ect..)
@@ -285,11 +292,11 @@ varibale declared.
 17.Fuctions.
 min(2.5rem, 3vh); (abs, rel) -it always take the smallest of two values and 
 changes according to the relative value.it take the max of absolute value.
-max(1.5rem, 3vh);  it take min of absolute value.
+max(1.5rem, 3vh);  it take max value between the two values.
 clamp(min_value relative_value max_value);clamp(1rem 4vw 2rem);
-html <p data-attr_name="attr_value"></p> attributes starts with data key_words.
 calc(70% - 5px)
 minmax();
+html <p data-attr_name="attr_value"></p> attributes starts with data key_words.
 
 -----------------------------------------------------------------------------
 18.Animations.
