@@ -41,6 +41,12 @@ property values *{margin:0; padding:0; box-sizing:border-box; }
 selector {p:v!important} -it will overwrites all the value and precedence is 
 after id. but it very rarely used. 
 
+Combinators:
+div p - to select all descendant of <p> element inside the <div> element
+div > p - to select only the direct child of <p> element inside the <div>.
+div ~ p - to select all the sibiling of <p> element after <div> element
+div + p - to select first sibiling of <p> element after <div> element.
+
 ------------------------------------------------------------------------------
 3.Property and Value
 ----1.color---------
