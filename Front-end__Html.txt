@@ -137,21 +137,20 @@ one autofocus input per page and requried is should be filled.
 <input type="email" pattern=".+@gmail.com" size="30" requried>
 <input type="tel" pattern="[0-9]{10}"> -for phone input [number]{no_digits}
 <input type="number" min="0" max="100" step="5" value="50" > -number input
-<input type="text" list="list_name"><datalist id="list_name"><option value="opt">
-<option value="opt"></datalist> -to create a list of drop down options.
+
 <input type="radio" value="opt"><label for="">opt</label> -radio options
 <input type="checkbox" id="" value="opt"><label>opt</label> -checkbox options
 <input type="date"> --date_box
 <input type="color"> --color_adjust
 <input type="range"> --choose_range
-
+<select id="f" name=""><option value="options">options</option><></></select>
 <button type="submit">Submit</button> -to submit the form to server.
 <button type="reset">Reset</button> -to reset the form
 <textarea name="message" id="" cols="30" rows="10"></textarea> -entering 
 large message.
-<select id="" name=""><optgroup label="group_name"><option value="options">options
-</option></optgroup></select>
 
+<input type="text" list="list_name"><datalist id="list_name"><option value="opt">
+<option value="opt"></datalist> -to create a list of drop down options.
 ---------------------------------------------------------------------------------
 8.<table></table>
 <table><caption>text</caption><thead><tr><th></th><tr></thead>
@@ -168,7 +167,7 @@ td(table_data_cell); <caption>text</caption>-about table;
 Additional
 <small>text<\small>--small font.
 <cite><a href="cite_address" target="_blank"></a></cite>
-
+<code></code>
 <audio src="audio/path" type=audio/mp3 controls></audio>
 <video src="video/path" type=vedio/mp4 controls></video>
 #frame(youtube vedio)
