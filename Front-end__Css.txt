@@ -142,16 +142,18 @@ white-space: nowrap; -don't cut the content or text after the whitespace.
 
 ------------------------------------------------------------------------------
 10.position
-position: absolute; -it need a relative element or else it will take his parent
-element as relative. while adjusting postion by using(top,left,buttom,right).
-position: relative; -it will take only its parent element as relative.
-position: fixed; -it is always relative to parent element and it is fixed.
-it remains in same position through out page. it is an inline element.
-position: sticky; -it will act as fixed but only when it reach it specified
-position like (top:0;).
+position: static; it is default position according to normal flow.
+position: relative; it is positioned relative to its normal position.
+position: absolute; it is positioned relative to the parent positioned element
+and absolute positioned element can overlap elements.
+position: fixed; it is positioned relative to viewport. it remains same position
+even if the page is scrolled.
+position: sticky; it toggles between relative and fixed, dependent on scroll 
+position.it change to fixed when it reaches secified position.
+The positioned elemets can adjusted by using top,right,bottom,left: 20px,0,values
 
 z-index:1; 2,3 -among the position type element making the highest precedence.
-low index will in lower, high index will be higher.
+low index will in lower, high index will be in top.
 position:absolute; left:-10000px; -to make something disappear. off the page
 
 -----------------------------------------------------------------------------
