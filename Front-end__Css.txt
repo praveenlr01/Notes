@@ -237,7 +237,15 @@ the previous condition and also override the specified condition inside it.
 ------------------------------------------------------------------------------
 15.pseudo
 ---pseudo_class-----
-.class_name:nth-child(2){} -in same class name 2nd class element.(even),(odd);
+a:link - to select all the anchore links and unvisited links.
+a:visited - to select all the visited links. 
+a:hover, a:focus - to select all the mouse hover links.
+a:active -to select all the active links.
+p:first-child -to select the first <p> elements in list of <p> tags.
+p:last-child -to select the last <p> element in the list of <p> elements.
+p:nth-child(no) -to select the no-value element in the list of <p> elements.
+(number)(even)(odd) in nth-child(values).
+
 nav a:hover, nav a:focus {} || nav: is(a:hover, a:focus) {} - :is() The highest
 precendence element inside the:is() will be precedence of :is() pseudo class also
 nav a, nav a:visted {} || nav a:any-link{} -[a,a:visited,a:act,a:hov,a:focus;]
