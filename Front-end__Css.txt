@@ -113,8 +113,8 @@ Block level element - (<p> <main> <ul> <li> <h>)...
 in block element we can apply width;height;margin;
 Inline level Element - (<a> <span> <img>)
 in inline we can not apply width,height so we can change into inline-block.
-
-display:inline-block; - to make the inline element inside the block.
+display:inline-block; - to make the inline element inside the block. it
+does not add linebreak at the end.
 display:none;  - to make the entire block to disappeier.
 visibility:hidden; -to disappeier but occupies the space.
 
