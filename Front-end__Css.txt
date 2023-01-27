@@ -215,11 +215,14 @@ html--<img src="path" alt="#" width="200" height="200"> (only 200) not 200px
 ----background_img----------
 background-image:url('../images/path');
 background-image:linear-gradient(to bottom,blue,wheat);radial-gradient(only color)
-background-size:cover,contain; 25%, auto;
+background-size:cover,contain;  25%, auto, 100px 80px; width heigt;
 background-position:center; top right;top left;bottom center;
 background-repeat: no-repeat,repeat,repeat-x,repeat-y; -to control the img repeat.
 background: rgba(0,0,0,0.7) url('./images/path');
 background-blend-mode: darken;  --to make background image dark;
+background:url('') cover no-repeate, url() top left no-repeate; -to set 
+multiple background images to the same container.
+background-attachment: fixed; -make bg img fixed even page is scrolled.
 
 ---------------------------------------------------------------------------
 14.media_queries
