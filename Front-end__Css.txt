@@ -262,8 +262,8 @@ nav a, nav a:visted {} || nav a:any-link{} -[a,a:visited,a:act,a:hov,a:focus;]
 
 attributes Selectors: 
 it is used to style specific element that has the attributes or that 
-attributes value. by using attributes selector. ele[attr = "value"]
-a[traget] {};  -to select element that has the attributes.
+attributes value. by using attributes selector. ele[attr_name = "value"]
+a[traget] {};  -to select element that has the attributes_name.
 a[target="_blank"] {}; -it select attr have 'only' "value" as value.
 a[class~="red"] {} -to select attr have that "value" as value.
 .class img[attribute] -to style img inside the class which has that attribute.
@@ -355,34 +355,24 @@ max-width:600px;min-width:500px; min-height:100%; max-height:500px;
 width:100vw; height: 100vh;
 [100% == 16px == 1rem]
 1rem - 0.1em-(1/10th of 1rem).
+Responsive-to make good to all type of device.
+viewport- it is user's visible area in a web page.
 
 -----Addtional--------
 html {scroll-behaviour: smooth; } - to make page to scroll smoothly.
-width:min(100%, 350px);
-display:content; -to display direct child element.;
-border:medium ridge black;
-vertical-align:sub sup;
 outline:none; -to remove the defalut styling in input box.
 outline:10px solid black; -it is the area around the border of ele.
 backdrop-filter: blur(10px); -to set glassy background.
-
-@using symbols
-class_name > p{;;} --to select para tag of only child of class_name
-class_name + p{;;} --to select frist next after child block
-@class atributes
-div[class]{;;} |
-div[id]{;;}    |----div must seperate not nested
-div[class="class_name"] --- to select pariticular class ".
-div[class~="class_name"] --- to select pariticular class even when
-                             there is multiple class_names ".
-a[title="name"]{;;} a[href="name"]{;;} -- to select particular anchore
+display:content; -to display direct child element.;
+border:medium ridge black;
+vertical-align:sub sup;
 a[title^="name"]{;;} --starting letter a[href$="name"] --ending letter 
-
 //caniuse.com -to check the support.
+
 ----shortcut_keys--------------
 shift+alt+a -to comment the selected lines
-shift+alt+down-arrow -to copy the single line content to next line.
-alt+z -to cut down the extented lines
+alt+z -to wrap content lines
 ctrl+d - to select the similary words.
 ctrl+shift+l - to select all the similiar words.
 li*4>a+tab -emmet abbrevation.to create 4 list with 4 links
+shift+alt+down-arrow -to copy the single line content to next line.
