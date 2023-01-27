@@ -1,0 +1,77 @@
+-----------------------------REACT.JS-----------------------------------------
+React it is a javascript libary used to build user interfaces. facebook(2013)
+reactjs.org - documentation | nodejs.org/download - to download | store.chrome.web
+-to add extention of React Dev Tools | node -v  >to get node.js version.
+es7 react -install extension | emmet include item javascript:javascriptreact
+
+-------------------------------------------------------------------------------
+1.__Start-App___
+1.npx create-react-app app_name   >to create a new app in that folder.
+2.cd app_name  >to change the directory | code . >to open new vs folder app_name
+3.npm start >to open development sever localhost:3000 react app|ctrl+c>stop server
+
+
+-------------------------------------------------------------------------------
+2.Folders
+--1. .git folder / .gitignore -to store the sorce file in the github.
+--2. node_modules - it contains all of dependences of nodejs.
+--3. public folder - it includes the index.html, one html doc is loaded in the
+browser and rest is take over by react.
+--4. src folder -
+
+--5.package.json - app_name,version,dependence,npx commands scripts,ect..
+--6.Readme.md - that explain some of the scripts and what the do.
+
+-------------------------------------------------------------------------------
+3. jsx - (javascriptxml) -it is similiar to html with slight changes.
+jsx renders data as 'text' when it is displayed. {javascript_Expersion}.
+{js_elements} -it will convert into string or text formate | 
+{variables}-{"str"},{int},arr,obj,{[array]}but convert into text. | 
+{function()} || {{object}} {boolean} - are not allowed.
+
+--changes:
+<div className="class_name"> -instead of class - className.
+<ul> <li className="list_item" key={i.id}> -in jsx list element <li> needs key 
+attributes to keep track of which list item is displayed.
+<p style={{color:'green',fontSize:'2rem'}}> </p>-to give inline style in jsx.
+
+-------------------------------------------------------------------------------
+4.function components:
+create Header.js const Header () => {return (<p>HEADER</p>)} export default Header
+import Header from './Header.js' |inside app() - <Header /> |
+--Css_StyleSheet. -include inside the index.css and import "./index.css" inside 
+the index.js.
+--Event_listener: const handelClickEvent = (name) => {return 'Hello ${name}'}
+<button onClick={()=>handelClickEvent('praveen')}>click it</button>  | 
+onClick={function_name} 
+
+
+--------------------------------------------------------------------------------
+5.Hooks:
+--1.useState - import {useState} from 'react'
+const [variable_name,setvariable_function] = useState('Praveen');
+console.log(useState("Praveen")) -["Praveen",f] | using that function we can set 
+values to the variable_name. setvari('new_value'); |  but the state of variable
+will be same till next event is occured | const [count,setCount] = useState(0)
+setCount(count+1);setCount(count+1) - console.log(count) -1 ,the count remains 
+same throught the state, always use const for useState,because we should not 
+change the state directly.
+
+--------------------------------------------------------------------------------
+6.Props / propDrilling:
+app.js <Header title="HT" /> |Header (props | {title}) <h1>{title}</h1> |
+Header.defaultProps = {title:"default Title"} - to set default props values if it
+is not passed;
+--PropDrilling: -it is passing properties to the child Component,and can access
+the properties. <Component agr_name={variable_name} arg_name={variable_name} />
+
+
+-------------------------------------------------------------------------------
+--Additional
+CLI (Command Line Interface)
+ctrl+~ - to open new terminal window in vs. | cls -to clear screen.
+cd dir_name - change directory to the dir_name.
+
+npm install react-icons --save | import {icon_name} from 'react-icons/fa';
+<in role="button" tabIndex="0" />  |.list svg {} -to style in css . 
+
