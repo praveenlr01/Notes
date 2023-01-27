@@ -356,7 +356,11 @@ width:100vw; height: 100vh;
 [100% == 16px == 1rem]
 1rem - 0.1em-(1/10th of 1rem).
 Responsive-to make good to all type of device.
-viewport- it is user's visible area in a web page.
+viewport- it is user's visible area in a web page.to access viewport 
+we have to import <meta> tag. w="d-w"; according to deviec width,
+in-sc:1.0; the initial zoom level.
+box-sizing:border-box; -to include the padding and border are include
+in the total width and height of a element.
 
 -----Addtional--------
 html {scroll-behaviour: smooth; } - to make page to scroll smoothly.
