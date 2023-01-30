@@ -40,7 +40,7 @@ condition?true:condition?true:false -nested ternary operator.c?c?:t:f:f;
 1.should not start with number| 2.only _ special character is allowed.
 3.no bulid in keywords can be used. naming-convention (camelcase).myNameIs="lr".
 let myAgeIs=23; -one variabel =one date.
-let myNameIs="praveen";myAgeIs=23; -in single line.
+let myNameIs="praveen", myAgeIs=23; -in single line.
 
 1.let myName="praveen"; myName="vijay"; -let variable can modify but cannot 
 reassign.
@@ -87,7 +87,7 @@ if any case matches it get break and if no case matches default is executed.
 ---3.While Loop---
 Every Looping must have a Break point or else it will be endless.
 let myNum=0; while(myNum<50) {console.log(myNum); myNum+=1;} declartion,condition,
-increment is while Loop.increment ways - myNum=myNum+1;myNum+=1;myNum++;
+increment is while Loop(dci).increment ways - myNum=myNum+1;myNum+=1;myNum++;
 --Do While Loop -- |similary to while loop.but it will execute the do block 
 atleast one time even the condition is false. 
 do {console.log(myNum);myNum++;}while(myNum<20);
