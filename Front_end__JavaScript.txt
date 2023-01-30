@@ -71,6 +71,10 @@ Math.min(3,2,0) -0 |Math.max(2,4,9) -9|Math.random() -random values 0.0 to 0.9 |
 Math.floor(Math.random()*10)+1; | end_value= (start_value+end_value)-1; s_v=s_v
 (Math.random()*end_value)+start_value;
 
+---Date_Time---
+const currentDate = new Date(); -day_name mm dd yy hh:mm:ss gst (ist)
+currentDate.toDateString() - to make readable string formate.
+
 ---------------------------------------------------------------------------------
 2.conditional Statement and Looping.
 ---1.Conditional Statement---
@@ -209,30 +213,39 @@ catch(err) {console.log/error/warn/table(err);} -when there is error in try it e
 finally{excecute all time}; -it will execute all time in both case.
 
 ---3.DOM(DocumentObjectModel)---
---Properties- element.style.css_style_property="value";h1.style.color="red"; |
+With help of Html DOM javaScript can access and change the html element.
+
+--methods-for selecting elements.
+const section1 = document.getElementById("id_name"); -to select element in id_name
+it will return element of that id_name of object type.
+const sections=document.getElementsByClassName("sec"); -to select elements by 
+using class_name. it return htmlCollection of object type. sections[0].
+const div = document.getElementsByTagName("div"); -to select all div elements.
+
+const div2 = section1.querySelectorAll(div:nth-child(2)); -to select from previous.
+const sectionOne = document.querySelectorAll(".sectionOne") -to select elements 
+in class sectionOne. args is like css selector..class_name, #id_name, tag_name, .
+it will return nodeList of object type.
+document.querySelector("#red"); -arg like css selector but it will select the 
+first result and used for selecting single element. it will return element of 
+object type. we can style,change the content of element.
+
+---Properties---
+const element = document.querySelector("#id_name");
+element.style.css_style_property="value";h1.style.color="red"; |
+element.attribute_name = "attr_value"; -to change the attribute value in element
+element.innerHTML=`content to be added`; -html-elements can be overwrite.
 element.textContent="text to be added"; -only text can be overwrite.
-element.innerHTML=`elements to be added`; -html-elements can be overwrite.
+element.value  -to get input element value.
 element.parentElement; -it will return the parent_element of element
 element.parentElement.children; -to get all the children of the parent_ele of ele
 ele.parentElement.childNodes; first/lastChild;first/lastElementChild; -to select
 ele.next/previousSibling; next/previousElementSibling; .haschildNodes; -any doms. 
 
---methods-for selecting elements.
-const section1 = document.getElementById("id_name"); -to select element in id_name
-const sections=document.getElementsByClassName("sec"); -to select elements by 
-using class_name. can't use .style | .querySelectorAll() |
-const div = document.getElementsByTagName("div"); -to select all div elements.
-
-const section1 = document.querySelector("css s"); -arg like css selector but it 
-will select the first result and used for selecting single element.
-const sections = document.querySelectorAll("css s"); -to select elements by using
-.class_name, #id_name, tag_name,  . pass agrument same as css selector.
-const div2 = section1.querySelectorAll(div:nth-child(2)); -to select from previous
 --method-for creating and appending new elements/remove old elements.
 section1.last/firsChild|last/firstElementChild.remove();to remove_nodes|r_element
 const newElement = document.createElement("tag_name");-add tC,s.Css;
 section1.append(newElement) -to append the newly created element into parent ele.
-
 ---4.Event_Listener---
 syntax - ele.addEventListener(event,function_name,useCapture);
 const element=document.querySelector("h1");
