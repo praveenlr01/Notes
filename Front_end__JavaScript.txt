@@ -94,8 +94,9 @@ do {console.log(myNum);myNum++;}while(myNum<20);
 
 ---4.For Loop----
 let myName="praveen";for(let i=0;i<myName.length;i++) i->counter_variable.
-{console.log(myName.charAt(i));} |let i=0; for(;i<=7;){i++}|
---for (let variable in iter) for (let i in myArray) {consol.log(i);}
+{console.log(myName.charAt(i));} |let i=0; for(;i<=7;){i++}|for(d;c;i) {};
+--for (let variable in iter) -variable take the index of value.
+--for(let variable of iter)  -variable take the values directly.
 
 -break; to stop the execution and come out of the control block.
 -continue;to skip the remaing statement only for that iteration.pass control to s
