@@ -123,17 +123,17 @@ myArray.join(','?'':'') -array to str with , 1-D Array = [1,2,3]  array [1] > 2|
 ---2.Object--- {}  || like dictionay ||obj={key:number,str,array,object,function};
 const myObject = {name:["praveen","kumar"],age:23}; typeof 'object'{property:val}
 const myObject = {"name":"praveen","age":23}; typeof 'object'{"key":val};
-myObject['name'] >["praveen","kumar"] | myobject.name >["praveen","kumar"] |
-myObject['name'][1] >kumar |const myobj = {"marks":{"10th":466,"12th":1055},
+myobject.name >["praveen","kumar"] | myObject['name'] >["praveen","kumar"] |
+myObject['name'][1] >kumar |const myobj = {marks:{"10th":466,"12th":1055},
 func:function(){return "can also include function"}} myObj.func() >can also..
---Object_Inheritance---
-const myObj={name:"praveen",age:23} |const otherObj=Object.create(myObj);
-obj.name="vijay"; otherObj=Object.create(obj);otherObj["name"]>"vijay"
 --Destructuring_object--
 const {key_name:variable_name}=object_name |const {name:myName}=myObject; -to 
 create a variable from a object by changing a key_name or with same key_name.{sn}
 function fn({key_name}) {return this.kn;} fn(object_name); -to pass a key's value 
 as argument to the function by using object_name,key_name.
+--Object_Inheritance---
+const myObj={name:"praveen",age:23} |const otherObj=Object.create(myObj);
+obj.name="vijay"; otherObj=Object.create(obj);otherObj["name"]>"vijay"
 --Inbulid_object's_property/method--
 myObj.hasOwnProperty("name") -return true/false.
 delete myObj.name; -to delete a item in the object.
@@ -152,6 +152,12 @@ const obj=(arg) => {stat;}; -arrow function.
 alert();prompt();
 ---Methods--
 Math.random(); Number.isNaN();
+
+---7.HigherOrderFunction---one or many arg|but one expersion.
+--1.myArray.forEach((e)=>{console.log(e);}); -to iterate array of each element.
+--2.myArray.filter((e)=>{return e%2==0;}); -to filter only even numbers.
+--3.myArray.map((e)=>{return e+1;}); -to map do some change in all values.
+--4.myArray.reduce((a,b)=>{return a+b}) -to reduce an array into single value.
 
 --------------------------------------------------------------------------------
 5.Oops[Object Oriented Programming]
@@ -274,13 +280,7 @@ export default fn; export {fn,fn}; -at the end of file.
 import {fn, fn as new} from "./f.js" -to import export function,also rename fname
 import * as F from "./fn.js"; -to import all function from files. F.fn() -access.
 
----7.HigherOrderFunction---one or many arg|but one expersion.
---1.myArray.forEach((e)=>{console.log(e);}); -to iterate array of each element.
---2.myArray.filter((e)=>{return e%2==0;}); -to filter only even numbers.
---3.myArray.map((e)=>{return e+1;}); -to map do some change in all values.
---4.myArray.reduce((a,b)=>{return a+b}) -to reduce an array into single value.
-
----8.Fetch_API---
+---7.Fetch_API---
 --1.async/await - async function fn(){const data = await fetch("serverAddress")};
 to make a async function and to use await keyword to wait till it is completed.
 but js is synchronised fuction it will execute same . async execute seperately
@@ -315,7 +315,7 @@ postDadJoke(dadJoke);
 -example_4 -
 
 
----9.RegularExpression(RegEx)---
+---8.RegularExpression(RegEx)---
 They are used to describe and select patterns inside a string data.
 //g -global_scope | //gm -g_with_multiline | //gi -g_with-case_insenistive.
 [abc-f12&*] -to select all the charcters in the list| [range_start-range_end]
