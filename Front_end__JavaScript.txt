@@ -110,9 +110,11 @@ number instead [myArray.length - 1][3-2]; | myArray.push("values") -to insert da
 in last position [-1] like append and return new len of array.| myArray.pop() -to
 remove and return the last value of the array.| array.unshift("val")-to insert 
 data in [0] first position. |myArr.shift() -to remove and return the first data.
-myArray.splice(1,1); -to delete data in [1] position|.splice(1,3) -[1,2,3] posi v
-myArray.splice(1,0,"val"); -to add val in [1] position.|del,update v in position.
-myArray.slice(1,4) -[1,2,3] |myArray.reverse(); -to reverse the array order ele.
+myArray.splice(1,1); -to delete data in [1] position|.splice(1,3) -[1,2,3] -to
+delete 3 values from index position[1]. myArray.splice(1,0,"val"); -to add val 
+in [1] position|myArray.splice(1,1,"val") -to replace the val in [1] position.
+[delete,update,replace value in specific position] myArray.slice(1,4) -[1,2,3]
+myArray.reverse(); -to reverse the array order ele.
 myArray1.concat(myArray2); -to add two arrays.|newArr=[...arr1, ...arr2];
 myArray.join(','?'':'') -array to str with , 1-D Array = [1,2,3]  array [1] > 2| 
 2-D Array=[[1,2],[4,5]] array[0][1] >2 |
