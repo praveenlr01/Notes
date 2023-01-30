@@ -143,21 +143,19 @@ delete myObj.name; -to delete a item in the object.
 ---user_defind_function---
 function fun_name(para) {statements;return;}  -it used for code reusablity. 
 fun_name(para) -to call a function.
-
----anonymous_fuction---
-fuction (arg) {stat;};  |const obj=function (arg) {stat;}; |obj(arg) -to call fun
-const obj=(arg) => {stat;}; -arrow function.
-
----build_in_function---
-alert();prompt();
----Methods--
-Math.random(); Number.isNaN();
-
----7.HigherOrderFunction---one or many arg|but one expersion.
+---Arrow_Function---
+const obj=(arg) => {stat;}; -arrow function. obj(arg) -to call arrow function.
+---HigherOrderFunction--- one or many arg|but one expersion.
 --1.myArray.forEach((e)=>{console.log(e);}); -to iterate array of each element.
 --2.myArray.filter((e)=>{return e%2==0;}); -to filter only even numbers.
 --3.myArray.map((e)=>{return e+1;}); -to map do some change in all values.
 --4.myArray.reduce((a,b)=>{return a+b}) -to reduce an array into single value.
+---anonymous_fuction---
+fuction (arg) {stat;};  |const obj=function (arg) {stat;}; |obj(arg) -to call fun
+---build_in_function---
+alert();prompt();
+---Methods--
+Math.random(); Number.isNaN();
 
 --------------------------------------------------------------------------------
 5.Oops[Object Oriented Programming]
