@@ -249,7 +249,7 @@ const newElement = document.createElement("tag_name");-add tC,s.Css;
 section1.append(newElement) -to append the newly created element into parent ele.
 
 ---4.Event_Listener--- 
-<tag onevent_name=function_name()>text</tag> -syntax.
+<tag onevent_name=function_name()>text</tag> -syntax. 
 <button onclick=handelClick()>click</b> -to add eventListener to element.
 
 ele.addEventListener(event,function_name,useCapture); -syntax to add el in js.
@@ -269,6 +269,9 @@ element.classList.toggle("cn")-it will add if it is not and remove if it is in.
 const myText=event.target.textContent;myText=="old"?event.target.textContent="new"
 :event.target.textContent="old";-to toggle textContent.
 event.preventDefault(); -to not execute the default action.
+
+---Events_list---
+click - onclick event, | onchange event -
 
 --Events-element.addEventListener("click",fn,f);-clicking event.
 document.aEL("readystatechange",event.readyState=="complete");
@@ -357,7 +360,10 @@ t(?!ext) -select 't' that not followed by 'ext'.
 
 //regexr.com
 --------------------------------------------------------------------------------
+---Additional---
 knowledge collesking operator- name?? "null"; -if name=null/undefind.
 location.reload() -to reload the current page.
 api?
 outline css
+let x=document.getElementById("fname");
+x.value=x.value.toUpperCase();
