@@ -232,11 +232,12 @@ object type. we can style,change the content of element.
 
 ---Properties---
 const element = document.querySelector("#id_name");
+element.innerHTML=`content to be added`; -html-elements can be overwrite.
 element.style.css_style_property="value";h1.style.color="red"; |
 element.attribute_name = "attr_value"; -to change the attribute value in element
-element.innerHTML=`content to be added`; -html-elements can be overwrite.
-element.textContent="text to be added"; -only text can be overwrite.
+element.setAttribute(attr_name,value); -to add new attribute to element.
 element.value  -to get input element value.
+element.textContent="text to be added"; -only text can be overwrite.
 element.parentElement; -it will return the parent_element of element
 element.parentElement.children; -to get all the children of the parent_ele of ele
 ele.parentElement.childNodes; first/lastChild;first/lastElementChild; -to select
@@ -246,8 +247,12 @@ ele.next/previousSibling; next/previousElementSibling; .haschildNodes; -any doms
 section1.last/firsChild|last/firstElementChild.remove();to remove_nodes|r_element
 const newElement = document.createElement("tag_name");-add tC,s.Css;
 section1.append(newElement) -to append the newly created element into parent ele.
----4.Event_Listener---
-syntax - ele.addEventListener(event,function_name,useCapture);
+
+---4.Event_Listener--- 
+<tag onevent_name=function_name()>text</tag> -syntax.
+<button onclick=handelClick()>click</b> -to add eventListener to element.
+
+ele.addEventListener(event,function_name,useCapture); -syntax to add el in js.
 const element=document.querySelector("h1");
 element.addEventListener("click",welcome,false);
 element.addEventListener("click",(event) => {event.target.textContent="welcome"},
@@ -256,6 +261,7 @@ event is occured/prev_occ it will not change. event.target.style != element.styl
 element.removeEventListener("click",welcome,false); -to remove EventListener.
 usecapture-false(default) -eventbubble from inner to outer| -true propagate from
 outer to inner that is called capture.
+
 event.stopPropagation() -to stop the event bubbling or capture.
 element.classList.add("class_name")-to add new class in ele <h1 class="newcn">
 element.classList.remove("cn")-to remove old class in ele <h1 class="">
