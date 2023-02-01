@@ -271,7 +271,9 @@ const myText=event.target.textContent;myText=="old"?event.target.textContent="ne
 event.preventDefault(); -to not execute the default action.
 
 ---Events_list---
-click - onclick event, | onchange event -
+onclick - when click the button | onchange event - when input field is changed,
+onkeypress - when a key is pressed keyboard key. |
+
 
 --Events-element.addEventListener("click",fn,f);-clicking event.
 document.aEL("readystatechange",event.readyState=="complete");
@@ -368,3 +370,4 @@ outline css
 let x=document.getElementById("fname");
 x.value=x.value.toUpperCase();
 document.getElementById("demo").innerHTML += "Moused over!<br>";
+event.which - return char ascii value. 
