@@ -262,6 +262,14 @@ element.removeEventListener("click",welcome,false); -to remove EventListener.
 usecapture-false(default) -eventbubble from inner to outer| -true propagate from
 outer to inner that is called capture.
 
+--event-- it is an object which will return event object differ based on type of
+event. event.target - to select the element on which the event is happening.
+event.charCode - to get ascii value of the character. event.key -to get char entered
+
+ 
+
+
+
 event.stopPropagation() -to stop the event bubbling or capture.
 element.classList.add("class_name")-to add new class in ele <h1 class="newcn">
 element.classList.remove("cn")-to remove old class in ele <h1 class="">
