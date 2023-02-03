@@ -379,3 +379,4 @@ let x=document.getElementById("fname");
 x.value=x.value.toUpperCase();
 document.getElementById("demo").innerHTML += "Moused over!<br>";
 event.which - return char ascii(American Standard code for information interchange) value. 
+number input_box - '' -NaN | input_box - -0- -NaN |
