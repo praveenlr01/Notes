@@ -375,6 +375,7 @@ knowledge collesking operator- name?? "null"; -if name=null/undefind.
 location.reload() -to reload the current page.
 api?
 outline css
+if input field is empty it return "" empty string| coverting "" to int give NaN |
 let x=document.getElementById("fname");
 x.value=x.value.toUpperCase();
 document.getElementById("demo").innerHTML += "Moused over!<br>";
