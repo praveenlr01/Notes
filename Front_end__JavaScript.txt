@@ -1,5 +1,6 @@
 ----------------------------JAVASCRIPT-----------------------------------
-
+Invented by Brendan Eich in 1995.ECMAS(European computer manifactures 
+association Script).ES6
 
 127.0.0.1:5500/ip_address:port_number or local host.
 <script>console.log("Hello world!")</script>
