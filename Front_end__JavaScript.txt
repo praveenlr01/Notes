@@ -78,6 +78,7 @@ no negative.
 
 ---Date_Time--  -to create date object |to access date object method.
 const currentDate = new Date(); -day_name mm dd yy hh:mm:ss gst (ist)
+return date in object type. 
 currentDate.toDateString() - to make readable string format.
 currentDate.toLocalDate/TimeString() - to make readable date,time format.
 
@@ -384,12 +385,17 @@ knowledge collesking operator- name?? "null"; -if name=null/undefind.
 location.reload() -to reload the current page.
 api?
 outline css
-if input field is empty it return "" empty string| coverting "" to int give NaN |
-let x=document.getElementById("fname");
-x.value=x.value.toUpperCase();
-document.getElementById("demo").innerHTML += "Moused over!<br>";
+---Input_Fields---
+if input field is empty it return > "" empty string| coverting "" to int give NaN |
+date empty input field will return >Invalid Date object |
 event.which - return char ascii(American Standard code for information interchange) value. 
 number input_box - '' -NaN | input_box - -0- -NaN | 
 <input type="radio" name = "gender">male . ele[i].checked -retrun true if checked || false
 ele[i] == element_selected - <input /> |
-use this || event to validate input field.
+use event to validate input field.event - object event.charCode,.target.value.length;
+this is widows object;this.charCode; - can use any one this || event;
+
+document.getElementById("demo").innerHTML += "Moused over!<br>";
+let x=document.getElementById("fname");
+x.value=x.value.toUpperCase();
+
