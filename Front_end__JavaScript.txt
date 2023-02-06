@@ -82,7 +82,7 @@ return date in object type.  d1 - d2 differen in millisecond| /840 -to diff
 new Date("mm/dd/yy") - to covert into date object.
 currentDate.toDateString() - to make readable string format.
 currentDate.toLocalDate/TimeString() - to make readable date,time format.
-currentDate.
+currentDate.getDay() - 0-6 | getDate() -1-31 | getMonth() - 1-31
 
 
 
