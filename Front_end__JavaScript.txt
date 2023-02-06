@@ -76,12 +76,13 @@ Math.floor(Math.random()*10)+1; | end_value= (start_value+end_value)-1; s_v=s_v
 (Math.random()*end_value)+start_value; | Math.abs(-1) - >1 -to get absolute value
 no negative.
 
----Date_Time--  -to create date object |to access date object method.
+---Date_Time--  -to create date object |to access date object methods.
 const currentDate = new Date(); -day_name mm dd yy hh:mm:ss gst (ist)
-return date in object type. 
+return date in object type.  d1 - d2 differen in millisecond| /840 -to diff
+new Date("mm/dd/yy") - to covert into date object.
 currentDate.toDateString() - to make readable string format.
 currentDate.toLocalDate/TimeString() - to make readable date,time format.
-
+currentDate.
 
 
 
