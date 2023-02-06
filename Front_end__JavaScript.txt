@@ -49,7 +49,10 @@ reassign.
 cannot reassign.
 3.var myName="praveen"; var myName="vijay" -it can be modify and can be reassign.
 var is fuction scope. //try to avoid var
--Scope 1.local_scope 2.non-local or enclosed_scope/fuction_scope 3.global_scope.
+--Scope:  1.local_scope 2.non-local or enclosed_scope/fuction_scope 3.global_scope.
+in JavaScript there is no block level scope | it has only functional level scope,
+the variables in same name in function and if/else block will affect. same varible
+in different function will not affect.
 
 ---Print---
 console.log(myName); -to print in console >praveen |const myName="praveen"
@@ -72,9 +75,13 @@ Math.min(3,2,0) -0 |Math.max(2,4,9) -9|Math.random() -random values 0.0 to 0.9 |
 Math.floor(Math.random()*10)+1; | end_value= (start_value+end_value)-1; s_v=s_v
 (Math.random()*end_value)+start_value;
 
----Date_Time---
+---Date_Time--  -to create date object |to access date object method.
 const currentDate = new Date(); -day_name mm dd yy hh:mm:ss gst (ist)
-currentDate.toDateString() - to make readable string formate.
+currentDate.toDateString() - to make readable string format.
+currentDate.toLocalDate/TimeString() - to make readable date,time format.
+
+
+
 
 ---------------------------------------------------------------------------------
 2.conditional Statement and Looping.
