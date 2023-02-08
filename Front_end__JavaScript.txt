@@ -232,6 +232,7 @@ it will return element of that id_name of object type.
 const sections=document.getElementsByClassName("sec"); -to select elements by 
 using class_name. it return htmlCollection of object type. sections[0].
 const div = document.getElementsByTagName("div"); -to select all div elements.
+return html collection of object type.
 
 const div2 = section1.querySelectorAll(div:nth-child(2)); -to select from previous.
 const sectionOne = document.querySelectorAll(".sectionOne") -to select elements 
