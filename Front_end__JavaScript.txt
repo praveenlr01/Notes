@@ -171,7 +171,9 @@ fuction (arg) {stat;};  |const obj=function (arg) {stat;}; |obj(arg) -to call fu
 alert();prompt();
 ---Methods--
 Math.random(); Number.isNaN();
-
+--Recursion---
+if(base_condition): break; else if(other condition): break; 
+else: calling_function_iteself(with different argument change);
 --------------------------------------------------------------------------------
 5.Oops[Object Oriented Programming]
 --1.Class---
