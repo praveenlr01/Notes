@@ -398,8 +398,8 @@ number input_box - '' -NaN | input_box - -0- -NaN |
 ele[i] == element_selected - <input /> |
 use event to validate input field.event - object event.charCode,.target.value.length;
 this is widows object;this.charCode; - can use any one this || event;
-
 document.getElementById("demo").innerHTML += "Moused over!<br>";
 let x=document.getElementById("fname");
 x.value=x.value.toUpperCase();
+selectelement.selectedIndex = 0; -to reset the selected option.
 
