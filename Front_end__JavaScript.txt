@@ -134,8 +134,10 @@ myArray1.concat(myArray2); -to add two arrays.|newArr=[...arr1, ...arr2];
 myArray.join(','?'':'') -array to str with , 1-D Array = [1,2,3]  array [1] > 2| 
 2-D Array=[[1,2],[4,5]] array[0][1] >2 |
 3-D Array = [[[1,2],[3,4]],[[5,6],[7,8]]]-[0][0][1] >2 |
-let arr = array.slice() - to make shallow copy.
-
+let arr = array.slice() - to copy array independently.
+-----------------------------------------------------------------------------------
+arr.filter((item, index) => arr.indexOf(item) === index); -to remove duplicate elements
+arr1.length == arr2.length -to check if two array is same.
 ---2.Object--- {}  || like dictionay ||obj={key:number,str,array,object,function};
 const myObject = {name:["praveen","kumar"],age:23}; typeof 'object'{property:val}
 const myObject = {"name":"praveen","age":23}; typeof 'object'{"key":val};
