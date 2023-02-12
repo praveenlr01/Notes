@@ -45,7 +45,7 @@ between two operants if any one is str the result will be str,"lr"+23 >lr23 str
 
 ---DATATYPES---- |8 types of datatype |find type of data is stored in variable.
 javascript is dynamic typed let s="lr"; s=23; we can change the type of variable.
-1.String - it is sequence of characters enclosed with single or double quotes
+--1.String - it is sequence of characters enclosed with single or double quotes
 let name="praveen" | typeof name >string | const myName="praveen" > myName.length; 
 myName.toUpperCase(); | MyName.toLowerCase() | myName.charAt(0)-index_position
 myName[0] -'p'; | myName.indexOf('e')-returns char;  .lastIndexOf('e'); 
@@ -54,7 +54,7 @@ myName.slice(0,3)-pra, .slice(3)-veen,.slice(5,2)-''; myName.split(',')-seperato
 to convert str into array based on the seperator.myName.trim() -remove extra space
 type-casting: String(23)-"23" -converting Number_type to String_type.
 
-2.Number - 23 -in js every number is stored in 64bit floatType|
+--2.Number - 23 -in js every number is stored in 64bit floatType|
 (int), 23.5 (float) both are number datatype | color:purple;
 let myNum = 23 |Number.isInteger(myNum) -true/false| Number.parseFloat(myNum) 
 -it convert into float -(23.5klf -23.5).Number.parseInt(myNum) -to convert into
@@ -65,9 +65,14 @@ Number(true) -1. Number(false) -0. ||isNaN(num) -not check type check value itse
 let num = 10e5; 100000; -to repersent expontial|10e-5; 0.00001 |
 let bigNum = BigInt(11111111111111111111111) -to store large number more than 64bit.
 
-3.Boolean - true, false -to check the result of conditional statements.
-4.Object - 1.array -values are enclosed with square bracket [];2.object
+--3.Boolean - true, false -to check the result of conditional statements.
 
+--4.Object - 1.array -values are enclosed with square bracket [];
+2.object -values are sepearted by key:value as items that is enclose with {},
+3.Date - new Date() - to create a date object.
+--5.undefined - in js variable without value has value as undefined type is also
+"undefined" by defalut. "" != undefined;
+--6.
 
 
 
@@ -173,10 +178,13 @@ myObj.hasOwnProperty("name") -return true/false.
 delete myObj.name; -to delete a item in the object.
 
 ---------------------------------------------------------------------------------
-4.Functions.
+4.FUNCTIONS - a block of code designed to perform specific task when it is called 
+and return with a value to caller.
 ---user_defind_function---
-function fun_name(para) {statements;return;}  -it used for code reusablity. 
-fun_name(para) -to call a function.
+function fun_name(parameters,parameters) {statements;return;}  
+fun_name(arguments,arguments) -to call a function. -it used for code reusablity.
+the parameters behaves like local variables created when function start and
+deleted when function ends.
 ---Arrow_Function---
 const obj=(arg) => {stat;}; -arrow function. obj(arg) -to call arrow function.
 ---HigherOrderFunction--- one or many arg|but one expersion.
