@@ -1,4 +1,6 @@
 ----------------------------JAVASCRIPT-----------------------------------
+programming language is used to communicate to computer to perform specific
+task,by writing a set of instruction to be execute. eg:javascript.It was
 Invented by Brendan Eich in 1995.ECMAS(European computer manifactures 
 association Script) it is organization to maintain javascript standard
 in 2015 it release es6|
@@ -6,6 +8,7 @@ javascript code run in every browser has javascript Engine.eg:chorme -v8,
 firefox-spidermonkey| and javascript can also run in node server |Both 
 provied a runtime environment 
 complier,interperter,just in time complier|
+
 127.0.0.1:5500/ip_address:port_number or local host.
 <script defer src="js/main.js"></script> | <script type="module" src="path"></>
 <script>console.log("Hello world!")</script> above the <body></body> tag
