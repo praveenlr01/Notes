@@ -18,48 +18,59 @@ complier,interperter,just in time complier|
 comments is notes or description for the following statements
 //single_line_comment  /*multi_line_comment */
 
----Datatypes----
-1.String - "praveen"  |let name="praveen" | typeof name >string |color:white;
-const myName="praveen" > myName.length; myName.toUpperCase(); MyName.toLowerCase()
-myName.charAt(0)-index_position|myName[0] -'p'; myName.indexOf('e')-returns char; 
-.lastIndexOf('e'); .includes('ee') -return true if 'ee' is present in that string
+---VARIABLES---
+1.should not start with number| 2.only _ and $ special character is allowed.
+3.no bulid in keywords can be used. naming-convention (camelcase).myNameIs="lr".
+let myAgeIs=23; -one variabel =one date.
+let myNameIs="praveen", myAgeIs=23; -in single line.
+1.let myName="praveen"; myName="vijay"; -let variable can modify but cannot reassign.
+2.const myName="praveen"; myName="vijay"-error. const variable cannot modify and cannot reassign.
+3.var myName="praveen"; var myName="vijay" -it can be modify and can be reassign.
+var is fuction scope. //try to avoid var |but old browsers only support var.
+--Scope:  1.local_scope 2.non-local or enclosed_scope/fuction_scope 3.global_scope.
+in JavaScript there is no block level scope | it has only functional level scope,
+the variables in same name in function and if/else block will affect. same variable
+in different function will not affect.
+
+---OPERATORS---  |6 types of operators,to perform task between operants
+1.Arithmetic Operator-(+,-,*,/,%,**,++,--) -to mathametic calculations
+2.Assignment Operator-(=,+=,-=,*=,/=,%=,**=) -to assign value to variables
+3.Relational Operator-(<,>,<=,>=,==/===,!=/!==) -to check relation between 
+two values |=== check if both equal value and equal type.
+4.Ternary Operator-(condition?iftrue:iffalse).((myNum%2==0)?"even":"odd");
+condition?true:condition?true:false -nested ternary operator.c?c?:t:f:f;
+5.Logical Operator-(&&,||,!) -to check logical conditions
+6.typeof Operator -(typeof,instanceof) -to find type of value
+between two operants if any one is str the result will be str,"lr"+23 >lr23 str
+
+---DATATYPES---- |8 types of datatype |find type of data is stored in variable.
+javascript is dynamic typed let s="lr"; s=23; we can change the type of variable.
+1.String - it is sequence of characters enclosed with single or double quotes
+let name="praveen" | typeof name >string | const myName="praveen" > myName.length; 
+myName.toUpperCase(); | MyName.toLowerCase() | myName.charAt(0)-index_position
+myName[0] -'p'; | myName.indexOf('e')-returns char;  .lastIndexOf('e'); 
+.includes('ee') -return true if 'ee' is present in that string
 myName.slice(0,3)-pra, .slice(3)-veen,.slice(5,2)-''; myName.split(',')-seperator
 to convert str into array based on the seperator.myName.trim() -remove extra space
 type-casting: String(23)-"23" -converting Number_type to String_type.
 
-2.Number - 23 (int), 23.5 (float) both are number datatype | color:purple;
+2.Number - 23 -in js every number is stored in 64bit floatType|
+(int), 23.5 (float) both are number datatype | color:purple;
 let myNum = 23 |Number.isInteger(myNum) -true/false| Number.parseFloat(myNum) 
 -it convert into float -(23.5klf -23.5).Number.parseInt(myNum) -to convert into
 integer -(23.4jf - 23).| .tofixed(2) -.2f(two decimal digits after number) but it
 will convert into string; Number.isNaN(num) -return true/false. NaN-Not a Number.
 type-casting: Number("23") -23 -converting String type into Number type.
 Number(true) -1. Number(false) -0. ||isNaN(num) -not check type check value itself
+let num = 10e5; 100000; -to repersent expontial|10e-5; 0.00001 |
+let bigNum = BigInt(11111111111111111111111) -to store large number more than 64bit.
 
-3.boolean - true, false
+3.Boolean - true, false -to check the result of conditional statements.
+4.Object - 1.array -values are enclosed with square bracket [];2.object
 
----Operators---
-1.Arithmetic Operator-(+,-,*,/,%,**) .In js praveen+23=praveen23 >typeof string
-2.Relational Operator-(<,>,<=,>=,==/===,!=/!==)
-3.Logical Operator-(&&,||,!)
-4.Ternary Operator-(condition?iftrue:iffalse).((myNum%2==0)?"even":"odd");
-condition?true:condition?true:false -nested ternary operator.c?c?:t:f:f;
 
----Variables---
-1.should not start with number| 2.only _ special character is allowed.
-3.no bulid in keywords can be used. naming-convention (camelcase).myNameIs="lr".
-let myAgeIs=23; -one variabel =one date.
-let myNameIs="praveen", myAgeIs=23; -in single line.
 
-1.let myName="praveen"; myName="vijay"; -let variable can modify but cannot 
-reassign.
-2.const myName="praveen"; myName="vijay"-error. const variable cannot modify and
-cannot reassign.
-3.var myName="praveen"; var myName="vijay" -it can be modify and can be reassign.
-var is fuction scope. //try to avoid var
---Scope:  1.local_scope 2.non-local or enclosed_scope/fuction_scope 3.global_scope.
-in JavaScript there is no block level scope | it has only functional level scope,
-the variables in same name in function and if/else block will affect. same varible
-in different function will not affect.
+
 
 ---Print---
 console.log(myName); -to print in console >praveen |const myName="praveen"
@@ -90,8 +101,6 @@ new Date("mm/dd/yy") - to covert into date object.
 currentDate.toDateString() - to make readable string format.
 currentDate.toLocalDate/TimeString() - to make readable date,time format.
 currentDate.getDay() - 0-6 | getDate() -1-31 | getMonth() - 1-31
-
-
 
 ---------------------------------------------------------------------------------
 2.conditional Statement and Looping.
