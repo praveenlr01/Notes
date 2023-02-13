@@ -70,7 +70,7 @@ let bigNum = BigInt(11111111111111111111111) -to store large number more than 64
 --5.undefined - in js variable without value has value as undefined type is also
 "undefined" by defalut. "" != undefined;
 --6.null -when return from function without value,nothing| type is 'object'
---7.
+--7.symbol
 
 1.Primitive Type: (string,number,boolean,null,undefined,symbol) -it copied by Value
 it is independent variable changes does not affect.
