@@ -2,7 +2,7 @@
 programming language is used to communicate to computer to perform specific
 task,by writing a set of instruction to be execute. eg:javascript.It was
 Invented by Brendan Eich in 1995.ECMAS(European computer manifactures 
-association Script) it is organization to maintain javascript standard
+association Script) it is organization that maintain javascript standard
 in 2015 it release es6|
 javascript code run in every browser has javascript Engine.eg:chorme -v8,
 firefox-spidermonkey| and javascript can also run in node server |Both 
@@ -53,7 +53,6 @@ myName[0] -'p'; | myName.indexOf('e')-returns char;  .lastIndexOf('e');
 myName.slice(0,3)-pra, .slice(3)-veen,.slice(5,2)-''; myName.split(',')-seperator
 to convert str into array based on the seperator.myName.trim() -remove extra space
 type-casting: String(23)-"23" -converting Number_type to String_type.
-
 --2.Number - 23 -in js every number is stored in 64bit floatType|
 (int), 23.5 (float) both are number datatype | color:purple;
 let myNum = 23 |Number.isInteger(myNum) -true/false| Number.parseFloat(myNum) 
@@ -64,18 +63,19 @@ type-casting: Number("23") -23 -converting String type into Number type.
 Number(true) -1. Number(false) -0. ||isNaN(num) -not check type check value itself
 let num = 10e5; 100000; -to repersent expontial|10e-5; 0.00001 |
 let bigNum = BigInt(11111111111111111111111) -to store large number more than 64bit.
-
 --3.Boolean - true, false -to check the result of conditional statements.
-
 --4.Object - 1.array -values are enclosed with square bracket [];
 2.object -values are sepearted by key:value as items that is enclose with {},
 3.Date - new Date() - to create a date object.
 --5.undefined - in js variable without value has value as undefined type is also
 "undefined" by defalut. "" != undefined;
---6.
+--6.null -when return from function without value,nothing| type is 'object'
+--7.
 
-
-
+1.Primitive Type: (string,number,boolean,null,undefined,symbol) -it copied by Value
+it is independent variable changes does not affect.
+2.Reference Type:(object,array,function) -it is copied by reference.it is dependent
+any changes affect the object value.
 
 ---Print---
 console.log(myName); -to print in console >praveen |const myName="praveen"
