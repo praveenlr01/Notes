@@ -36,7 +36,7 @@ in different function will not affect.
 1.Arithmetic Operator-(+,-,*,/,%,**,++,--) -to mathametic calculations
 2.Assignment Operator-(=,+=,-=,*=,/=,%=,**=) -to assign value to variables
 3.Relational Operator-(<,>,<=,>=,==/===,!=/!==) -to check relation between 
-two values |=== check if both equal value and equal type.
+two values | === check both value and type are equal.
 4.Ternary Operator-(condition?iftrue:iffalse).((myNum%2==0)?"even":"odd");
 condition?true:condition?true:false -nested ternary operator.c?c?:t:f:f;
 5.Logical Operator-(&&,||,!) -to check logical conditions
@@ -45,7 +45,7 @@ between two operants if any one is str the result will be str,"lr"+23 >lr23 str
 
 ---DATATYPES---- |8 types of datatype |find type of data is stored in variable.
 javascript is dynamic typed let s="lr"; s=23; we can change the type of variable.
---1.String - it is sequence of characters enclosed with single or double quotes
+--1.String -zero or sequence of characters enclosed with single or double quotes.
 let name="praveen" | typeof name >string | const myName="praveen" > myName.length; 
 myName.toUpperCase(); | MyName.toLowerCase() | myName.charAt(0)-index_position
 myName[0] -'p'; | myName.indexOf('e')-returns char;  .lastIndexOf('e'); 
@@ -53,6 +53,7 @@ myName[0] -'p'; | myName.indexOf('e')-returns char;  .lastIndexOf('e');
 myName.slice(0,3)-pra, .slice(3)-veen,.slice(5,2)-''; myName.split(',')-seperator
 to convert str into array based on the seperator.myName.trim() -remove extra space
 type-casting: String(23)-"23" -converting Number_type to String_type.
+
 --2.Number - 23 -in js every number is stored in 64bit floatType|
 (int), 23.5 (float) both are number datatype | color:purple;
 let myNum = 23 |Number.isInteger(myNum) -true/false| Number.parseFloat(myNum) 
@@ -70,7 +71,7 @@ let bigNum = BigInt(11111111111111111111111) -to store large number more than 64
 --5.undefined - in js variable without value has value as undefined type is also
 "undefined" by defalut. "" != undefined;
 --6.null -when return from function without value,nothing| type is 'object'
---7.symbol
+--7.symbol -used to hide key of object,and store unique values let a=Symbol(); o[a]=v;
 
 1.Primitive Type: (string,number,boolean,null,undefined,symbol) -it copied by Value
 it is independent variable changes does not affect.
@@ -83,8 +84,8 @@ console.log("my name is",myName) -my name is praveen |both string and variables
 console.log(`my name is ${name}`); -my name is praveen| const name="praveen";
 
 ---input---
-alert("Hello World!"); -pop up window on top to show some message.return none. 
-ok. to show some information to user.
+alert("Hello World!"); -pop up window on top to show some message with ok. 
+to show some information to user. return undefined value of type undefined.
 confirm("click ok if you agree"); pou up window on top with ok | cancel and
 return true or false. to get permission from user.
 let p=prompt("Enter Your Name"); if(p){console.log(p)}else{"enter name"}
@@ -289,7 +290,12 @@ section1.last/firsChild|last/firstElementChild.remove();to remove_nodes|r_elemen
 const newElement = document.createElement("tag_name");-add tC,s.Css;
 section1.append(newElement) -to append the newly created element into parent ele.
 
----4.Event_Listener--- 
+---4.Event_Listener--- Event is something done by a browser or user.
+
+
+
+
+
 <tag onevent_name=function_name()>text</tag> -syntax. 
 <button onclick=handelClick()>click</b> -to add eventListener to element.
 
@@ -384,7 +390,6 @@ async function postDadJoke(joke) {
     console.log(jsonResponse.json); } -.headers .data
 postDadJoke(dadJoke);
 -example_4 -
-
 
 ---8.RegularExpression(RegEx)---
 They are used to describe and select patterns inside a string data.
