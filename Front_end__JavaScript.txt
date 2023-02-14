@@ -43,15 +43,25 @@ condition?true:condition?true:false -nested ternary operator.c?c?:t:f:f;
 6.typeof Operator -(typeof,instanceof) -to find type of value
 between two operants if any one is str the result will be str,"lr"+23 >lr23 str
 
----DATATYPES---- |8 types of datatype |find type of data is stored in variable.
+---DATATYPES---- |8 types of datatype |type of data is stored in variable.
 javascript is dynamic typed let s="lr"; s=23; we can change the type of variable.
+
 --1.String -zero or sequence of characters enclosed with single or double quotes.
-let name="praveen" | typeof name >string | const myName="praveen" > myName.length; 
-myName.toUpperCase(); | MyName.toLowerCase() | myName.charAt(0)-index_position
-myName[0] -'p'; | myName.indexOf('e')-returns char;  .lastIndexOf('e'); 
-.includes('ee') -return true if 'ee' is present in that string
-myName.slice(0,3)-pra, .slice(3)-veen,.slice(5,2)-''; myName.split(',')-seperator
-to convert str into array based on the seperator.myName.trim() -remove extra space
+let name="praveen" | typeof name >string | myName.length; >7 | myName[0] -'p';
+myName.charAt(0) -index_position| myName.toUpperCase(); | MyName.toLowerCase() 
+myName.indexOf('e')-r indexpositon;  .lastIndexOf('e'); | return -1 if not found |
+.includes('ee',starting Index) -return true if 'ee' is present in that string
+myName.slice(0,3)-pra, .slice(3)-veen,.slice(-1) -r last value,.slice(5,2)-r '' |
+myName.split(',')-seperator  -to convert str into array based on the seperator
+.myName.trim() -remove extra space |.myName.repeat(3) -return string 3 times
+str1.concat(str2,str3,str4..) - to add strings into one string.
+charCodeAt()-return character Code a=97 |.fromCharCode() -charCode to character.
+str.startsWith('s',3)-return boolean s-string to search,3 starting index position.
+str.match("str"|/a/g) - return a array of found string or return null|
+str.search("str"|re) -return the first index position of found string. 
+str.replace("blue"|/red/) -return string of replaced value.not change original str
+str.subString(4,1) -if 4>length argument will swap| str.toString() -obj to string.
+str.valueOf() - return the value of str| str.localCompare() -based on english order|
 type-casting: String(23)-"23" -converting Number_type to String_type.
 
 --2.Number - 23 -in js every number is stored in 64bit floatType|
@@ -64,6 +74,7 @@ type-casting: Number("23") -23 -converting String type into Number type.
 Number(true) -1. Number(false) -0. ||isNaN(num) -not check type check value itself
 let num = 10e5; 100000; -to repersent expontial|10e-5; 0.00001 |
 let bigNum = BigInt(11111111111111111111111) -to store large number more than 64bit.
+
 --3.Boolean - true, false -to check the result of conditional statements.
 --4.Object - 1.array -values are enclosed with square bracket [];
 2.object -values are sepearted by key:value as items that is enclose with {},
@@ -152,11 +163,31 @@ delete 3 values from index position[1]. myArray.splice(1,0,"val"); -to add val
 in [1] position|myArray.splice(1,1,"val") -to replace the val in [1] position.
 [delete,update,replace value in specific position] myArray.slice(1,4) -[1,2,3]
 myArray.reverse(); -to reverse the array order ele.
-myArray1.concat(myArray2); -to add two arrays.|newArr=[...arr1, ...arr2];
-myArray.join(','?'':'') -array to str with , 1-D Array = [1,2,3]  array [1] > 2| 
+myArray1.concat(myArray2,arr3,..); -to join arrays.|newArr=[...arr1, ...arr2];
+myArray.join(',') -array to str with seperator for string.
+1-D Array = [1,2,3]  array [1] > 2| 
 2-D Array=[[1,2],[4,5]] array[0][1] >2 |
 3-D Array = [[[1,2],[3,4]],[[5,6],[7,8]]]-[0][0][1] >2 |
 let arr = array.slice() - to copy array independently.
+array.sort() -use compare function for sorting numbers;
+array.every(func) -it iterator every elements pass (argument val,index,array)all
+true return true.|
+array.find(func()=>text_condition) -return first_element that passes test_condition
+return undefined none pass| array.findIndex()-return index of fe, -1 none 
+array.fill("value",sInd,endIn)-to copy val to index position.modify original arr
+
+array.entries() -return both key and value as array.
+Array.from(str) -str-array |Array.isArray()
+
+--higherOrderFunction_Array--
+array.filter((value,index,array)=>test_condition) -it return new array that pass
+test_codition. not change original array. none pass return empty array.
+array.map()
+array.reduce()
+array.forEach(func(v,i,a)=>statement) -it return undefined only it execute statement.
+
+
+
 -----------------------------------------------------------------------------------
 arr.filter((item, index) => arr.indexOf(item) === index); -to remove duplicate elements
 arr1.length == arr2.length -to check if two array is same.
@@ -291,7 +322,24 @@ const newElement = document.createElement("tag_name");-add tC,s.Css;
 section1.append(newElement) -to append the newly created element into parent ele.
 
 ---4.Event_Listener--- Event is something done by a browser or user.
-
+1.Mouse Events:
+onclick 
+ondblclick
+onmouseover
+onmouseout
+2.Keyboard Events:onkeypress
+onkeyup
+onkeydown
+3.Form Events:
+onfocus
+onchange
+onselect
+onsubmit
+onreset
+4.Object Events:
+onload
+onscroll
+onresize
 
 
 
