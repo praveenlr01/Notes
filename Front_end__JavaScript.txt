@@ -171,9 +171,10 @@ array.every(func) -it iterator every elements pass (argument val,index,array)all
 true return true.|array.some() -it return true if any one test case pass.
 array.find(func()=>text_condition) -return first_element that passes test_condition
 return undefined none pass| array.findIndex()-return index of fe, -1 none 
+Array.from(str) -str to array |any object,any iterable into array.
 array.fill("value",sInd,endIn)-to copy val to index position.modify original arr
 array.entries() -return both key and value as array.
-Array.from(str) -str-array |Array.isArray() |arr.toString()|arr.valueOf()|
+|Array.isArray() |arr.toString()|arr.valueOf()|
 
 --higherOrderFunction_Array--
 array.filter((value,index,array)=>test_condition) -it return new array that pass
@@ -304,6 +305,8 @@ it will return nodeList of object type.
 document.querySelector("#red"); -arg like css selector but it will select the 
 first result and used for selecting single element. it will return element of 
 object type. we can style,change the content of element.
+getElementbyId,querySelector-return html element <h1></h1>| Node List.
+getElementByClassName,getElementByTagName,querySelectorAll -return htmlcollection
 
 ---Properties---
 const element = document.querySelector("#id_name");
