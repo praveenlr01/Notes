@@ -333,6 +333,10 @@ element.getAttribute("attr_name")
 element.setAttribute("attr_name","attr_value")
 element.removeAttribute("attr_name")
 
+element.classList.add()
+element.classList.remove()
+element.classList.toggle()
+element.style.css_property="value";
 
 
 ---4.Event_Listener--- Event is something done by a browser or user.
