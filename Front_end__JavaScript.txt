@@ -162,35 +162,32 @@ myArray.splice(1,1); -to delete data in [1] position|.splice(1,3) -[1,2,3] -to
 delete 3 values from index position[1]. myArray.splice(1,0,"val"); -to add val 
 in [1] position|myArray.splice(1,1,"val") -to replace the val in [1] position.
 [delete,update,replace value in specific position] myArray.slice(1,4) -[1,2,3]
-myArray.reverse(); -to reverse the array order ele.
+myArray.reverse(); -to reverse the array order. changes original array.
 myArray1.concat(myArray2,arr3,..); -to join arrays.|newArr=[...arr1, ...arr2];
-myArray.join(',') -array to str with seperator for string.
-1-D Array = [1,2,3]  array [1] > 2| 
-2-D Array=[[1,2],[4,5]] array[0][1] >2 |
-3-D Array = [[[1,2],[3,4]],[[5,6],[7,8]]]-[0][0][1] >2 |
-let arr = array.slice() - to copy array independently.
-array.sort() -use compare function for sorting numbers;
+myArray.join(',') -array to str with seperator for string. 
+let arr = array.slice() - to copy array independently.arr.slice(si,eni-1);(-3,-1);
+array.sort() -use compare function for sorting numbers; it sort according ascii val.
 array.every(func) -it iterator every elements pass (argument val,index,array)all
-true return true.|
+true return true.|array.some() -it return true if any one test case pass.
 array.find(func()=>text_condition) -return first_element that passes test_condition
 return undefined none pass| array.findIndex()-return index of fe, -1 none 
 array.fill("value",sInd,endIn)-to copy val to index position.modify original arr
-
 array.entries() -return both key and value as array.
-Array.from(str) -str-array |Array.isArray()
+Array.from(str) -str-array |Array.isArray() |arr.toString()|arr.valueOf()|
 
 --higherOrderFunction_Array--
 array.filter((value,index,array)=>test_condition) -it return new array that pass
 test_codition. not change original array. none pass return empty array.
-array.map()
-array.reduce()
+array.map() -val,index,array() -return new array.
+array.reduce() -intialval|return value,currentvalue,index,array -return reduce element.
 array.forEach(func(v,i,a)=>statement) -it return undefined only it execute statement.
-
-
-
------------------------------------------------------------------------------------
+1-D Array = [1,2,3]  array [1] > 2| 
+2-D Array=[[1,2],[4,5]] array[0][1] >2 |
+3-D Array = [[[1,2],[3,4]],[[5,6],[7,8]]]-[0][0][1] >2 |
 arr.filter((item, index) => arr.indexOf(item) === index); -to remove duplicate elements
 arr1.length == arr2.length -to check if two array is same.
+
+-----------------------------------------------------------------------------------
 ---2.Object--- {}  || like dictionay ||obj={key:number,str,array,object,function};
 const myObject = {name:["praveen","kumar"],age:23}; typeof 'object'{property:val}
 const myObject = {"name":"praveen","age":23}; typeof 'object'{"key":val};
@@ -284,8 +281,13 @@ try{ error;throw new Error("message");} -execute if no error is occured in block
 catch(err) {console.log/error/warn/table(err);} -when there is error in try it exe
 finally{excecute all time}; -it will execute all time in both case.
 
----3.DOM(DocumentObjectModel)---
-With help of Html DOM javaScript can access and change the html element.
+---3.DOM---Document(Html,xml..)Object(htmlTags,elements)Model(structuredLayout).
+maintained by W3c With help of DOM can access and change the html element.
+1.Html Dom,2.Xml Dom,3.core Dom|it convert htmltags,ele, into object,nodeList.
+html attributes as poperty,methods,events to access the element.can add/remove
+html elements,attribute,style,|react to existing events,add/remove events
+window is parent element used in browser.window.open,close,innerHeigt,
+
 
 --methods-for selecting elements.
 const section1 = document.getElementById("id_name"); -to select element in id_name
@@ -321,6 +323,18 @@ section1.last/firsChild|last/firstElementChild.remove();to remove_nodes|r_elemen
 const newElement = document.createElement("tag_name");-add tC,s.Css;
 section1.append(newElement) -to append the newly created element into parent ele.
 
+
+---DOM_Manipulation---
+div = element.createElement("html_tag_name") -to create html element
+div.innerText = text_inside_html_tag.
+element.append("string",tags) -to append after element.
+
+element.getAttribute("attr_name")
+element.setAttribute("attr_name","attr_value")
+element.removeAttribute("attr_name")
+
+
+
 ---4.Event_Listener--- Event is something done by a browser or user.
 1.Mouse Events:
 onclick 
@@ -340,8 +354,6 @@ onreset
 onload
 onscroll
 onresize
-
-
 
 
 <tag onevent_name=function_name()>text</tag> -syntax. 
